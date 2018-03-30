@@ -1,3 +1,2 @@
 # hello-world
-myFirstRepo
-i love pizza:coffe:sleeping;
+myFirstRepo, now i am using for other temp work
