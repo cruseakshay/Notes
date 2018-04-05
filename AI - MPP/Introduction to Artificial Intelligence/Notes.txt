@@ -1,0 +1,43 @@
+Stemming using porter stemmer 
+python SpeechRecognition package 
+python pyaudio package
+check out ! LUIS.ai offering by microsoft for conversational software.
+
+#Generic code snippets for reuse
+#python 
+
+# Create Faceted Histograms
+%matplotlib inline
+import seaborn as sns
+sns.set_style("whitegrid")
+def create_facethists(df):
+	import numpy as np
+	cols = df.columns.tolist()[:-1]
+	for col in cols:
+		if(df[col].dtype in [np.int64, np.int32, np.float64] and df[col].name != "Diabetic"):
+			g = sns.FacetGrid(frame, col="Diabetic")
+			g.map(sns.distplot, col)
+	return('Done')
+create_facethists(frame)
+
+Note: This code creates histograms for each numeric variable, faceted by the Diabetic label – in
+other words, it enables you to compare the distribution of numeric feature values for diabetic
+and non-diabetic patients.
+
+
+# Create Boxplots
+def create_boxplots(df):
+	import numpy as np
+	import matplotlib.pyplot as plt
+	cols = df.columns.tolist()[:-1]
+	for col in cols:
+		if(df[col].dtype in [np.int64, np.int32, np.float64] and df[col].name != "Diabetic"):
+			fig = plt.figure(figsize = (6,6))
+			fig.clf()
+			ax = fig.gca()
+			df.boxplot(column = [col], ax = ax, by = ['Diabetic'])
+	return('Done')
+create_boxplots(frame)
+
+Note: This code shows the same comparison of feature value distributions as box plots, which
+make it easier to see the median and quartile values in the distributions.
