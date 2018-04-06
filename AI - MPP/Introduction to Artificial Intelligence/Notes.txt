@@ -48,7 +48,7 @@ Image processing
 		Gaussion filter
 		median filter
 	Edge detection
-		sobel algorithm
+		sobel Edge detection algorithm
 	cornor detection
 		Harris cornor detector
 	
