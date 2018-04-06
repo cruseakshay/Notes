@@ -41,3 +41,24 @@ create_boxplots(frame)
 
 Note: This code shows the same comparison of feature value distributions as box plots, which
 make it easier to see the median and quartile values in the distributions.
+
+Image processing 
+	Equilization
+	Filters
+		Gaussion filter
+		median filter
+	Edge detection
+		sobel algorithm
+	cornor detection
+		Harris cornor detector
+	
+	Image Classification 
+		Using customvision.ai by microsoft
+		Computer Vision API with OCR capabilities 
+	
+	Face Detection and Recognition 
+		cognitive_face - SDK from microsoft for python 
+		
+	Video Analysis 
+		videoindexer.ai - for Video Analysis by microsoft
+		videobreakdown API
