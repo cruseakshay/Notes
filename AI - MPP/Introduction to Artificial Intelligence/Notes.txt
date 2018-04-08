@@ -62,3 +62,7 @@ Image processing
 	Video Analysis 
 		videoindexer.ai - for Video Analysis by microsoft
 		videobreakdown API
+
+Conversation as a platform 
+	Azure cloud has bot service, can be integrated with many messaging channels.
+	also check out ! qnamaker.ai
