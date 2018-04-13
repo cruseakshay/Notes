@@ -1,0 +1,46 @@
+CREATE SEQUENCE ref_sequence
+  MINVALUE 1
+  MAXVALUE 999999
+  START WITH 1
+  INCREMENT BY 1
+  CACHE 20;
+--To generate reference number kind of string BRCODE+PRCODE+DATE+SEQUENCE
+DECLARE 
+	branchCode varchar2(3);
+	productCode varchar2(4);
+    c varchar2(20);
+FUNCTION genRefNumber(branchCode varchar2, productCode varchar2)  
+RETURN varchar2 
+IS 
+    f varchar2(20);
+    --day varchar(4);
+    day number;
+    seq number;
+    refNumber varchar2(16);
+BEGIN 
+    --select TO_CHAR(SYSDATE, 'DD') AS day into day
+    --from DUAL;
+    day := EXTRACT(DAY FROM SYSDATE);
+    day := day + 80;
+    dbms_output.put_line('day :'||day);
+    
+    SELECT REF_SEQUENCE.NEXTVAL
+    INTO seq
+    FROM DUAL;
+    
+    --seq := LPAD(REF_SEQUENCE.NEXTVAL, 6, '0');
+    dbms_output.put_line('SEQ :'|| seq);
+    
+    --f := CONCAT(branchCode, productCode);
+    f := branchCode || productCode ;
+    refNumber := CONCAT(f, TO_CHAR(day));
+    --refNumber := refNumber || TO_CHAR(seq, '000000');
+    refNumber := refNumber || LPAD(seq, 6, '0');
+   RETURN refNumber; 
+END genRefNumber; 
+BEGIN 
+   branchCode := 'ABC';  
+   productCode := 'ZTFR';
+   c := genRefNumber(branchCode, productCode); 
+   dbms_output.put_line('Generated Reference Number is : ' || c);
+END;
