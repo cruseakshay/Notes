@@ -30,3 +30,5 @@ When you start modifying and combining columns and rows of data, there are many 
 To start working with Spark DataFrames, you first have to create a SparkSession object from your SparkContext. You can think of the SparkContext as your connection to the cluster and the SparkSession as your interface with that connection.
 
 ![Temporary table concept](https://s3.amazonaws.com/assets.datacamp.com/production/course_4452/datasets/spark_figure.png)
+
+Spark DataFrame is immutable.This means that it can't be changed, and so columns can't be updated in place.
