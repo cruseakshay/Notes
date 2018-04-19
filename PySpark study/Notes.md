@@ -28,3 +28,5 @@ The Spark DataFrame was designed to behave a lot like a SQL table (a table with 
 When you start modifying and combining columns and rows of data, there are many ways to arrive at the same result, but some often take much longer than others. When using RDDs, it's up to the data scientist to figure out the right way to optimize the query, but the DataFrame implementation has much of this optimization built in!
 
 To start working with Spark DataFrames, you first have to create a SparkSession object from your SparkContext. You can think of the SparkContext as your connection to the cluster and the SparkSession as your interface with that connection.
+
+![Temporary table concept](https://s3.amazonaws.com/assets.datacamp.com/production/course_4452/datasets/spark_figure.png)
