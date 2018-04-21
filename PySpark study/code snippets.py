@@ -63,3 +63,21 @@ airports = spark.read.csv(file_path, header=True)
 airports.show()
 
 # creating new column using data manipulation
+# Create the DataFrame flights
+flights = spark.table("flights")
+
+# Show the head
+print(flights.show())
+
+# Add duration_hrs
+flights = flights.withColumn("duration_hrs", flights.air_time/60)
+
+# Filter flights with a SQL string
+long_flights1 = flights.filter("distance > 1000")
+
+# Filter flights with a boolean column
+long_flights2 = flights.filter(flights.distance > 1000)
+
+# Examine the data to check they're equal
+print(long_flights1.show())
+print(long_flights2.show())
