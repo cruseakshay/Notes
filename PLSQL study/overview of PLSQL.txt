@@ -1,0 +1,9 @@
+PL/SQL, the Oracle procedural extension of SQL, is a portable, high-performance transaction-processing language.
+
+PL/SQL combines the data-manipulating power of SQL with the processing power of procedural languages.
+
+The basic unit of a PL/SQL source program is the block, which groups related declarations and statements.
+
+A PL/SQL block is defined by the keywords DECLARE, BEGIN, EXCEPTION, and END. These keywords divide the block into a declarative part, an executable part, and an exception-handling part. Only the executable part is required. A block can have a label.
+
+Declarations are local to the block and cease to exist when the block completes execution, helping to avoid cluttered namespaces for variables and subprograms.
