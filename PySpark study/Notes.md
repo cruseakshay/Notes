@@ -32,3 +32,9 @@ To start working with Spark DataFrames, you first have to create a SparkSession 
 ![Temporary table concept](https://s3.amazonaws.com/assets.datacamp.com/production/course_4452/datasets/spark_figure.png)
 
 Spark DataFrame is immutable.This means that it can't be changed, and so columns can't be updated in place.
+
+The difference between .select() and .withColumn() methods is that .select() returns only the columns you specify, while .withColumn() returns all the columns of the DataFrame in addition to the one you defined.
+
+Aliasing : flights.select((flights.air_time/60).alias("duration_hrs"))
+OR
+The equivalent Spark DataFrame method .selectExpr() takes SQL expressions as a string: flights.selectExpr("air_time/60 as duration_hrs")

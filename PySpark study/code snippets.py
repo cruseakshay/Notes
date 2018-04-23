@@ -81,3 +81,19 @@ long_flights2 = flights.filter(flights.distance > 1000)
 # Examine the data to check they're equal
 print(long_flights1.show())
 print(long_flights2.show())
+
+# select in pySpark
+# Select the first set of columns
+selected1 = flights.select("tailnum", "origin", "dest")
+
+# Select the second set of columns
+temp = flights.select(flights.origin, flights.dest, flights.carrier)
+
+# Define first filter
+filterA = flights.origin == "SEA"
+
+# Define second filter
+filterB = flights.dest == "PDX"
+
+# Filter the data, first by filterA then by filterB
+selected2 = temp.filter(filterA).filter(filterB)
