@@ -35,6 +35,11 @@ Spark DataFrame is immutable.This means that it can't be changed, and so columns
 
 The difference between .select() and .withColumn() methods is that .select() returns only the columns you specify, while .withColumn() returns all the columns of the DataFrame in addition to the one you defined.
 
+selecting transforming and aliasing
 Aliasing : flights.select((flights.air_time/60).alias("duration_hrs"))
 OR
 The equivalent Spark DataFrame method .selectExpr() takes SQL expressions as a string: flights.selectExpr("air_time/60 as duration_hrs")
+
+OR
+flights.selectExpr("air_time/60 as duration_hrs")
+as keyword being equivalent to the .alias() method. To select multiple columns, you can pass multiple strings.
