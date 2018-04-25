@@ -1,4 +1,5 @@
-What is Spark ?
+# What is Spark
+
 Spark is a platform for cluster computing. Spark lets you spread data and computations over clusters with multiple nodes (think of each node as a separate computer). Splitting up your data makes it easier to work with very large datasets because each node only works with a small amount of data.
 
 As each node works on its own subset of the total data, it also carries out a part of the total calculations required, so that both data processing and computation are performed in parallel over the nodes in the cluster. It is a fact that parallel computation can make certain types of programming tasks much faster.
@@ -31,6 +32,8 @@ To start working with Spark DataFrames, you first have to create a SparkSession 
 
 [Temporary table concept](https://s3.amazonaws.com/assets.datacamp.com/production/course_4452/datasets/spark_figure.png)
 
+## Manipulating data
+
 Spark DataFrame is immutable.This means that it can't be changed, and so columns can't be updated in place.
 
 The difference between .select() and .withColumn() methods is that .select() returns only the columns you specify, while .withColumn() returns all the columns of the DataFrame in addition to the one you defined.
@@ -43,3 +46,9 @@ The equivalent Spark DataFrame method .selectExpr() takes SQL expressions as a s
 OR
 flights.selectExpr("air_time/60 as duration_hrs")
 as keyword being equivalent to the .alias() method. To select multiple columns, you can pass multiple strings.
+
+### Aggregating
+
+All of the common aggregation methods, like .min(), .max(), and .count() are GroupedData methods.
+eg. df.groupBy().min("col").show()
+This creates a GroupedData object (so you can use the .min() method), then finds the minimum value in col, and returns it as a DataFrame.
