@@ -52,3 +52,7 @@ as keyword being equivalent to the .alias() method. To select multiple columns, 
 All of the common aggregation methods, like .min(), .max(), and .count() are GroupedData methods.
 eg. df.groupBy().min("col").show()
 This creates a GroupedData object (so you can use the .min() method), then finds the minimum value in col, and returns it as a DataFrame.
+
+### Grouping and Aggregating I
+
+Part of what makes aggregating so powerful is the addition of groups. PySpark has a whole class devoted to grouped data frames: pyspark.sql.GroupedData .
