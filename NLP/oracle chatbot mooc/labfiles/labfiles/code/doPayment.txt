@@ -1,0 +1,6 @@
+  doPayment:
+    component: "System.Output"
+    properties:
+      text: "${paymentAmount.value.totalCurrency} paid from ${accountType.value} to ${toAccount.value}"
+    transitions:
+      return: "doPayment"

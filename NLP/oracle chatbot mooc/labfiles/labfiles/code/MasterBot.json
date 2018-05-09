@@ -1,0 +1,457 @@
+{
+  "name" : "MasterBot",
+  "description" : "Financial Virtual Assistant for Masters Training",
+  "type" : "USER",
+  "intents" : [ {
+    "name" : "Balances",
+    "paramsList" : [ {
+      "entity" : {
+        "name" : "AccountType",
+        "type" : "ENUMVALUES",
+        "enumValues" : "savings,checking,credit card{card:Amex:Chase}",
+        "ruleParameters" : null,
+        "parentEntity" : null,
+        "patternExpression" : null
+      },
+      "name" : "accountType",
+      "isRequired" : true,
+      "required" : true
+    } ],
+    "type" : "NLPIntent"
+  }, {
+    "name" : "Track Spending",
+    "paramsList" : [ {
+      "entity" : {
+        "name" : "DATE",
+        "type" : "SYSTEM",
+        "enumValues" : null,
+        "ruleParameters" : null,
+        "parentEntity" : null,
+        "patternExpression" : null
+      },
+      "name" : "date",
+      "isRequired" : true,
+      "required" : true
+    }, {
+      "entity" : {
+        "name" : "DURATION",
+        "type" : "SYSTEM",
+        "enumValues" : null,
+        "ruleParameters" : null,
+        "parentEntity" : null,
+        "patternExpression" : null
+      },
+      "name" : "duration",
+      "isRequired" : true,
+      "required" : true
+    }, {
+      "entity" : {
+        "name" : "TrackSpendingCategory",
+        "type" : "ENUMVALUES",
+        "enumValues" : "gas,retail{clothes:books},travel,uber,restaurants{restaurant:eating:dining},coffee,grocery{food}",
+        "ruleParameters" : null,
+        "parentEntity" : null,
+        "patternExpression" : null
+      },
+      "name" : "spendingCategory",
+      "isRequired" : true,
+      "required" : true
+    } ],
+    "type" : "NLPIntent"
+  }, {
+    "name" : "Send Money",
+    "paramsList" : [ {
+      "entity" : {
+        "name" : "AccountType",
+        "type" : "ENUMVALUES",
+        "enumValues" : "savings,checking,credit card{card:Amex:Chase}",
+        "ruleParameters" : null,
+        "parentEntity" : null,
+        "patternExpression" : null
+      },
+      "name" : "accountType",
+      "isRequired" : true,
+      "required" : true
+    }, {
+      "entity" : {
+        "name" : "CURRENCY",
+        "type" : "SYSTEM",
+        "enumValues" : null,
+        "ruleParameters" : null,
+        "parentEntity" : null,
+        "patternExpression" : null
+      },
+      "name" : "date",
+      "isRequired" : true,
+      "required" : true
+    }, {
+      "entity" : {
+        "name" : "ToAccount",
+        "type" : "ENUMVALUES",
+        "enumValues" : "Lauren,Sasha,Mom,Chase Preferred,the babysitter{the baby sitter}",
+        "ruleParameters" : null,
+        "parentEntity" : null,
+        "patternExpression" : null
+      },
+      "name" : "toAccount",
+      "isRequired" : true,
+      "required" : true
+    } ],
+    "type" : "NLPIntent"
+  } ],
+  "entities" : [ {
+    "name" : "TransactionType",
+    "type" : "ENUMVALUES",
+    "enumValues" : "deposits,withdrawals,payments,checks,debits,credits",
+    "ruleParameters" : null,
+    "parentEntity" : null,
+    "patternExpression" : null
+  }, {
+    "name" : "AccountType",
+    "type" : "ENUMVALUES",
+    "enumValues" : "savings,checking,credit card{card:Amex:Chase}",
+    "ruleParameters" : null,
+    "parentEntity" : null,
+    "patternExpression" : null
+  }, {
+    "name" : "TransactionSelector",
+    "type" : "ENUMVALUES",
+    "enumValues" : "last 2,last 3,last 4,last 5,largest{most expensive},smallest{cheapest}",
+    "ruleParameters" : null,
+    "parentEntity" : null,
+    "patternExpression" : null
+  }, {
+    "name" : "ToAccount",
+    "type" : "ENUMVALUES",
+    "enumValues" : "Lauren,Sasha,Mom,Chase Preferred,the babysitter{the baby sitter}",
+    "ruleParameters" : null,
+    "parentEntity" : null,
+    "patternExpression" : null
+  }, {
+    "name" : "DateSpecifier",
+    "type" : "ENUMVALUES",
+    "enumValues" : "yesterday,last weekend,last week,last month,last year",
+    "ruleParameters" : null,
+    "parentEntity" : null,
+    "patternExpression" : null
+  }, {
+    "name" : "TrackSpendingCategory",
+    "type" : "ENUMVALUES",
+    "enumValues" : "gas,retail{clothes:books},travel,uber,restaurants{restaurant:eating:dining},coffee,grocery{food}",
+    "ruleParameters" : null,
+    "parentEntity" : null,
+    "patternExpression" : null
+  } ],
+  "dialog" : [ {
+    "metadata" : {
+      "platformVersion" : "1.0"
+    },
+    "main" : true,
+    "name" : "FinancialBotMainFlow",
+    "context" : {
+      "variables" : {
+        "accountType" : "AccountType",
+        "toAccount" : "ToAccount",
+        "spendingCategory" : "TrackSpendingCategory",
+        "paymentAmount" : "CURRENCY",
+        "iResult" : "nlpresult"
+      }
+    },
+    "states" : {
+      "intent" : {
+        "component" : "System.Intent",
+        "properties" : {
+          "variable" : "iResult",
+          "confidenceThreshold" : 0.4
+        },
+        "transitions" : {
+          "actions" : {
+            "Balances" : "startBalances",
+            "Send Money" : "startPayments",
+            "Track Spending" : "startTrackSpending",
+            "unresolvedIntent" : "unresolved"
+          }
+        }
+      },
+      "startBalances" : {
+        "component" : "System.SetVariable",
+        "properties" : {
+          "variable" : "accountType",
+          "value" : "${iResult.value.entityMatches['AccountType'][0]}"
+        },
+        "transitions" : { }
+      },
+      "askBalancesAccountType" : {
+        "component" : "System.List",
+        "properties" : {
+          "options" : "${accountType.type.enumValues}",
+          "prompt" : "For which account do you want your balance?",
+          "variable" : "accountType"
+        },
+        "transitions" : { }
+      },
+      "printBalance" : {
+        "component" : "BalanceRetrieval",
+        "properties" : {
+          "accountType" : "${accountType.value}"
+        },
+        "transitions" : {
+          "return" : "printBalance"
+        }
+      },
+      "startPayments" : {
+        "component" : "System.SetVariable",
+        "properties" : {
+          "variable" : "accountType",
+          "value" : "${iResult.value.entityMatches['AccountType'][0]}"
+        },
+        "transitions" : { }
+      },
+      "resolveToAccount" : {
+        "component" : "System.SetVariable",
+        "properties" : {
+          "variable" : "toAccount",
+          "value" : "${iResult.value.entityMatches['ToAccount'][0]}"
+        },
+        "transitions" : { }
+      },
+      "resolvePaymentAmount" : {
+        "component" : "System.SetVariable",
+        "properties" : {
+          "variable" : "paymentAmount",
+          "value" : "${iResult.value.entityMatches['CURRENCY'][0]}"
+        },
+        "transitions" : { }
+      },
+      "askFromAccountType" : {
+        "component" : "System.List",
+        "properties" : {
+          "options" : "${accountType.type.enumValues}",
+          "prompt" : "From which account do you want to make a payment?",
+          "variable" : "accountType"
+        },
+        "transitions" : { }
+      },
+      "askToAccount" : {
+        "component" : "System.List",
+        "properties" : {
+          "options" : "${toAccount.type.enumValues}",
+          "prompt" : "To which account do you want to make a payment?",
+          "variable" : "toAccount"
+        },
+        "transitions" : { }
+      },
+      "askPaymentAmount" : {
+        "component" : "System.Text",
+        "properties" : {
+          "prompt" : "What's the payment amount?",
+          "variable" : "paymentAmount"
+        },
+        "transitions" : { }
+      },
+      "doPayment" : {
+        "component" : "Payments",
+        "properties" : {
+          "fromAccountType" : "${accountType.value}",
+          "toAccount" : "${toAccount.value}",
+          "amount" : "${paymentAmount.value.totalCurrency}"
+        },
+        "transitions" : {
+          "return" : "doPayment"
+        }
+      },
+      "startTrackSpending" : {
+        "component" : "System.SetVariable",
+        "properties" : {
+          "variable" : "spendingCategory",
+          "value" : "${iResult.value.entityMatches['TrackSpendingCategory'][0]}"
+        },
+        "transitions" : { }
+      },
+      "showSpending" : {
+        "component" : "TrackSpending",
+        "properties" : {
+          "spendingCategory" : "${spendingCategory.value}",
+          "date" : "${iResult.value.entityMatches['DATE'][0]}",
+          "durationStart" : "${iResult.value.entityMatches['DURATION'][0].startDate}",
+          "durationEnd" : "${iResult.value.entityMatches['DURATION'][0].endDate}"
+        },
+        "transitions" : {
+          "return" : "showSpending"
+        }
+      },
+      "unresolved" : {
+        "component" : "System.Output",
+        "properties" : {
+          "text" : "Unable to resolve intent!"
+        },
+        "transitions" : { }
+      }
+    }
+  } ],
+  "componentServices" : [ {
+    "name" : "MobileCloudContainer",
+    "description" : "MCS Back-end",
+    "url" : "https://mcsnas-a429941.mobileenv.us2.oraclecloud.com:443/mobile/custom/BankingCC/components",
+    "headers" : [ ],
+    "credentials" : {
+      "type" : "mcs",
+      "mobileBackendId" : "f88935a1-cfd1-4ed8-847c-5043dfa73f3e",
+      "anonymous" : true,
+      "username" : null,
+      "anonymousKeyKey" : null,
+      "passwordKey" : null
+    }
+  } ],
+  "trainingDataList" : [ {
+    "sentence" : "What’s my available credit on my Visa?",
+    "intent" : "Balances",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "What’s the current balance on my cc?",
+    "intent" : "Balances",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "How much money do I have in checking?",
+    "intent" : "Balances",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "What’s my balance?",
+    "intent" : "Balances",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "How much do I owe on all my credit cards?",
+    "intent" : "Balances",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "How much money do I have in all of my accounts?",
+    "intent" : "Balances",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "How much money did I save last year?",
+    "intent" : "Balances",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "How much did I spend at Apple last year?",
+    "intent" : "Track Spending",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "What was my largest concert ticket?",
+    "intent" : "Track Spending",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "How much have I spent in 2016?",
+    "intent" : "Track Spending",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "How much have I spent on restaurants in 2016?",
+    "intent" : "Track Spending",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "What was my largest Best Buy transaction?",
+    "intent" : "Track Spending",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "What did I spend on food in London last month?",
+    "intent" : "Track Spending",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "How much did I spend last weekend?",
+    "intent" : "Track Spending",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "How much did I spend on clothes in June?",
+    "intent" : "Track Spending",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "What was my most expensive restaurant expense?",
+    "intent" : "Track Spending",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "How much did I spend on travel in March?",
+    "intent" : "Track Spending",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "What was my largest hotel transaction in 2015?",
+    "intent" : "Track Spending",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "How much did I spend on Uber? Last month?",
+    "intent" : "Track Spending",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "How much have I spent at Philz Coffee?",
+    "intent" : "Track Spending",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "How much did I spend on gas last month?",
+    "intent" : "Track Spending",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "How much did I spend on gas in October?",
+    "intent" : "Track Spending",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "How much did I spend on June 2nd?",
+    "intent" : "Track Spending",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "How much did I spend eating out last week?",
+    "intent" : "Track Spending",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "How much did I spend on groceries last week?",
+    "intent" : "Track Spending",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "How much did I spend on gas using my Visa cc last week?",
+    "intent" : "Track Spending",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "I’d like to send Sasha $20 for lunch",
+    "intent" : "Send Money",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "Pay Lauren $15 for photos",
+    "intent" : "Send Money",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "Send $500 to Mom from Savings every month",
+    "intent" : "Send Money",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "Pay Chase the minimum balance on the 15th of the month",
+    "intent" : "Send Money",
+    "namedEntities" : [ ]
+  }, {
+    "sentence" : "Pay Cleo for rent on the 1st of every month using Paypal",
+    "intent" : "Send Money",
+    "namedEntities" : [ ]
+  } ],
+  "channels" : [ {
+    "name" : "System_Bot_Test",
+    "description" : "Used by the BOT test feature. If it is disabled, the test UI will not work for this BOT.",
+    "enabled" : true,
+    "config" : {
+      "type" : "test"
+    }
+  }, {
+    "name" : "facebook",
+    "description" : "Channel for calling CustomPizza from Facebook Messenger",
+    "enabled" : false,
+    "config" : {
+      "type" : "facebook"
+    }
+  } ],
+  "settings" : {
+    "createdOn" : "2017-07-29T13:48:10.827Z",
+    "updatedOn" : "2017-07-29T13:48:10.827Z",
+    "links" : null,
+    "settings" : {
+      "Multistage_Pipeline" : true,
+      "Verbose_Output" : false,
+      "Result_Size" : 10,
+      "Pipeline_Output_Size" : 100
+    }
+  }
+}

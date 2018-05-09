@@ -1,0 +1,26 @@
+  askFromAccountType:
+    component: "System.List"
+    properties:
+      options: "${accountType.type.enumValues}"
+      prompt: "From which account do you want to make a payment?"
+      variable: "accountType"
+    transitions: {}
+  askToAccount:
+    component: "System.List"
+    properties:
+      options: "${toAccount.type.enumValues}"
+      prompt: "To which account do you want to make a payment?"
+      variable: "toAccount"
+    transitions: {}
+  resolvePaymentAmount:
+    component: "System.SetVariable"
+    properties:
+      variable: "paymentAmount"
+      value: "${iResult.value.entityMatches['CURRENCY'][0]}"
+    transitions: {}
+  askPaymentAmount:
+    component: "System.Text"
+    properties:
+      prompt: "What's the payment amount?"
+      variable: "paymentAmount"
+    transitions: {}

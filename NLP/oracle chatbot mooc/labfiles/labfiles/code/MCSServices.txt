@@ -1,0 +1,9 @@
+Backend ID		f88935a1-cfd1-4ed8-847c-5043dfa73f3e
+
+
+Metadata URL		https://mcsnas-a429941.mobileenv.us2.oraclecloud.com:443/mobile/custom/BankingCC/components
+
+
+Authorization		QTQyOTk0MV9NQ1NOQVNfTU9CSUxFX0FOT05ZTU9VU19BUFBJRDpFb3owcWVfYzd0ZnJ3Zw==
+
+

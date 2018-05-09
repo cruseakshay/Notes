@@ -1,0 +1,6 @@
+  startTrackSpending:
+    component: "System.Output"
+    properties:
+      text: "Resolve the TrackSpending Intent here."
+    transitions:
+      return: "trackSpending"    
