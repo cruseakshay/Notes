@@ -21,8 +21,10 @@ After completing this week's lesson, you should be able to:
 
 ### Terminology
 
-- Intents
-- utterence
+- Intents (Unit of work that bot can perform)
+- utterence (Sample phrases)
 - entity
 - artificial intelligence
 - Conversational flow
+
+also use of Custom components like REST serive calls to perform certain actions(backend services)
