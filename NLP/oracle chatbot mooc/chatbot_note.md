@@ -12,12 +12,12 @@ This course introduces you to the world of intelligent chatbots and how you can 
 
 After completing this week's lesson, you should be able to:
 
-  -Describe how chatbots can connect users to your enterprise data.
-  -Describe the building blocks of Oracle Intelligent Bots, how they enable chatbots to parse the user input, prompt users for more information, and reply to   users.
-  -Use the Bot Builder to:
-    -Create intents
-    -Add training data (utterances)
-    -Define entities
+- Describe how chatbots can connect users to your enterprise data.
+- Describe the building blocks of Oracle Intelligent Bots, how they enable chatbots to parse the user input, prompt users for more information, and reply to   users.
+- Use the Bot Builder to:
+  -Create intents
+  -Add training data (utterances)
+  -Define entities
 
 ### Terminology
 
