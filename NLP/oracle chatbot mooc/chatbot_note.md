@@ -18,3 +18,11 @@ After completing this week's lesson, you should be able to:
     -Create intents
     -Add training data (utterances)
     -Define entities
+
+### Terminology
+
+- Intents
+- utterence
+- entity
+- artificial intelligence
+- Conversational flow
