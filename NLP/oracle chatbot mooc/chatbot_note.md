@@ -28,7 +28,7 @@ After completing this week's lesson, you should be able to:
     - value list
     - derived (Imp. based on preceding or following phrase eg. from JFK to LDN)
     - entity list (eg. Depart_Airport > Location > [AirportCode, AirportName, City])
-    - RegEx
+    - RegEx (eg. SR number, ticket number, order number etc.)
 - artificial intelligence
 - Conversational flow
 
