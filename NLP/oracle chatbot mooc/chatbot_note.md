@@ -33,3 +33,16 @@ After completing this week's lesson, you should be able to:
 - Conversational flow
 
 also use of Custom components like REST serive calls to perform certain actions(backend services)
+
+for week 1 - MasterBot_AS
+
+## Week 2
+
+After completing this week's lesson, you should be able to:
+
+- Use the Bot Builder to create the bot-user conversation using our variant of YAML, OBotML.
+- Learn about system components.
+- Learn about custom components.
+- Learn about the component service.
+- Create a component service.
+- Integrate the component service with OMCe.
