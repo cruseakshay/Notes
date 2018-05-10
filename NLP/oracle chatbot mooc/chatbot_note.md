@@ -21,9 +21,14 @@ After completing this week's lesson, you should be able to:
 
 ### Terminology
 
-- Intents (Unit of work that bot can perform)
+- Intents (Unit of work that bot can perform, ususally mapped to business action)
 - utterence (Sample phrases)
-- entity
+- entity (Custum entiites, day to day entities, built in entities )
+  - Building custom entities
+    - value list
+    - derived (Imp. based on preceding or following phrase eg. from JFK to LDN)
+    - entity list (eg. Depart_Airport > Location > [AirportCode, AirportName, City])
+    - RegEx
 - artificial intelligence
 - Conversational flow
 
