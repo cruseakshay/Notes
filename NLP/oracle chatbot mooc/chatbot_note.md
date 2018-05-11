@@ -1,5 +1,7 @@
 # Description
 
+[Refer this url for Docs](https://docs.oracle.com/en/cloud/paas/mobile-suite/develop/bots.html)         
+
 This course introduces you to the world of intelligent chatbots and how you can build them quickly and easily with Oracle Mobile Cloud, Enterprise.
 
 -You will learn how to:
@@ -49,6 +51,9 @@ After completing this week's lesson, you should be able to:
 
 - Dialogue flow in oracle chatbot
   - States
+    - Component (System and Custom)
+      - properties
+      - actions
   - Action
 
 - Conversation Flow markup
@@ -57,3 +62,17 @@ After completing this week's lesson, you should be able to:
   - States (each individual state has one and only component- which does the work)
     - Component are like program functions and its properties like parameters
     - return statement to return from the or end of conversation (Transition options- 1. next: 2. error: etc..)
+
+- System Components in dialogue flow:
+  - out of box building blocks for building dialogue flow.
+  - available components:
+    - System.Output
+    - System.SetVariable
+    - System.Switch
+    - Intent
+
+- Custom Components in dialogue flow:
+  - build by user
+  - implemented as REST service
+  - calls to backend (for fetching the desiered data)
+  - Specialised UI
