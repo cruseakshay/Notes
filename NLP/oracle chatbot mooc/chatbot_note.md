@@ -1,6 +1,6 @@
 # Description
 
-[Refer this url for Docs](https://docs.oracle.com/en/cloud/paas/mobile-suite/develop/bots.html)         
+[Refer this url for Docs](https://docs.oracle.com/en/cloud/paas/mobile-suite/develop/bots.html)
 
 This course introduces you to the world of intelligent chatbots and how you can build them quickly and easily with Oracle Mobile Cloud, Enterprise.
 
