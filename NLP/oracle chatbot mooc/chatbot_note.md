@@ -46,3 +46,14 @@ After completing this week's lesson, you should be able to:
 - Learn about the component service.
 - Create a component service.
 - Integrate the component service with OMCe.
+
+- Dialogue flow in oracle chatbot
+  - States
+  - Action
+
+- Conversation Flow markup
+  - Header
+  - Context (provides global variable scope for the bot eg. variableName:"variableType")
+  - States (each individual state has one and only component- which does the work)
+    - Component are like program functions and its properties like parameters
+    - return statement to return from the or end of conversation (Transition options- 1. next: 2. error: etc..)
