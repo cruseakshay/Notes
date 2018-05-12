@@ -76,3 +76,31 @@ After completing this week's lesson, you should be able to:
   - implemented as REST service
   - calls to backend (for fetching the desiered data)
   - Specialised UI
+
+Custom components are reusable program units you build to add use case specific logic and backend system calls to a dialogue flow 
+
+
+Oracle Mobile colud has REST Connector to interact with REST services.
+
+Converter Shared API - for cross device compatibilty ??
+
+- Each custom component exposes two functions
+  - metadata (For discovery)
+  - invoke (For execution)
+
+Component service / Custom component service *accessed as REST services* (Custom API)
+GET --> metadata (design time)
+POST --> invoke (in dialogue flow)
+
+Registry -- *simple file, component name and physical file location*
+
+Shell -- *broker, routes the GET and POST*
+
+SDK -- passed with custom compent and calls invoke method, gives access to input parameters
+
+- Custom component setup and development [Refer](https://www.youtube.com/watch?time_continue=223&v=JcFf59sypfQ)
+  - Download the starter app
+  - Build component service 
+  - Add SDK
+  - Develop Component 
+  - Depoly and register Component
