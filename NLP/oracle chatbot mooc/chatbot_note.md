@@ -125,4 +125,4 @@ SDK -- passed with custom compent and calls invoke method, gives access to input
       - create conector
       - create shared API
       - configure shared API in component service
-      - use shared API in Component 
+      - use shared API in Component
