@@ -96,7 +96,7 @@ Registry -- *simple file, component name and physical file location*
 
 Shell -- *broker, routes the GET and POST*
 
-SDK -- passed with custom compent and calls invoke method, gives access to input parameters
+SDK -- passed with custom compent and calls invoke method, gives access to input parameters [Refer](https://cloud.oracle.com/en_US/mobile/videos)
 
 - Custom component setup and development [Refer](https://www.youtube.com/watch?time_continue=223&v=JcFf59sypfQ)
   - Download the starter app
@@ -104,3 +104,25 @@ SDK -- passed with custom compent and calls invoke method, gives access to input
   - Add SDK
   - Develop Component 
   - Depoly and register Component
+
+-SDK [Refer](https://www.youtube.com/watch?time_continue=135&v=gEIeoWRfkSA)
+  - functions to read from bot payload
+    - text()
+    - properties()
+    - nlpResult()
+    - request()
+    - channelType()
+    - variable(name, value) 
+  - functions to write to the context
+   - variable(name, value)
+   - reply(JSON)
+   - transition(value)
+   - keepTurn(boolean)
+
+- Backend Integration
+  - mobile SDK
+    - Developement steps
+      - create conector
+      - create shared API
+      - configure shared API in component service
+      - use shared API in Component 
