@@ -134,3 +134,24 @@ SDK -- passed with custom compent and calls invoke method, gives access to input
   - Describe how webhooks enable near-real time communication between bots.
   - Use the Bot Builder to integrate your bot with Facebook Messenger.
   - Identify how (and when) to hand users off to an instant app.
+
+- Channels
+  - A channel represent the settings for a supported messenger platform acting as the client
+
+Webhooks: server to server communication via REST API, in simple terms webhooks are like PUBLICATION-SUBSCRIPTION mechanism.
+
+Webhooks can be set up in both direction.
+
+- Chatbot integration with Facebook messenger: [For detailed steps refer](https://www.youtube.com/watch?time_continue=293&v=VanQKn63XL4)
+  - Facebook Account
+    - FB account
+    - create FB Page
+    - Enable FB developer account
+      - create FB App
+      - App secret key
+      - enable messenger project
+        - Page access token
+  - Intelligent Chatbot Requirement
+    - needs App secret key & Page access token
+      - webhook url
+      - verify token 
