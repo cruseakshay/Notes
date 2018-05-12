@@ -126,3 +126,11 @@ SDK -- passed with custom compent and calls invoke method, gives access to input
       - create shared API
       - configure shared API in component service
       - use shared API in Component
+
+## Week 3
+
+- After completing this week's lesson, you should be able to:
+  - Describe how you make your bot available to users.
+  - Describe how webhooks enable near-real time communication between bots.
+  - Use the Bot Builder to integrate your bot with Facebook Messenger.
+  - Identify how (and when) to hand users off to an instant app.
