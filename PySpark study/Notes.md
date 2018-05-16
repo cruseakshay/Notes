@@ -56,3 +56,7 @@ This creates a GroupedData object (so you can use the .min() method), then finds
 ### Grouping and Aggregating I
 
 Part of what makes aggregating so powerful is the addition of groups. PySpark has a whole class devoted to grouped data frames: pyspark.sql.GroupedData .
+
+### Joining
+
+In PySpark, joins are performed using the DataFrame method .join(). This method takes three arguments. The first is the second DataFrame that you want to join with the first one. The second argument, on, is the name of the key column(s) as a string. The names of the key column(s) must be the same in each table. The third argument, how, specifies the kind of join to perform.
