@@ -209,3 +209,9 @@ from pyspark.ml import Pipeline
 
 # Make the pipeline
 flights_pipe = Pipeline(stages=[dest_indexer, dest_encoder, carr_indexer, carr_encoder, vec_assembler])
+
+# Fit and transform the data
+piped_data = flights_pipe.fit(model_data).transform(model_data)
+
+# Split the data into training and test sets
+training, test = piped_data.randomSplit([0.6, 0.4])
