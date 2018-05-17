@@ -179,3 +179,33 @@ model_data = model_data.withColumn("label", model_data.is_late.cast("integer"))
 
 # Remove missing values
 model_data = model_data.filter("arr_delay is not NULL and dep_delay is not NULL and air_time is not NULL and plane_year is not NULL")
+
+# The inputCol is the name of the column you want to index or encode, and the outputCol is the name of the new column that the Transformer should create.
+
+# Create a StringIndexer
+carr_indexer = StringIndexer(inputCol="carrier", outputCol="carrier_index")
+
+# Create a OneHotEncoder
+carr_encoder = OneHotEncoder(inputCol="carrier_index", outputCol="carrier_fact")
+
+# Create a StringIndexer
+dest_indexer = StringIndexer(inputCol="dest", outputCol="dest_index")
+
+# Create a OneHotEncoder
+dest_encoder = OneHotEncoder(inputCol="dest_index", outputCol="dest_fact")
+
+# The last step in the Pipeline is to combine all of the columns containing our features into a single column. 
+# You can do this by storing each of the values from a column as an entry in a vector. 
+# Then, from the model's point of view, every observation is a vector that contains all of the information about it and a label that tells the modeler what value that observation corresponds to. 
+# All of the Spark modeling routines expect the data to be in this form.
+
+# Make a VectorAssembler
+vec_assembler = VectorAssembler(inputCols=["month", "air_time", "carrier_fact", "dest_fact", "plane_age"], outputCol="features")
+
+# Create the pipeline
+# stages should be a list holding all the stages you want your data to go 
+# Import Pipeline
+from pyspark.ml import Pipeline
+
+# Make the pipeline
+flights_pipe = Pipeline(stages=[dest_indexer, dest_encoder, carr_indexer, carr_encoder, vec_assembler])
