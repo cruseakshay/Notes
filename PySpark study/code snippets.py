@@ -247,3 +247,28 @@ grid = grid.addGrid(lr.elasticNetParam, [0, 1])
 # Build the grid
 grid = grid.build()
 
+# Create the CrossValidator
+cv = tune.CrossValidator(estimator=lr,
+               estimatorParamMaps=grid,
+               evaluator=evaluator
+               )
+
+# Fit the model(s)
+# Fit cross validation models
+#models = cv.fit(training)
+
+# Extract the best model
+#best_lr = models.bestModel
+
+# Call lr.fit()
+best_lr = lr.fit(training)
+
+# Print best_lr
+print(best_lr)
+
+# Evaluate the model
+# Use the model to predict the test set
+test_results = best_lr.transform(test)
+
+# Evaluate the predictions
+print(evaluator.evaluate(test_results))

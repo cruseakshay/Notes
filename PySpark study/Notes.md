@@ -116,3 +116,7 @@ A Hyperparameter is just a value in the model that's not estimated from the data
  tuning your logistic regression model using a procedure called k-fold cross validation. This is a method of estimating the model's performance on unseen data (like test DataFrame).
 
  You'll be using cross validation to choose the hyperparameters by creating a grid of the possible pairs of values for the two hyperparameters, *elasticNetParam* and *regParam*, and using the cross validation error to compare all the different models so you can choose the best one!
+
+ use the .addGrid() and .build() methods to create a grid that you can use for cross validation. The .addGrid() method takes a model parameter (an attribute of the model Estimator, lr) and a list of values that you want to try. The .build() method takes no arguments, it just returns the grid
+
+ The submodule pyspark.ml.tuning also has a class called CrossValidator for performing cross validation. This Estimator takes the modeler you want to fit, the grid of hyperparameters you created, and the evaluator you want to use to compare your models.
