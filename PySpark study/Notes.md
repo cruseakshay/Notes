@@ -102,3 +102,17 @@ The second step is to encode this numeric column as a one-hot vector using a One
 ### Test/Train split
 
 In Spark it's important to make sure you split the data after all the transformations. This is because operations like StringIndexer don't always produce the same index even when given the same list of strings.
+
+## Model tuning and selection
+
+### What is logistic regression
+
+This model is very similar to a linear regression, but instead of predicting a numeric variable, it predicts the probability (between 0 and 1) of an event.
+
+A Hyperparameter is just a value in the model that's not estimated from the data, but rather is supplied by the user to maximize performance.
+
+### Cross validation
+
+ tuning your logistic regression model using a procedure called k-fold cross validation. This is a method of estimating the model's performance on unseen data (like test DataFrame).
+
+ You'll be using cross validation to choose the hyperparameters by creating a grid of the possible pairs of values for the two hyperparameters, *elasticNetParam* and *regParam*, and using the cross validation error to compare all the different models so you can choose the best one!

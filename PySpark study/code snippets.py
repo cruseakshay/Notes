@@ -215,3 +215,35 @@ piped_data = flights_pipe.fit(model_data).transform(model_data)
 
 # Split the data into training and test sets
 training, test = piped_data.randomSplit([0.6, 0.4])
+
+# Create a model
+# Import LogisticRegression
+from pyspark.ml.classification import LogisticRegression
+
+# Create a LogisticRegression Estimator
+lr = LogisticRegression()
+
+# Create the evaluator
+#  the pyspark.ml.evaluation submodule has classes for evaluating different kinds of models. 
+
+# Import the evaluation submodule
+import pyspark.ml.evaluation as evals
+
+# Create a BinaryClassificationEvaluator
+evaluator = evals.BinaryClassificationEvaluator(metricName="areaUnderROC")
+
+# Make a grid
+# The submodule pyspark.ml.tuning includes a class called ParamGridBuilder
+# Import the tuning submodule
+import pyspark.ml.tuning as tune
+
+# Create the parameter grid
+grid = tune.ParamGridBuilder()
+
+# Add the hyperparameter
+grid = grid.addGrid(lr.regParam, np.arange(0, .1, .01))
+grid = grid.addGrid(lr.elasticNetParam, [0, 1])
+
+# Build the grid
+grid = grid.build()
+
