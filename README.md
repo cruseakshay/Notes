@@ -1,2 +1,3 @@
-Notes
-myFirstRepo, now i am using for other temp work
+# Notes
+
+I use this repository for notes.
