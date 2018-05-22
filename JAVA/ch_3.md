@@ -46,3 +46,4 @@ Exmaple:
   - so new LocalDate(2014, 6, 21) is not valid.
   - But LocalDate.of(2014, 6, 21) is valid.
 - dates are immutable.
+- Period does not allow chaining.Only the last Period method called counts.
