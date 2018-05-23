@@ -18,3 +18,5 @@ w@X represents the DOT product.
 Logistic Loss (use plot x = raw model output, y = loss)
 
 Hinge loss in SVM 
+
+## Logistic regression
