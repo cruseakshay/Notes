@@ -37,12 +37,11 @@ howMany(true, new boolean[]{true, true}); //valid
     System.out.println(rope1.length);
 }
 ```
+
 - static final variables must be set exactly once, and it must be in the declaration line or in a static initialization block.
 - you can only do a static import on static members.
 - Java is pass-by-value.
 - this() may only be called as the first line of a constructor.
-- *this.variableName* can be called from any instance method to refer to an instance variable. It cannot be
-called from a static method because there is no instance of the class to refer to.
-- The default constructor is only written by the compiler if no user-defined
-constructors were provided.
+- *this.variableName* can be called from any instance method to refer to an instance variable. It cannot be called from a static method because there is no instance of the class to refer to.
+- The default constructor is only written by the compiler if no user-defined constructors were provided.
 - *this()* can only be called from a constructor in the same class.
