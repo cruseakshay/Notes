@@ -45,3 +45,10 @@ howMany(true, new boolean[]{true, true}); //valid
 - *this.variableName* can be called from any instance method to refer to an instance variable. It cannot be called from a static method because there is no instance of the class to refer to.
 - The default constructor is only written by the compiler if no user-defined constructors were provided.
 - *this()* can only be called from a constructor in the same class.
+- Java prefers autoboxing to varargs. (while promoting the variable. eg. int --> Integer rather than int --> int..)
+- return keyword is required inside braces for lambda bodies.
+- a variable used in the parameter list of the lambda expression can not be redefined in the lambda body. example:
+
+```java
+caller((e) -> {String e = ""; "poof"}); // not valid as e is redefined.
+```
