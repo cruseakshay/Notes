@@ -154,3 +154,33 @@ best_lr = searcher.best_estimator_
 coefs = best_lr.coef_
 print("Total number of features:", coefs.size)
 print("Number of selected features:", np.count_nonzero(coefs))
+
+# Regularization and probabilities
+#  observe the effects of changing the regularization stength on the predicted probabilities.
+# Set the regularization strength
+model = LogisticRegression(C=0.1)
+
+# Fit and plot
+model.fit(X,y)
+plot_classifier(X,y,model,proba=True)
+
+# Predict probabilities on training points
+prob = model.predict_proba(X)
+print("Maximum predicted probability", np.max(prob))
+
+# Visualizing easy and difficult examples
+# The handwritten digits dataset is already loaded
+lr = LogisticRegression()
+lr.fit(X,y)
+
+# Get predicted probabilities
+proba = lr.predict_proba(X)
+
+# Sort the example indices by their maximum probability
+proba_inds = np.argsort(np.max(proba,axis=1))
+
+# Show the most confident (least confusing) digit
+show_digit(proba_inds[-1], lr)
+
+# Show the least confident (most confusing) digit
+show_digit(proba_inds[0], lr)
