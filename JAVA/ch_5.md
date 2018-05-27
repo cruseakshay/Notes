@@ -7,3 +7,16 @@ methods and they are never abstract, one cannot assume the abstract modifier wil
 - private methods are always hidden in a subclass.
 - static methods cannot be overridden, only hidden in subclass.
 - variables may only be hidden in subclass, regardless of the access modifier.
+- if a method takes the superclass of an object as a parameter, then any subclass references may be used without a cast. (polymorphic parameters)
+- All objects extend java.lang.Object, so if a method takes that type, any valid object, including null, may be passed.
+- an interface method that provides a body must be marked as default or static explicitly.
+- Since Java 8, interfaces may also contain concrete methods in form of static or default methods.
+- Both abstract classes and interfaces can be extended with the extends keyword.
+- Only interfaces can contain default methods.
+- Both abstract classes and interfaces can contain static methods.
+- *interface doesn't inherit from java.lang.Object*.
+- Interface variables are assumed to be public static final.
+- Concrete classes are, by definition, not abstract.
+- Concrete classes can be both final and not final.
+- Abstract methods cannot contain a body.
+- With hidden methods, the specific method used depends on where it is referenced.
