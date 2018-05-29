@@ -18,6 +18,16 @@ Java class design is about code reusability, increased functionality,and standar
 
 ![Java class definition](./img/class_def.png)
 
+- Java allows only one public class per file.
+
+## Applying Class Access Modifiers
+
+- access modifiers
+  - public
+  - private
+  - protected
+  - default
+
 ## for review exam
 
 - All interface methods are implicitly public.
