@@ -11,6 +11,12 @@ Java class design is about code reusability, increased functionality,and standar
     - You can extend a class any number of times.
   - Multiple inheritance
     - __By design, Java doesn’t support multiple inheritance in the language because studies have shown that multiple inheritance can lead to complex, often diffi cult-to-maintain code.__
+    - Part of what makes multiple inheritance complicated is determining which parent to inherit values from in case of a conflict.
+    - Consider: if you have an object or method defined in all of the parents, which one does the child inherit? (Ambiguity)
+
+- Class definition:
+
+![Java class definition](./img/class_def.png)
 
 ## for review exam
 
