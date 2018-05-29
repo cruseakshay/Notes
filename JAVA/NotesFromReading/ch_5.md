@@ -1,5 +1,19 @@
 # Class Design
 
+Java class design is about code reusability, increased functionality,and standardization.
+
+- Class Inheritance
+  - Inheritance is the process by which the new child subclass automatically includes any public or protected primitives, objects, or methods defined in the parent class.
+  - single inheritance
+    - Java supports single inheritance, by which a class may inherit from only one direct parent class.
+  - multiple levels of inheritance
+    - Java also supports multiple levels of inheritance, by which one class may extend another class, which in turn extends another class.
+    - You can extend a class any number of times.
+  - Multiple inheritance
+    - __By design, Java doesn’t support multiple inheritance in the language because studies have shown that multiple inheritance can lead to complex, often diffi cult-to-maintain code.__
+
+## for review exam
+
 - All interface methods are implicitly public.
 - Prior to Java 8 all interface methods would be assumed to be abstract.Since Java 8 now includes default and static methods and they are never abstract, one cannot assume the abstract modifier will be implicitly applied to all methods by the compiler.
 - the rules for overriding a method allow a subclass to define a method with an exception that is a subclass of the exception in the parent method.
