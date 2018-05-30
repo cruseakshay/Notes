@@ -2,6 +2,12 @@
 
 Java class design is about code reusability, increased functionality,and standardization.
 
+## Class
+
+All classes inherit from a single class *java.lang.Object*.
+
+*java.lang.Object* is the only class that doesn’t have any parent classes.
+
 - Class Inheritance
   - Inheritance is the process by which the new child subclass automatically includes any public or protected primitives, objects, or methods defined in the parent class.
   - single inheritance
@@ -18,15 +24,30 @@ Java class design is about code reusability, increased functionality,and standar
 
 ![Java class definition](./img/class_def.png)
 
-- Java allows only one public class per file.
+- Java allows only one public class per file, a Java file can have many classes but at most one public class.(NOTE: it may have no public class at all)
+- There can be at most one public class or *interface* in a Java file.
 
 ## Applying Class Access Modifiers
 
 - access modifiers
   - public
+    - The public access modifi er applied to a class indicates that it can be referenced and used in any class.
   - private
   - protected
   - default
+    - The default package private modifier, which is the lack of any access modifier,indicates the class can be accessed only by a subclass or class within the same package.
+
+- _NOTE_
+  - For the OCA exam, you should only be familiar with *public* and *default* package-level class access modifiers, because these are the only ones that can be applied to top-level classes within a Java file.
+  - The *protected* and *private* modifiers can only be applied to inner classes, which are classes that are defined within other classes.
+
+## Defining Constructors
+
+Every class has at least one constructor.
+
+In the case that no constructor is declared, the compiler will automatically insert a default no-argument constructor.
+
+In Java, the first statement of every constructor is either a call to another constructor within the class, using this(), or a call to a constructor in the direct parent class, using super(). If a parent constructor takes arguments, the super constructor would also take arguments.
 
 ## for review exam
 
