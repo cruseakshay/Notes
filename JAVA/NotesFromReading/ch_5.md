@@ -47,7 +47,28 @@ Every class has at least one constructor.
 
 In the case that no constructor is declared, the compiler will automatically insert a default no-argument constructor.
 
-In Java, the first statement of every constructor is either a call to another constructor within the class, using this(), or a call to a constructor in the direct parent class, using super(). If a parent constructor takes arguments, the super constructor would also take arguments.
+In Java, the first statement of every constructor is either a call to another constructor within the class, using *this()*, or a call to a constructor in the direct parent class, using *super()*. If a parent constructor takes arguments, the super constructor would also take arguments.
+
+- _super()_
+  - the command may only be used as the first statement of the constructor.
+
+### Understanding Compiler Enhancements
+
+Java compiler automatically inserts a call to the no-argument constructor super() if the first statement is not a call to the parent constructor.
+
+- What happens if the parent class doesn’t have a no-argument constructor?
+  - Recall that the no-argument constructor is not required and only inserted if there is no constructor defined in the class.
+
+- Subclasses may define no-argument constructors even if their parent classes do not, provided the constructor of the child maps to a parent constructor via an explicit call of the super() command.
+
+## POINTS TO REMEMBER (Revise before exam)
+
+- Constructor Definition Rules:
+  1. The first statement of every constructor is a call to another constructor within the class using this(), or a call to a constructor in the direct parent class using super().
+  2. The super() call may not be used after the first statement of the constructor.
+  3. If no super() call is declared in a constructor, Java will insert a no-argument super() as the first statement of the constructor.
+  4. If the parent doesn’t have a no-argument constructor and the child doesn’t define any constructors, the compiler will throw an error and try to insert a default no-argument.
+  5. If the parent doesn’t have a no-argument constructor, the compiler requires an explicit call to a parent constructor in each child constructor.
 
 ## for review exam
 
