@@ -89,7 +89,15 @@ __you can override a method a method by declaring a new method with the signatur
 
 When you override a method, you may reference the parent version of the method using the super keyword. In this manner, the keywords this and super allow you to select between the current and parent version of a method, respectively.
 
+- The compiler performs the following checks when you override a nonprivate method:
+  1. The method in the child class must have the same signature as the method in the parent class.
+  2. The method in the child class must be at least as accessible or more accessible than the method in the parent class.
+  3. The method in the child class may not throw a checked exception that is new or broader than the class of any exception thrown in the parent class method.
+  4. If the method returns a value, it must be the same or a subclass of the method in the parent class, known as *covariant return types*.
 
+> Any time you see a method on the exam with the same name as a method in the parent class, determine whether the method is being overloaded or overridden first.
+
+- __Redeclaring private Methods__
 
 ## POINTS TO REMEMBER (Revise before exam)
 
