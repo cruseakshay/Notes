@@ -98,6 +98,12 @@ When you override a method, you may reference the parent version of the method u
 > Any time you see a method on the exam with the same name as a method in the parent class, determine whether the method is being overloaded or overridden first.
 
 - __Redeclaring private Methods__
+  - In Java, it is not possible to override a private method in a parent class since the parent method is not accessible from the child class.
+  - Java permits you to redeclare a new method in the child class with the same or modified signature as the method in the parent class. This method in the child class is a separate and independent method, unrelated to the parent version’s method, so none of the rules for overriding methods are invoked.
+
+- __Hiding Static Methods__
+  - A hidden method occurs when a child class defines a static method with the same name and signature as a static method defi ned in a parent class.
+
 
 ## POINTS TO REMEMBER (Revise before exam)
 
