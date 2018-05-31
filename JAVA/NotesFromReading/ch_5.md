@@ -61,6 +61,36 @@ Java compiler automatically inserts a call to the no-argument constructor super(
 
 - Subclasses may define no-argument constructors even if their parent classes do not, provided the constructor of the child maps to a parent constructor via an explicit call of the super() command.
 
+## Calling Constructors
+
+In Java, the parent constructor is always executed before the child constructor.
+
+## Calling Inherited Class Members
+
+Java classes may use any public or protected member of the parent class, including methods, primitives, or object references. If the parent class and child class are part of the same package, the child class may also use any default members defined in the parent class.
+
+__a child class may never access a private member of the parent class, at least not through any direct reference.__
+
+__you can explicitly reference a member of the parent class by using the *super* keyword__
+
+this and super may both be used for methods or variables defined in the parent class, but only this may be used for members defined in the current class.
+
+## Inheriting Methods
+
+Inheriting a class grants us access to the public and protected members of the parent class, but also sets the stage for collisions between methods defined in both the parent class and the subclass.
+
+- Overriding a Method
+
+What if there is a method defined in both the parent and child class?
+
+method signature includes the name and list of input parameters.
+
+__you can override a method a method by declaring a new method with the signature and return type as the method in the parent class.__
+
+When you override a method, you may reference the parent version of the method using the super keyword. In this manner, the keywords this and super allow you to select between the current and parent version of a method, respectively.
+
+
+
 ## POINTS TO REMEMBER (Revise before exam)
 
 - Constructor Definition Rules:
