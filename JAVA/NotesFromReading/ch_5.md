@@ -102,8 +102,20 @@ When you override a method, you may reference the parent version of the method u
   - Java permits you to redeclare a new method in the child class with the same or modified signature as the method in the parent class. This method in the child class is a separate and independent method, unrelated to the parent version’s method, so none of the rules for overriding methods are invoked.
 
 - __Hiding Static Methods__
-  - A hidden method occurs when a child class defines a static method with the same name and signature as a static method defi ned in a parent class.
+  - A hidden method occurs when a child class defines a static method with the same name and signature as a static method defined in a parent class.
+  - First, *the four previous rules for overriding a method must be followed when a method is hidden*. In addition, *a new rule is added for hiding a method,namely that the usage of the static keyword must be the same between parent and child classes*.
+  - In addition to the 4 rules mentioned above:
+    - The method defined in the child class must be marked as static if it is marked as static in the parent class (method hiding). Likewise, the method must not be marked as static in the child class if it is not marked as static in the parent class (method overriding).
+  - __hiding static methods is fraught with pitfalls and potential problems and as a practice should be avoided.__
 
+- __Overriding vs. Hiding Methods__
+  - __At runtime the child version of an overridden method is always executed for an instance regardless of whether the method call is defi ned in a parent or child class method.__
+  - __the parent method is never used unless an explicit call to the parent method is referenced, using the syntax ParentClassName.method().__
+  - __Alternatively, at runtime the parent version of a hidden method is always executed if the call to the method is defined in the parent class.__
+
+- Creating final methods
+  - final methods cannot be overridden.
+  - 
 
 ## POINTS TO REMEMBER (Revise before exam)
 
