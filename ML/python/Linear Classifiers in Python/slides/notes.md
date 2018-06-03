@@ -28,3 +28,8 @@ smaller values of C lead to less confident predictions. That's because smaller C
 
 - a one-vs-rest logistic regression classifier
 - a softmax logistic regression classifier using the solver lbfgs
+
+## Support Vectors
+
+Support vectors are defined as training examples that influence the decision boundary.
+
