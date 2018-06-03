@@ -23,3 +23,8 @@ Hinge loss in SVM
 ## Logistic regression
 
 smaller values of C lead to less confident predictions. That's because smaller C means more regularization, which in turn means smaller coefficients, which means raw model outputs closer to zero and, thus, probabilities closer to 0.5 after the raw model output is squashed through the sigmoid function.
+
+## multi-class logistic regression
+
+- a one-vs-rest logistic regression classifier
+- a softmax logistic regression classifier using the solver lbfgs
