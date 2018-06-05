@@ -124,6 +124,27 @@ When you override a method, you may reference the parent version of the method u
     - the rules for accessing the parent and child variables are:
       - If you’re referencing the variable from within the parent class, the variable defined in the parent class is used. Alternatively,   if you’re referencing the variable from within a child class, the variable defined in the child class is used.
 
+## Creating Abstract Classes
+
+abstract class is a class that is marked with the abstract keyword and cannot be instantiated.
+
+abstract method is a method marked with the abstract keyword defi ned in an abstract class, for which no implementation is provided.
+
+an abstract class may include nonabstract methods and variables.
+
+__an abstract method may only be defi ned in an abstract class.__
+
+__an abstract class cannot be marked as final.__
+
+__an abstract method may not be marked as final.__
+
+__a method may not be marked as both abstract and private.__
+
+- Creating a Concrete Class
+
+A concrete class is the first nonabstract subclass that extends an abstract class and is required to implement all inherited abstract methods.
+
+
 ## POINTS TO REMEMBER (Revise before exam)
 
 - Constructor Definition Rules:
