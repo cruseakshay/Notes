@@ -115,7 +115,14 @@ When you override a method, you may reference the parent version of the method u
 
 - Creating final methods
   - final methods cannot be overridden.
-  - 
+  - you cannot hide a static method in a parent class if it is marked as final.
+
+- Inheriting Variables
+  - __Java doesn’t allow variables to be overridden but instead hidden.__
+  - __Don’t Hide Variables in Practice__
+  - Hiding Variables
+    - the rules for accessing the parent and child variables are:
+      - If you’re referencing the variable from within the parent class, the variable defined in the parent class is used. Alternatively,   if you’re referencing the variable from within a child class, the variable defined in the child class is used.
 
 ## POINTS TO REMEMBER (Revise before exam)
 
