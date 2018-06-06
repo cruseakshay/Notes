@@ -211,6 +211,19 @@ A class may implement multiple interfaces, each separated by a comma.
     2. __A default method must be marked with the default keyword. If a method is marked as default, it must provide a method body.__
     3. __A default method is not assumed to be static, final, or abstract, as it may be used or overridden by a class that implements the interface.__
     4. __Like all methods in an interface, a default method is assumed to be public and will not compile if marked as private or protected.__
+  
+  - Unlike interface variables, which are assumed static class members, default methods cannot be marked as static and require an instance of the class implementing the interface to be invoked. They can also not be marked as final or abstract, because they are allowed to be overridden in subclasses but are not required to be overridden.
+  When an interface extends another interface that contains a default method, it may choose to ignore the default method, in which case the default implementation for the method will be used. Alternatively, the interface may override the defi nition of the default method using the standard rules for method overriding, such as not limiting the accessibility of the method and using covariant returns. Finally, the interface may redeclare the method as abstract, requiring classes that implement the new interface to explicitly provide a method body.
+
+- Default Methods and Multiple Inheritance
+  - by allowing default methods in interfaces, coupled with the fact   a class may implement multiple interfaces, Java has essentially opened the door to multiple inheritance problems.
+  - __If a class implements two interfaces that have default methods with the same name and signature, the compiler will throw an error.__
+    - There is an exception to this rule, though: 
+      - __if the subclass overrides the duplicate default methods, the code will compile without issue—the ambiguity      about which version of the method to call has been removed.__
+      - This rule holds true even for abstract classes that implement multiple interfaces, because the default method   could be called in a concrete method within the abstract class.
+
+- Static Interface Methods
+
 ## POINTS TO REMEMBER (Revise before exam)
 
 - Constructor Definition Rules:
