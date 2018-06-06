@@ -152,7 +152,7 @@ abstract classes can extend other abstract classes and are not required to provi
   - __a concrete subclass is not required to provide an implementation for an abstract method if an intermediate abstract class provides the implementation.__
   - __if an intermediate class provides an implementation for an abstract method, that method is inherited by subclasses as a concrete method, not as an abstract one.__
 
-- __Abstract Class Defi nition Rules:__
+- __Abstract Class Definition Rules:__
   1. Abstract classes cannot be instantiated directly.
   2. Abstract classes may be defined with any number, including zero, of abstract and nonabstract methods.
   3. Abstract classes may not be marked as private or final.
@@ -182,7 +182,35 @@ A class may implement multiple interfaces, each separated by a comma.
     5. All nondefault methods in an interface are assumed to have the modifiers abstract and public in their definition. Therefore, marking a method as private, protected, or final will trigger compiler errors as these are incompatible with the abstract and public keywords.
 
 - Inheriting an Interface
+  - There are two inheritance rules to keep in mind when extending an interface:
+    1. An interface that extends another interface, as well as an abstract class that implements an interface, inherits all of the abstract methods as its own abstract methods.
+    2. The first concrete class that implements an interface, or extends an abstract class that implements an interface, must provide an implementation for all of the inherited abstract methods.
 
+  - __Although a class can implement an interface, a class cannot extend an interface. Likewise, whereas an interface can extend another interface, an interface cannot implement another interface.__
+
+- Abstract Methods and Multiple Inheritance
+  - __what will happen if you defi ne a class that inherits from two interfaces that contain the same abstract method ?__
+  - Remember that interface methods are abstract and define the “behavior” that the class implementing the interface must have. If two abstract interface methods have identical behaviors — or have same method signature— creating a class that implements one of the two methods automatically implements the second method. In this manner, the interface methods are considered *duplicates* since they have the same signature.
+  - __What happens if the two methods have different signatures?__
+  - If the method name is the same but the input parameters are different, there is no confl ict because this is considered a method overload.
+  - if the method name and input parameters are the same but the return types are different between the two methods, the class or interface attempting to inherit both interfaces will not compile.
+    - The reason the code doesn’t compile has less to do with interfaces and more to do with class design.
+    - It is not possible in Java to defi ne two methods in a class with the same name and input parameters but different return types.
+
+- Interface Variables
+  - two interface variables rules:
+    1. __Interface variables are assumed to be public, static, and final. Therefore, marking a variable as private or protected will trigger a compiler error, as will marking any variable as abstract.__
+    2. __The value of an interface variable must be set when it is declared since it is marked as final.__
+
+- Default Interface Methods
+  - From JAVA 8 : 
+    - __A default method is a method defi ned within an interface with the default keyword in which a method body is provided.__
+    - A default method within an interface defi nes an abstract method with a default implementation.In this manner, classes have the option to override the default method if they need to, but they are not required to do so. If the class doesn’t override the method, the default implementation will be used. In this manner, the method defi nition is concrete, not abstract.
+  - default interface method rules:
+    1. __A default method may only be declared within an interface and not within a class or abstract class.__
+    2. __A default method must be marked with the default keyword. If a method is marked as default, it must provide a method body.__
+    3. __A default method is not assumed to be static, final, or abstract, as it may be used or overridden by a class that implements the interface.__
+    4. __Like all methods in an interface, a default method is assumed to be public and will not compile if marked as private or protected.__
 ## POINTS TO REMEMBER (Revise before exam)
 
 - Constructor Definition Rules:
