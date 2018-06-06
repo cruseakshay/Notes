@@ -148,7 +148,7 @@ A concrete class is the first nonabstract subclass that extends an abstract clas
 
 abstract classes can extend other abstract classes and are not required to provide implementations for any of the abstract methods.
 
-- There is one exception to the rule for abstract methods and concrete classes: 
+- There is one exception to the rule for abstract methods and concrete classes:
   - __a concrete subclass is not required to provide an implementation for an abstract method if an intermediate abstract class provides the implementation.__
   - __if an intermediate class provides an implementation for an abstract method, that method is inherited by subclasses as a concrete method, not as an abstract one.__
 
@@ -166,6 +166,22 @@ abstract classes can extend other abstract classes and are not required to provi
   4. Implementing an abstract method in a subclass follows the same rules for overriding a method. For example, the     name and signature must be the same, and the visibility of the method in the subclass must be at least as           accessible as the method in the parent class.
 
 ## Implementing Interfaces
+
+An interface is an abstract data type that defi nes a list of abstract public methods that any class implementing the interface must provide.
+
+![Java interface definition](./img/interface_def.png)
+
+A class may implement multiple interfaces, each separated by a comma.
+
+- Defining an Interface
+  - The following is a list of rules for creating an interface
+    1. Interfaces cannot be instantiated directly.
+    2. An interface is not required to have any methods.
+    3. An interface may not be marked as final.
+    4. All top-level interfaces are assumed to have public or default access, and they must include the abstract modifier in their definition. Therefore, marking an interface as private, protected, or final will trigger a compiler error, since this is incompatible with these assumptions.
+    5. All nondefault methods in an interface are assumed to have the modifiers abstract and public in their definition. Therefore, marking a method as private, protected, or final will trigger compiler errors as these are incompatible with the abstract and public keywords.
+
+- Inheriting an Interface
 
 ## POINTS TO REMEMBER (Revise before exam)
 
