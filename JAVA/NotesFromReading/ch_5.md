@@ -203,7 +203,7 @@ A class may implement multiple interfaces, each separated by a comma.
     2. __The value of an interface variable must be set when it is declared since it is marked as final.__
 
 - Default Interface Methods
-  - From JAVA 8 : 
+  - From JAVA 8 :
     - __A default method is a method defi ned within an interface with the default keyword in which a method body is provided.__
     - A default method within an interface defi nes an abstract method with a default implementation.In this manner, classes have the option to override the default method if they need to, but they are not required to do so. If the class doesn’t override the method, the default implementation will be used. In this manner, the method defi nition is concrete, not abstract.
   - default interface method rules:
@@ -218,7 +218,7 @@ A class may implement multiple interfaces, each separated by a comma.
 - Default Methods and Multiple Inheritance
   - by allowing default methods in interfaces, coupled with the fact   a class may implement multiple interfaces, Java has essentially opened the door to multiple inheritance problems.
   - __If a class implements two interfaces that have default methods with the same name and signature, the compiler will throw an error.__
-    - There is an exception to this rule, though: 
+    - There is an exception to this rule, though:
       - __if the subclass overrides the duplicate default methods, the code will compile without issue—the ambiguity      about which version of the method to call has been removed.__
       - This rule holds true even for abstract classes that implement multiple interfaces, because the default method   could be called in a concrete method within the abstract class.
 
