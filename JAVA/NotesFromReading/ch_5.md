@@ -228,6 +228,9 @@ A class may implement multiple interfaces, each separated by a comma.
   - static interface method rules:
     1. Like all methods in an interface, a static method is assumed to be public and will not compile if marked as private or protected.
     2. To reference the static method, a reference to the name of the interface must be used.
+  - a class that implements two interfaces containing static methods with the same signature will still compile at      runtime, because the static methods are not inherited by the subclass and must be accessed with a reference to      the interface name.
+
+## Understanding Polymorphism
 
 ## POINTS TO REMEMBER (Revise before exam)
 
