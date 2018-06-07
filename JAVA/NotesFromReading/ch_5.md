@@ -223,6 +223,11 @@ A class may implement multiple interfaces, each separated by a comma.
       - This rule holds true even for abstract classes that implement multiple interfaces, because the default method   could be called in a concrete method within the abstract class.
 
 - Static Interface Methods
+  - Java 8 also now includes support for static methods within interfaces.
+  - A static method defined in an interface is not inherited in any classes that implement the interface.
+  - static interface method rules:
+    1. Like all methods in an interface, a static method is assumed to be public and will not compile if marked as private or protected.
+    2. To reference the static method, a reference to the name of the interface must be used.
 
 ## POINTS TO REMEMBER (Revise before exam)
 
