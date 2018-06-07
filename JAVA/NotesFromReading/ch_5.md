@@ -232,6 +232,37 @@ A class may implement multiple interfaces, each separated by a comma.
 
 ## Understanding Polymorphism
 
+> polymorphism: property of an object to take on many different forms.
+
+a Java object may be accessed using a reference with the same type as the object, a reference that is a superclass of the object, or a reference that defines an interface the object implements, either directly or through a superclass.
+
+a cast is not required if the object is being reassigned to a super type or interface of the object
+
+- Object vs. Reference
+  - In Java, all objects are accessed by reference, so as a developer you never have direct access to the object itself.
+  - Regardless of the type of the reference you have for the object in memory, the object itself doesn’t change.
+  - two rules:
+    1. The type of the object determines which properties exist within the object in memory.
+    2. The type of the reference to the object determines which methods and variables are accessible to the Java program.
+
+- Casting Objects
+  - basic rules to keep in mind when casting variables:
+    1. Casting an object from a subclass to a superclass doesn’t require an explicit cast.
+    2. Casting an object from a superclass to a subclass requires an explicit cast.
+    3. The compiler will not allow casts to unrelated types.
+    4. Even when the code compiles without issue, an exception may be thrown at runtime if the object being cast is not actually an instance of that class.
+
+- Virtual Methods
+
+A virtual method is a method in which the specific implementation is not determined until runtime.
+
+> all non-final, non static, and non-private Java methods are considered virtual methods.
+
+What makes a virtual method special in Java is that if you call a method on an object that overrides a method, you get the overridden method, even if the call to the method is on a parent reference or within the parent class.
+
+- Polymorphic Parameters
+
+
 ## POINTS TO REMEMBER (Revise before exam)
 
 - Constructor Definition Rules:
