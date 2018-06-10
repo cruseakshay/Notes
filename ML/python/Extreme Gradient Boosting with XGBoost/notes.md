@@ -8,7 +8,7 @@ Gradient boosting is currently one of the most popular techniques for efficient 
 
 In this course, you'll learn how to use this powerful library alongside pandas and scikit-learn to build and tune supervised learning models.
 
-### Classification with XGBoost
+### Classification with XGBoost(ensemble algorithm)
 
 XGBoost is popular because of its Speed and performance. Its core algorithm is parallelizable even on GPUs.
 
