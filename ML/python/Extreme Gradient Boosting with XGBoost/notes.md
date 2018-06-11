@@ -12,3 +12,4 @@ In this course, you'll learn how to use this powerful library alongside pandas a
 
 XGBoost is popular because of its Speed and performance. Its core algorithm is parallelizable even on GPUs.
 
+### Regression with XGBoost
