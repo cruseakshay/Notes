@@ -261,6 +261,8 @@ A virtual method is a method in which the specific implementation is not determi
 What makes a virtual method special in Java is that if you call a method on an object that overrides a method, you get the overridden method, even if the call to the method is on a parent reference or within the parent class.
 
 - Polymorphic Parameters
+  - example : you can defi ne a method that takes an instance of an interface as a parameter. In this manner, any class that implements the interface can be passed to the method. Since you’re casting from a subtype to a supertype, an explicit cast is not required. This property is referred to as polymorphic parameters of a method.
+
 
 
 ## POINTS TO REMEMBER (Revise before exam)
