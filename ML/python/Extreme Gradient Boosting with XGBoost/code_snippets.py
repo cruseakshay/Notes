@@ -161,3 +161,26 @@ for reg in reg_params:
 # Look at best rmse per l2 param
 print("Best rmse as a function of l2:")
 print(pd.DataFrame(list(zip(reg_params, rmses_l2)), columns=["l2", "rmse"]))
+
+# Visualizing individual XGBoost trees
+# how to visually explore your models
+# Create the DMatrix: housing_dmatrix
+housing_dmatrix = xgb.DMatrix(data=X, label=y)
+
+# Create the parameter dictionary: params
+params = {"objective":"reg:linear", "max_depth":2}
+
+# Train the model: xg_reg
+xg_reg = xgb.train(params=params, dtrain=housing_dmatrix, num_boost_round=10)
+
+# Plot the first tree
+xgb.plot_tree(xg_reg, num_trees=0)
+plt.show()
+
+# Plot the fifth tree
+xgb.plot_tree(xg_reg, num_trees=4)
+plt.show()
+
+# Plot the last tree sideways
+xgb.plot_tree(xg_reg, num_trees=9, rankdir="LR")
+plt.show()
