@@ -184,3 +184,19 @@ plt.show()
 # Plot the last tree sideways
 xgb.plot_tree(xg_reg, num_trees=9, rankdir="LR")
 plt.show()
+
+# Visualizing feature importances: What features are most important in my dataset
+# counting the number of times each feature is split on across all boosting rounds (trees) in the model
+
+# Create the DMatrix: housing_dmatrix
+housing_dmatrix = xgb.DMatrix(data=X, label=y)
+
+# Create the parameter dictionary: params
+params = {"objective": "reg:linear", "max_depth": 4}
+
+# Train the model: xg_reg
+xg_reg = xgb.train(params=params, dtrain=housing_dmatrix, num_boost_round=10)
+
+# Plot the feature importances
+xgb.plot_importance(xg_reg)
+plt.show()
