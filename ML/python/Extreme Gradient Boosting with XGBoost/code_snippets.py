@@ -226,3 +226,16 @@ for curr_num_rounds in num_rounds:
 # Print the resultant DataFrame
 num_rounds_rmses = list(zip(num_rounds, final_rmse_per_round))
 print(pd.DataFrame(num_rounds_rmses,columns=["num_boosting_rounds","rmse"]))
+
+# Automated boosting round selection using early_stopping
+# Create your housing DMatrix: housing_dmatrix
+housing_dmatrix = xgb.DMatrix(data=X, label=y)
+
+# Create the parameter dictionary for each tree: params
+params = {"objective":"reg:linear", "max_depth":4}
+
+# Perform cross-validation with early stopping: cv_results
+cv_results = xgb.cv(dtrain=housing_dmatrix, params=params,num_boost_round=50, metrics="rmse", early_stopping_rounds=10, seed=123, as_pandas=True, nfold=3)
+
+# Print cv_results
+print(cv_results)

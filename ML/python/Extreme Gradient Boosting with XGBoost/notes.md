@@ -16,3 +16,7 @@ XGBoost is popular because of its Speed and performance. Its core algorithm is p
 
 
 ### Fine-tuning your XGBoost model
+
+Early stopping works by testing the XGBoost model after every boosting round against a hold-out dataset and stopping the creation of additional boosting rounds (thereby finishing training of the model early) if the hold-out metric ("rmse" in our case) does not improve for a given number of rounds.
+
+Bear in mind that if the holdout metric continuously improves up through when num_boosting_rounds is reached, then early stopping does not occur.
