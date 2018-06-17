@@ -24,3 +24,5 @@ Bear in mind that if the holdout metric continuously improves up through when nu
 tuning the "eta", also known as the learning rate.
 
 max_depth, which is the parameter that dictates the maximum depth that each tree in a boosting round can grow to. Smaller values will lead to shallower trees, and larger values to deeper trees.
+
+Tuning colsample_bytree: (max_features in scikit). In both xgboost and sklearn, this parameter (although named differently) simply specifies the fraction of features to choose from at every split in a given tree. In xgboost, colsample_bytree must be specified as a float between 0 and 1.
