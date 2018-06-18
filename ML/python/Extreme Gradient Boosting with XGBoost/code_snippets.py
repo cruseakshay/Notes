@@ -415,3 +415,20 @@ print(df_encoded.shape)
 # NOTE: after one hot encoding, which creates binary variables out of the categorical variables, there are now 62 columns.
 
 # Encoding categorical columns III: DictVectorizer
+# Import DictVectorizer
+from sklearn.feature_extraction import DictVectorizer
+
+# Convert df into a dictionary: df_dict
+df_dict = df.to_dict("records")
+
+# Create the DictVectorizer object: dv
+dv = DictVectorizer(sparse=False)
+
+# Apply dv on df: df_encoded
+df_encoded = dv.fit_transform(df_dict)
+
+# Print the resulting first five rows
+print(df_encoded[:5,:])
+
+# Print the vocabulary
+print(dv.vocabulary_)

@@ -32,3 +32,5 @@ Tuning colsample_bytree: (max_features in scikit). In both xgboost and sklearn, 
 GridSearchCV and RandomizedSearchCV : to find the best model exhaustively from a collection of possible parameter values across multiple parameters simultaneously.
 
  Scikit-learn has a LabelEncoder function that converts the values in each categorical column into integers. 
+
+ Using a DictVectorizer on a DataFrame that has been converted to a dictionary allows you to get label encoding as well as one-hot encoding in one go.
