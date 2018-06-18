@@ -30,3 +30,5 @@ Tuning colsample_bytree: (max_features in scikit). In both xgboost and sklearn, 
 "subsample", which dictates the fraction of the training data that is used during any given boosting round. 
 
 GridSearchCV and RandomizedSearchCV : to find the best model exhaustively from a collection of possible parameter values across multiple parameters simultaneously.
+
+ Scikit-learn has a LabelEncoder function that converts the values in each categorical column into integers. 
