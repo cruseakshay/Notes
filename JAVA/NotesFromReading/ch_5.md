@@ -263,8 +263,6 @@ What makes a virtual method special in Java is that if you call a method on an o
 - Polymorphic Parameters
   - example : you can defi ne a method that takes an instance of an interface as a parameter. In this manner, any class that implements the interface can be passed to the method. Since you’re casting from a subtype to a supertype, an explicit cast is not required. This property is referred to as polymorphic parameters of a method.
 
-
-
 ## POINTS TO REMEMBER (Revise before exam)
 
 - Constructor Definition Rules:
