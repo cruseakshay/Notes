@@ -392,3 +392,26 @@ df[categorical_columns] = df[categorical_columns].apply(lambda x: le.fit_transfo
 
 # Print the head of the LabelEncoded categorical columns
 print(df[categorical_columns].head())
+
+# Encoding categorical columns II: OneHotEncoder
+# Import OneHotEncoder
+from sklearn.preprocessing import OneHotEncoder
+
+# Create OneHotEncoder: ohe
+ohe = OneHotEncoder(categorical_features=categorical_mask, sparse=False)
+
+# Apply OneHotEncoder to categorical columns - output is no longer a dataframe: df_encoded
+df_encoded = ohe.fit_transform(df)
+
+# Print first 5 rows of the resulting dataset - again, this will no longer be a pandas dataframe
+print(df_encoded[:5, :])
+
+# Print the shape of the original DataFrame
+print(df.shape)
+
+# Print the shape of the transformed array
+print(df_encoded.shape)
+
+# NOTE: after one hot encoding, which creates binary variables out of the categorical variables, there are now 62 columns.
+
+# Encoding categorical columns III: DictVectorizer
