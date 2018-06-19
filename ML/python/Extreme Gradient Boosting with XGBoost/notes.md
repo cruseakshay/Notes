@@ -14,7 +14,6 @@ XGBoost is popular because of its Speed and performance. Its core algorithm is p
 
 ### Regression with XGBoost
 
-
 ### Fine-tuning your XGBoost model
 
 Early stopping works by testing the XGBoost model after every boosting round against a hold-out dataset and stopping the creation of additional boosting rounds (thereby finishing training of the model early) if the hold-out metric ("rmse" in our case) does not improve for a given number of rounds.
@@ -34,3 +33,13 @@ GridSearchCV and RandomizedSearchCV : to find the best model exhaustively from a
  Scikit-learn has a LabelEncoder function that converts the values in each categorical column into integers. 
 
  Using a DictVectorizer on a DataFrame that has been converted to a dictionary allows you to get label encoding as well as one-hot encoding in one go.
+
+### Kidney disease case study I: Categorical Imputer
+
+[chronic kidney disease dataset](https://archive.ics.uci.edu/ml/datasets/chronic_kidney_disease)
+
+The chronic kidney disease dataset contains both categorical and numeric features, but contains lots of missing values. The goal here is to predict who has chronic kidney disease given various blood indicators as features.
+
+- sklearn_pandas, that allows you to chain many more processing steps inside of a pipeline than are currently supported in scikit-learn.
+  - Categorical_Imputer(), impute missing categorical values
+  - DataFrameMapper(), to apply any arbitrary sklearn-compatible transformer on DataFrame columns, where the resulting output can be either a NumPy array or DataFrame.
