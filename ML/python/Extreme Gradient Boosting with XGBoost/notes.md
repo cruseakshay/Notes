@@ -45,3 +45,9 @@ The chronic kidney disease dataset contains both categorical and numeric feature
   - DataFrameMapper(), to apply any arbitrary sklearn-compatible transformer on DataFrame columns, where the resulting output can be either a NumPy array or DataFrame.
 
  FeatureUnion : Concatenates results of multiple transformer objects.
+
+## For more in XGBoost
+
+- Using XGBoost for ranking/recommendation problems (Netflix/Amazon problem)
+- Using more sophisticated hyperparameter tuning strategies for tuning XGBoost models (Bayesian Optimization)
+- Using XGBoost as part of an ensemble of other models for regression/classification
