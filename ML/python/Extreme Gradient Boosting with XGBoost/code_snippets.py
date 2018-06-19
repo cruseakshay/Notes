@@ -472,3 +472,47 @@ cross_val_scores = cross_val_score(xgb_pipeline, X.to_dict("records"), y, scorin
 
 # Print the 10-fold RMSE
 print("10-fold RMSE: ", np.mean(np.sqrt(np.abs(cross_val_scores))))
+
+# ------------ CASE STUDY ------------
+
+# Kidney disease case study I: Categorical Imputer
+# Import necessary modules
+from sklearn_pandas import DataFrameMapper
+from sklearn_pandas import CategoricalImputer
+
+# Check number of nulls in each feature column
+nulls_per_column = X.isnull().sum()
+print(nulls_per_column)
+
+# Create a boolean mask for categorical columns
+categorical_feature_mask = X.dtypes == object
+
+# Get list of categorical column names
+categorical_columns = X.columns[categorical_feature_mask].tolist()
+
+# Get list of non-categorical column names
+non_categorical_columns = X.columns[~categorical_feature_mask].tolist()
+
+# Apply numeric imputer
+numeric_imputation_mapper = DataFrameMapper(
+                                            [([numeric_feature], Imputer(strategy="median")) for numeric_feature in non_categorical_columns],
+                                            input_df=True,
+                                            df_out=True
+                                           )
+
+# Apply categorical imputer
+categorical_imputation_mapper = DataFrameMapper(
+                                                [(category_feature, CategoricalImputer()) for category_feature in categorical_columns],
+                                                input_df=True,
+                                                df_out=True
+                                               )
+
+# Kidney disease case study II: Feature Union
+# Import FeatureUnion
+from sklearn.pipeline import FeatureUnion
+
+# Combine the numeric and categorical transformations
+numeric_categorical_union = FeatureUnion([
+                                          ("num_mapper", numeric_imputation_mapper),
+                                          ("cat_mapper", categorical_imputation_mapper)
+                                         ])

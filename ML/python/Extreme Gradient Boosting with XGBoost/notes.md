@@ -26,15 +26,15 @@ max_depth, which is the parameter that dictates the maximum depth that each tree
 
 Tuning colsample_bytree: (max_features in scikit). In both xgboost and sklearn, this parameter (although named differently) simply specifies the fraction of features to choose from at every split in a given tree. In xgboost, colsample_bytree must be specified as a float between 0 and 1.
 
-"subsample", which dictates the fraction of the training data that is used during any given boosting round. 
+"subsample", which dictates the fraction of the training data that is used during any given boosting round.
 
 GridSearchCV and RandomizedSearchCV : to find the best model exhaustively from a collection of possible parameter values across multiple parameters simultaneously.
 
- Scikit-learn has a LabelEncoder function that converts the values in each categorical column into integers. 
+ Scikit-learn has a LabelEncoder function that converts the values in each categorical column into integers.
 
  Using a DictVectorizer on a DataFrame that has been converted to a dictionary allows you to get label encoding as well as one-hot encoding in one go.
 
-### Kidney disease case study I: Categorical Imputer
+### Kidney disease case study
 
 [chronic kidney disease dataset](https://archive.ics.uci.edu/ml/datasets/chronic_kidney_disease)
 
@@ -43,3 +43,7 @@ The chronic kidney disease dataset contains both categorical and numeric feature
 - sklearn_pandas, that allows you to chain many more processing steps inside of a pipeline than are currently supported in scikit-learn.
   - Categorical_Imputer(), impute missing categorical values
   - DataFrameMapper(), to apply any arbitrary sklearn-compatible transformer on DataFrame columns, where the resulting output can be either a NumPy array or DataFrame.
+
+ FeatureUnion : Concatenates results of multiple transformer objects.
+
+ 
