@@ -45,5 +45,3 @@ The chronic kidney disease dataset contains both categorical and numeric feature
   - DataFrameMapper(), to apply any arbitrary sklearn-compatible transformer on DataFrame columns, where the resulting output can be either a NumPy array or DataFrame.
 
  FeatureUnion : Concatenates results of multiple transformer objects.
-
- 
