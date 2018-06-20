@@ -34,3 +34,27 @@ GridSearchCV and RandomizedSearchCV : to find the best model exhaustively from a
  Scikit-learn has a LabelEncoder function that converts the values in each categorical column into integers. 
 
  Using a DictVectorizer on a DataFrame that has been converted to a dictionary allows you to get label encoding as well as one-hot encoding in one go.
+
+### Kidney disease case study
+
+[chronic kidney disease dataset](https://archive.ics.uci.edu/ml/datasets/chronic_kidney_disease)
+
+The chronic kidney disease dataset contains both categorical and numeric features, but contains lots of missing values. The goal here is to predict who has chronic kidney disease given various blood indicators as features.
+
+- sklearn_pandas, that allows you to chain many more processing steps inside of a pipeline than are currently supported in scikit-learn.
+  - Categorical_Imputer(), impute missing categorical values
+  - DataFrameMapper(), to apply any arbitrary sklearn-compatible transformer on DataFrame columns, where the resulting output can be either a NumPy array or DataFrame.
+
+ FeatureUnion : Concatenates results of multiple transformer objects.
+
+## For more in XGBoost
+
+- Using XGBoost for ranking/recommendation problems (Netflix/Amazon problem)
+- Using more sophisticated hyperparameter tuning strategies for tuning XGBoost models (Bayesian Optimization)
+- Using XGBoost as part of an ensemble of other models for regression/classification
+
+ Using a DictVectorizer on a DataFrame that has been converted to a dictionary allows you to get label encoding as well as one-hot encoding in one go.
+
+ ### Using XGBoost in pipelines
+
+ > Refer chapter slides.
