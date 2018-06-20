@@ -58,3 +58,5 @@ The chronic kidney disease dataset contains both categorical and numeric feature
  ### Using XGBoost in pipelines
 
  > Refer chapter slides.
+
+ > A good source of links with example code and help is the [Awesome XGBoost page.](https://github.com/dmlc/xgboost/tree/master/demo)
