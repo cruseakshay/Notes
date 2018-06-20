@@ -472,3 +472,81 @@ cross_val_scores = cross_val_score(xgb_pipeline, X.to_dict("records"), y, scorin
 
 # Print the 10-fold RMSE
 print("10-fold RMSE: ", np.mean(np.sqrt(np.abs(cross_val_scores))))
+
+# ------------ CASE STUDY ------------
+
+# Kidney disease case study I: Categorical Imputer
+# Import necessary modules
+from sklearn_pandas import DataFrameMapper
+from sklearn_pandas import CategoricalImputer
+
+# Check number of nulls in each feature column
+nulls_per_column = X.isnull().sum()
+print(nulls_per_column)
+
+# Create a boolean mask for categorical columns
+categorical_feature_mask = X.dtypes == object
+
+# Get list of categorical column names
+categorical_columns = X.columns[categorical_feature_mask].tolist()
+
+# Get list of non-categorical column names
+non_categorical_columns = X.columns[~categorical_feature_mask].tolist()
+
+# Apply numeric imputer
+numeric_imputation_mapper = DataFrameMapper(
+                                            [([numeric_feature], Imputer(strategy="median")) for numeric_feature in non_categorical_columns],
+                                            input_df=True,
+                                            df_out=True
+                                           )
+
+# Apply categorical imputer
+categorical_imputation_mapper = DataFrameMapper(
+                                                [(category_feature, CategoricalImputer()) for category_feature in categorical_columns],
+                                                input_df=True,
+                                                df_out=True
+                                               )
+
+# Kidney disease case study II: Feature Union
+# Import FeatureUnion
+from sklearn.pipeline import FeatureUnion
+
+# Combine the numeric and categorical transformations
+numeric_categorical_union = FeatureUnion([
+                                          ("num_mapper", numeric_imputation_mapper),
+                                          ("cat_mapper", categorical_imputation_mapper)
+                                         ])
+
+# Kidney disease case study III: Full pipeline
+# piece together all of the transforms along with an XGBClassifier to build the full pipeline
+# Create full pipeline
+pipeline = Pipeline([
+                     ("featureunion", numeric_categorical_union),
+                     ("dictifier", Dictifier()),
+                     ("vectorizer", DictVectorizer(sort=False)),
+                     ("clf", xgb.XGBClassifier())
+                    ])
+
+# Perform cross-validation
+cross_val_scores = cross_val_score(pipeline, kidney_data, y, scoring="roc_auc",cv=3)
+
+# Print avg. AUC
+print("3-fold AUC: ", np.mean(cross_val_scores))
+
+# Bringing it all together
+# Create the parameter grid
+gbm_param_grid = {
+    'clf__learning_rate': np.arange(0.05, 1, 0.05),
+    'clf__max_depth': np.arange(3, 10, 1),
+    'clf__n_estimators': np.arange(50, 200, 50)
+}
+
+# Perform RandomizedSearchCV
+randomized_roc_auc = RandomizedSearchCV(estimator=pipeline, cv=2, n_iter=2, scoring="roc_auc", param_distributions=gbm_param_grid, verbose=1)
+
+# Fit the estimator
+randomized_roc_auc.fit(X, y)
+
+# Compute metrics
+print(randomized_roc_auc.best_score_)
+print(randomized_roc_auc.best_estimator_)
