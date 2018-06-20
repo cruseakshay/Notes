@@ -26,3 +26,19 @@ A valid .java file may define any number of classes or interfaces but have at mo
     | Local | _______ |
 
     > ANS: 2, 2, 1
+
+- What is the result of compiling and executing the following class?
+    ```java
+        public class ParkRanger {
+        int birds = 10;
+        public static void main(String[] data) {
+           int trees = 5;
+           System.out.print(trees+birds);
+        }
+    }
+    ```
+    options:
+    - It does not compile.
+    - It compiles but throws an exception at runtime.
+    - It compiles and outputs 5.
+    - It compiles and outputs 15
