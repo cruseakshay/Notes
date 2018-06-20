@@ -51,3 +51,5 @@ The chronic kidney disease dataset contains both categorical and numeric feature
 - Using XGBoost for ranking/recommendation problems (Netflix/Amazon problem)
 - Using more sophisticated hyperparameter tuning strategies for tuning XGBoost models (Bayesian Optimization)
 - Using XGBoost as part of an ensemble of other models for regression/classification
+
+> A great source of links with example code and help is the [Awesome XGBoost page.](https://github.com/dmlc/xgboost/tree/master/demo)
