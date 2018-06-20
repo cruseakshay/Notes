@@ -34,3 +34,7 @@ GridSearchCV and RandomizedSearchCV : to find the best model exhaustively from a
  Scikit-learn has a LabelEncoder function that converts the values in each categorical column into integers. 
 
  Using a DictVectorizer on a DataFrame that has been converted to a dictionary allows you to get label encoding as well as one-hot encoding in one go.
+
+ ### Using XGBoost in pipelines
+
+ > Refer chapter slides.
