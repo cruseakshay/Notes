@@ -4,6 +4,12 @@ The package java.lang is imported into every Java class.
 
 A valid .java file may define any number of classes or interfaces but have at most one public class.
 
+Java is object oriented, not procedural
+
+Operator overloading is permitted in languages like C++, not Java
+
+ the JVM manages the location of objects in memory that can change and is transparent to the Java application.
+
 ## Practice Questions before exam
 
 - Given the following application, fill in the missing values in the table starting from the top and going downward.
