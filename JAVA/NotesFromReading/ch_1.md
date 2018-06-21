@@ -2,7 +2,7 @@
 
 The package java.lang is imported into every Java class.
 
-A valid .java file may define any number of classes or interfaces but have at most one public class. It can also not define any public classes.
+A valid .java file may define any number of classes or interfaces but have at most one public class.
 
 ## Practice Questions before exam
 
