@@ -8,7 +8,11 @@ Java is object oriented, not procedural
 
 Operator overloading is permitted in languages like C++, not Java
 
- the JVM manages the location of objects in memory that can change and is transparent to the Java application.
+the JVM manages the location of objects in memory that can change and is transparent to the Java application.
+
+local variables defined within methods cannot have access modifiers such as public/private.
+
+Object-oriented programming is the technique of structuring data into objects, which may contain data and a set of actions that operate on the data.
 
 ## Practice Questions before exam
 
