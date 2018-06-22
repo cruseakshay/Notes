@@ -30,6 +30,8 @@ Integer is the name of a class in Java. While it is bad practice to use the name
 
 It is not legal to use a reserved word as a variable name. All of the primitives including int are reserved words. ex:- Integer int = 0;(does not compile).
 
+Instance variable of type int, long, and short are initialised to zero.
+
 ## Practice Questions before exam
 
 - Given the following application, fill in the missing values in the table starting from the top and going downward.
@@ -84,3 +86,15 @@ It is not legal to use a reserved word as a variable name. All of the primitives
     - double
     - None of the above
 
+- Of the types double, int, long, and short, how many could fill in the blank to have this code output 0?
+    ```java
+        static  _______defaultValue;
+        public static void main(String[] args) {
+            System.out.println(defaultValue);
+        }
+    ```
+  - Options:
+    - One
+    - Two
+    - Three
+    - Four
