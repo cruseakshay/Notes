@@ -36,3 +36,17 @@ Object-oriented programming is the technique of structuring data into objects, w
     | Local | _______ |
 
     > ANS: 2, 2, 1
+- example of: local scope overrides instance scope
+    ```Java
+        package sports;
+        public class Bicycle {
+        String color = "red";
+        private void printColor(String color) {
+            color = "purple";
+            System.out.print(color);
+        }
+        public static void main(String[] rider) {
+            new Bicycle().printColor("blue");
+        }
+        }
+    ```
