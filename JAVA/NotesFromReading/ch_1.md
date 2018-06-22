@@ -18,6 +18,18 @@ Garbage collection can happen at any time while an application is running, espec
 
 Java does not allow declaring different types as part of the same declaration. ex :- double num1, int num2 = 0;
 
+A byte is smaller than a char.
+
+The instance variables, constructor, and method names can appear in any order within a class declaration.
+
+The finalize() method may not be called, such as if your program crashes. However, it is guaranteed to be called no more than once.
+
+byte and short do not store values with decimal points.
+
+Integer is the name of a class in Java. While it is bad practice to use the name of a class as your local variable name, this is legal. ex:- int Integer = 0;
+
+It is not legal to use a reserved word as a variable name. All of the primitives including int are reserved words. ex:- Integer int = 0;(does not compile).
+
 ## Practice Questions before exam
 
 - Given the following application, fill in the missing values in the table starting from the top and going downward.
@@ -61,3 +73,14 @@ Java does not allow declaring different types as part of the same declaration. e
         float f1 = 5f;     // p3
         float f2 = 5.0;    // p4
     ```
+- Which of the following can fill in the blanks to make this code compile?
+    ```java
+         ______ d = new ______ (1_000_000_.00);
+    ```
+  - Options:
+    - double,
+    - doubledouble,
+    - DoubleDouble,
+    - double
+    - None of the above
+
