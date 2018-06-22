@@ -14,6 +14,10 @@ local variables defined within methods cannot have access modifiers such as publ
 
 Object-oriented programming is the technique of structuring data into objects, which may contain data and a set of actions that operate on the data.
 
+Garbage collection can happen at any time while an application is running, especially if the available memory suddenly becomes low.
+
+Java does not allow declaring different types as part of the same declaration. ex :- double num1, int num2 = 0;
+
 ## Practice Questions before exam
 
 - Given the following application, fill in the missing values in the table starting from the top and going downward.
@@ -40,13 +44,20 @@ Object-oriented programming is the technique of structuring data into objects, w
     ```Java
         package sports;
         public class Bicycle {
-        String color = "red";
-        private void printColor(String color) {
-            color = "purple";
-            System.out.print(color);
+            String color = "red";
+            private void printColor(String color) {
+                color = "purple";
+                System.out.print(color);
+            }
+            public static void main(String[] rider) {
+                new Bicycle().printColor("blue");
+            }
         }
-        public static void main(String[] rider) {
-            new Bicycle().printColor("blue");
-        }
-        }
+    ```
+- Which is the first line to trigger a compiler error?
+    ```java
+        double d1 = 5f;    // p1
+        double d2 = 5.0;   // p2
+        float f1 = 5f;     // p3
+        float f2 = 5.0;    // p4
     ```
