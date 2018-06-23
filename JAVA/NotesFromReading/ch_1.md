@@ -122,3 +122,22 @@ Remember that garbage collection is not guaranteed to run on demand. It may does
     - Two
     - Three
     - Four
+- What is the output of the following application?
+    ```java
+        package voting;
+        public class Election {
+        public void calculateResult(Integer candidateA, Integer candidateB) {
+            boolean process = candidateA == null || candidateA.intValue() < 10;
+            boolean value = candidateA && candidateB;
+            System.out.print(process || value);
+        }
+        public static void main(String[] unused) {
+            new Election().calculateResult(null,203);
+        }
+      }
+    ```
+  - Options:
+    - true
+    - false
+    - The code does not compile.
+    - The code compiles but throws a NullPointerException on line 3 at runtime.
