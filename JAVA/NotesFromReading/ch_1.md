@@ -32,6 +32,10 @@ It is not legal to use a reserved word as a variable name. All of the primitives
 
 Instance variable of type int, long, and short are initialised to zero.
 
+The wrapper class for int is **Integer** and the wrapper class for char is **Character**. All other primitives have the same name as of primitive.
+
+Underscores are allowed between any two digits in a numeric literal. Underscores are not allowed adjacent to a decimal point.
+
 ## Practice Questions before exam
 
 - Given the following application, fill in the missing values in the table starting from the top and going downward.
