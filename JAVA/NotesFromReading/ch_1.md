@@ -36,6 +36,10 @@ The wrapper class for int is **Integer** and the wrapper class for char is **Cha
 
 Underscores are allowed between any two digits in a numeric literal. Underscores are not allowed adjacent to a decimal point.
 
+The parseInt() methods return a primitive. The valueOf() methods return a wrapper class object.
+
+Remember that garbage collection is not guaranteed to run on demand. It may doesn’t run at all.
+
 ## Practice Questions before exam
 
 - Given the following application, fill in the missing values in the table starting from the top and going downward.
