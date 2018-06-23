@@ -40,6 +40,10 @@ The parseInt() methods return a primitive. The valueOf() methods return a wrappe
 
 Remember that garbage collection is not guaranteed to run on demand. It may doesn’t run at all.
 
+Java does not automatically convert integers to boolean values for use in if-then statements.
+
+Ternary operations require both right-hand expressions to be of compatible data types.
+
 ## Practice Questions before exam
 
 - Given the following application, fill in the missing values in the table starting from the top and going downward.
@@ -141,3 +145,12 @@ Remember that garbage collection is not guaranteed to run on demand. It may does
     - false
     - The code does not compile.
     - The code compiles but throws a NullPointerException on line 3 at runtime.
+- What is the output of the following application?
+    ```java
+        package schedule;
+        public class PrintWeek {
+            public static final void main(String[] days) {
+                System.out.print(5 + 6 + "7" + 8 + 9);
+            }
+        }
+    ```
