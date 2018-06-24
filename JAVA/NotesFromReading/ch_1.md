@@ -44,6 +44,10 @@ Java does not automatically convert integers to boolean values for use in if-the
 
 Ternary operations require both right-hand expressions to be of compatible data types.
 
+The & and && (AND) operators are not interchangeable, as the conjunctive & operator always evaluates both sides of the expression, while the conditional conjunctive && operator only evaluates the right-hand side of the expression if the left side is determined to be true. This is why conditional operators are often referred to as short-circuit operators, skipping the right-hand side expression at runtime.
+
+The XOR ^ operator evaluates to true if p and q differ and false if they are the same, for (p ^ q).
+
 ## Practice Questions before exam
 
 - Given the following application, fill in the missing values in the table starting from the top and going downward.
@@ -154,3 +158,10 @@ Ternary operations require both right-hand expressions to be of compatible data 
             }
         }
     ```
+- For a given non-null String myTestVariable, what is the resulting value of executing the statement myTestVariable.equals(null)?
+  - Options:
+    - true
+    - false
+    - The statement does not compile.
+    - The statement compiles but will produce an exception when used at runtime.
+- What is the value of 12 + 6 * 3 % (1 + 1) in Java?
