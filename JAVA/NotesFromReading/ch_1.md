@@ -48,6 +48,12 @@ The & and && (AND) operators are not interchangeable, as the conjunctive & opera
 
 The XOR ^ operator evaluates to true if p and q differ and false if they are the same, for (p ^ q).
 
+The value of a case statement must be constant, a literal value, or final variable.
+
+Barring any JVM limitations, a switch statement can have any number of case statements (including none) but at most one default statement.
+
+Shorter strings sort before longer strings when all the other characters are the same, making Option B the answer.
+
 ## Practice Questions before exam
 
 - Given the following application, fill in the missing values in the table starting from the top and going downward.
