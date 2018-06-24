@@ -54,6 +54,10 @@ Barring any JVM limitations, a switch statement can have any number of case stat
 
 Shorter strings sort before longer strings when all the other characters are the same, making Option B the answer.
 
+When using an array initializer, you are not allowed to specify the size separately. The size is inferred from the number of elements listed.
+
+Three dots in a row is a varargs parameter. While varargs is used like an array from within the method, **it can only be used as a method parameter**.
+
 ## Practice Questions before exam
 
 - Given the following application, fill in the missing values in the table starting from the top and going downward.
@@ -171,3 +175,21 @@ Shorter strings sort before longer strings when all the other characters are the
     - The statement does not compile.
     - The statement compiles but will produce an exception when used at runtime.
 - What is the value of 12 + 6 * 3 % (1 + 1) in Java?
+- What is the result of running the following program?
+    ```java
+        package fun;
+        public class Sudoku {
+            static int[][] game = new int[6][6];
+            public static void main(String[] args) {
+                game[3][3] = 6;
+                Object[] obj = game;
+                obj[3] = "X";
+                System.out.println(game[3][3]);
+            }
+        }
+    ```
+    - Options:
+      - X
+      - The code does not compile.
+      - The code compiles but throws a NullPointerException at runtime.
+      - The code compiles but throws a different exception at runtime.
