@@ -58,6 +58,10 @@ When using an array initializer, you are not allowed to specify the size separat
 
 Three dots in a row is a varargs parameter. While varargs is used like an array from within the method, **it can only be used as a method parameter**.
 
+Arrays are indexed using numbers, not strings
+
+Sorting an empty array is valid and results in an empty array. Java requires having a sorted array before calling binarySearch(). You do not have to call Arrays.sort to perform the sort though. Array can be already sorted.
+
 ## Practice Questions before exam
 
 - Given the following application, fill in the missing values in the table starting from the top and going downward.
@@ -193,3 +197,34 @@ Three dots in a row is a varargs parameter. While varargs is used like an array 
       - The code does not compile.
       - The code compiles but throws a NullPointerException at runtime.
       - The code compiles but throws a different exception at runtime.
+- What does the following output?
+    ```java
+        String[] os = new String[] { "Mac", "Linux", "Windows" };
+        Arrays.sort(os);
+        System.out.println(Arrays.binarySearch(os, "RedHat"));
+    ```
+- How many dimensions does the array reference moreBools allow?
+    ```java
+        boolean[][] bools[], moreBools;
+    ```
+- What is the result of the following when called as java counting.Binary?
+    ```java
+    package counting;
+    import java.util.*;
+    public class Binary {
+        public static void main(String... args) {
+            Arrays.sort(args);
+            System.out.println(Arrays.toString(args));
+        }
+    }
+    ```
+  - Options:
+    - null[]
+    - The code does not compile.
+    - The code compiles but throws an exception at runtime.
+    - What does the following output?
+- Which of the following statements are true?
+    - You can always change a method signature from call(String[] arg) to call(String... arg) without causing a compiler error in     the  calling code.
+    - You can always change a method signature from call(String... arg) to call(String[] arg) without causing a compiler error in     the  existing code.
+    
+    > Ans: From within a method, an array parameter and a varargs parameter are treated the same. From the caller, an array parameter is more restrictive. Both types can receive an array. However, only a varargs parameter is allowed to automatically turn individual parameters into an array. Therefore, statement I is correct
