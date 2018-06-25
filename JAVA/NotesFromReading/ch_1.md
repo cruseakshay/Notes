@@ -95,7 +95,7 @@ Sorting an empty array is valid and results in an empty array. Java requires hav
         }
     }
     ```
-    options:
+  - options:
     - It does not compile.
     - It compiles but throws an exception at runtime.
     - It compiles and outputs 5.
@@ -226,5 +226,4 @@ Sorting an empty array is valid and results in an empty array. Java requires hav
 - Which of the following statements are true?
     - You can always change a method signature from call(String[] arg) to call(String... arg) without causing a compiler error in     the  calling code.
     - You can always change a method signature from call(String... arg) to call(String[] arg) without causing a compiler error in     the  existing code.
-    
     > Ans: From within a method, an array parameter and a varargs parameter are treated the same. From the caller, an array parameter is more restrictive. Both types can receive an array. However, only a varargs parameter is allowed to automatically turn individual parameters into an array. Therefore, statement I is correct
