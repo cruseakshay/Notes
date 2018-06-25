@@ -62,6 +62,12 @@ Arrays are indexed using numbers, not strings
 
 Sorting an empty array is valid and results in an empty array. Java requires having a sorted array before calling binarySearch(). You do not have to call Arrays.sort to perform the sort though. Array can be already sorted.
 
+## Using loop constructs
+
+The continue keyword is used to end the loop iteration immediately and resume execution at the next iteration.
+
+for (segmentA; segmentB; segmentC) {}. A for loop is allowed to have all three segments left blank.
+
 ## Practice Questions before exam
 
 - Given the following application, fill in the missing values in the table starting from the top and going downward.
