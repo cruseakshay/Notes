@@ -72,6 +72,8 @@ It is not possible to create an infinite loop using a for-each because it simply
 
 The for-each loop uses a variable and colon as the syntax. eg - for (String f : fun) System.out.println(f);
 
+Java reserved keywords cannot be used as labels in looping constructs.
+
 ## Practice Questions before exam
 
 - Given the following application, fill in the missing values in the table starting from the top and going downward.
