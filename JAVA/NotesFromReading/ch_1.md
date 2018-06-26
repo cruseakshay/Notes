@@ -68,6 +68,10 @@ The continue keyword is used to end the loop iteration immediately and resume ex
 
 for (segmentA; segmentB; segmentC) {}. A for loop is allowed to have all three segments left blank.
 
+It is not possible to create an infinite loop using a for-each because it simply loops through an array or ArrayList.
+
+The for-each loop uses a variable and colon as the syntax. eg - for (String f : fun) System.out.println(f);
+
 ## Practice Questions before exam
 
 - Given the following application, fill in the missing values in the table starting from the top and going downward.
