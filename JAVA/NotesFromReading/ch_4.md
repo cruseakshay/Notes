@@ -52,3 +52,5 @@ howMany(true, new boolean[]{true, true}); //valid
 ```java
 caller((e) -> {String e = ""; "poof"}); // not valid as e is redefined.
 ```
+
+## Questions from practice for revision.
