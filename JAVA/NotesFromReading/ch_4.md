@@ -53,4 +53,50 @@ howMany(true, new boolean[]{true, true}); //valid
 caller((e) -> {String e = ""; "poof"}); // not valid as e is redefined.
 ```
 
+**Java uses pass-by-value to copy primitives and references of objects into a method. That means changes to the primitive value or reference in the method are not carried to the calling method. That said, the data within an object can change, just not the original reference itself.**
+
 ## Questions from practice for revision
+
+- What is the output of the following application?
+    ```java
+        package stocks;
+        public class Bond {
+            private static int price = 5;
+            public boolean sell() {
+                if(price<10) {
+                    price++;
+                    return true;
+                } else if(price>=10) {
+                    return false;
+                }
+            }
+            public static void main(String[] cash) {
+                new Bond().sell();
+                new Bond().sell();
+                new Bond().sell();
+                System.out.print(price);
+            }
+        }
+    ```
+  - Option
+    - 5
+    - 6
+    - 8
+    - The code does not compile.
+- What is true about the following program?
+    ```java
+        package figures;
+        public class Dolls {
+            public void nested() { nested(2,true); } // g1
+            public int nested(int level, boolean height) { return nested(level); }
+            public int nested(int level) { return level+1; }; // g2
+            public static void main(String[] outOfTheBox) {
+                System.out.print(new Dolls().nested());
+            }
+        }
+    ```
+  - Options:
+    - It compiles successfully and prints 3 at runtime.
+    - It does not compile because of line g1.
+    - It does not compile because of line g2.
+    - It does not compile for some other reason.
