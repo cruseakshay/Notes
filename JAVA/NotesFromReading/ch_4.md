@@ -59,6 +59,8 @@ A constructor can only call this() or super() on the first line of the construct
 
 If a class extends a parent class that does not include a no-argument constructor, the default no-argument constructor cannot be automatically inserted into the child class by the compiler. Instead, the developer must explicitly declare at least one constructor and explicitly define how the call to the parent constructor is made.
 
+A method may contain at most one varargs parameter, and it must appear as the last argument in the list. 
+
 ## Questions from practice for revision
 
 - What is the output of the following application?
@@ -130,3 +132,24 @@ If a class extends a parent class that does not include a no-argument constructo
     - public and setStuff
     - None of the above
 
+- Given the following application, which diagram best represents the state of the mySkier, mySpeed, and myName variables in the main() method after the call to the slalom() method?
+    ```java
+    package slopes;
+    public class Ski {
+        private int age = 18;
+        private static void slalom(Ski racer, int[] speed, String name) {
+            racer.age = 18;
+            name = "Wendy";
+            speed = new int[1];
+            speed[0] = 11;
+            racer = null;
+        }
+        public static void main(String... mountain) {
+            final Ski mySkier = new Ski();
+            mySkier.age = 16;
+            final int[] mySpeed = new int[1];
+            final String myName = "Rosie";
+            slalom(mySkier,mySpeed,myName);
+        }
+    }
+    ```
