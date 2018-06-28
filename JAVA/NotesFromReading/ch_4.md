@@ -59,7 +59,10 @@ A constructor can only call this() or super() on the first line of the construct
 
 If a class extends a parent class that does not include a no-argument constructor, the default no-argument constructor cannot be automatically inserted into the child class by the compiler. Instead, the developer must explicitly declare at least one constructor and explicitly define how the call to the parent constructor is made.
 
-A method may contain at most one varargs parameter, and it must appear as the last argument in the list. 
+A method may contain at most one varargs parameter, and it must appear as the last argument in the list.
+
+*A change made to the data within an object passed to a method is reflected in the calling method.*
+
 
 ## Questions from practice for revision
 
@@ -150,6 +153,20 @@ A method may contain at most one varargs parameter, and it must appear as the la
             final int[] mySpeed = new int[1];
             final String myName = "Rosie";
             slalom(mySkier,mySpeed,myName);
+        }
+    }
+    ```
+
+- Due to which line code won't compile ?
+    ```java
+    package sports;
+    public class Football {
+        public static Long getScore(Long timeRemaining) {
+            return 2*timeRemaining; // m1
+        }
+        public static void main(String[] refs) {
+            final int startTime = 4;
+            System.out.print(getScore(startTime)); // m2
         }
     }
     ```
