@@ -169,3 +169,11 @@ A method may contain at most one varargs parameter, and it must appear as the la
         }
     }
     ```
+
+- Imagine you are working with another team to build an application. You are developing code that uses a class that the other team has not finished writing yet. Which element of Java would best facilitate this development, allowing easy integration once the other team’s code is complete?
+  - An abstract class
+  - An interface
+  - static methods
+  - An access modifier
+> For this problem, an interface is the best choice. If the two teams agree on a common interface, one developer can write code that uses the interface, while another developer writes code that implements the interface. Assuming neither team changes the interface, the code can be easily integrated once both teams are done.
+
