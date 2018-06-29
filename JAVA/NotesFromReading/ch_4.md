@@ -177,3 +177,44 @@ A method may contain at most one varargs parameter, and it must appear as the la
   - An access modifier
 > For this problem, an interface is the best choice. If the two teams agree on a common interface, one developer can write code that uses the interface, while another developer writes code that implements the interface. Assuming neither team changes the interface, the code can be easily integrated once both teams are done.
 
+- What is the output of the following application?
+    ```java
+    package vehicles;
+    class Automobile {
+    private final String drive() { return "Driving vehicle"; }
+    }
+    class Car extends Automobile {
+    protected String drive() { return "Driving car"; }
+    }
+    public class ElectricCar extends Car {
+    public final String drive() { return "Driving electric car"; }
+    public static void main(String[] wheels) {
+        final Car car = new ElectricCar();
+        System.out.print(car.drive());
+    }
+    }
+    ```
+
+- What is the output of the following application?
+    ```java
+    package track;
+        interface Run {
+            default void walk() {
+                System.out.print("Walking and running!");
+            }
+        }
+        interface Jog {
+            default void walk() {
+                System.out.print("Walking and jogging!");
+            }
+        }
+        
+        public class Sprint implements Run, Jog {
+            public void walk() {
+                System.out.print("Sprinting!");
+            }
+            public static void main() {
+                new Sprint().walk();
+            }
+        }
+    ```
