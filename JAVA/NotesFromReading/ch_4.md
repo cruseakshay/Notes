@@ -63,7 +63,6 @@ A method may contain at most one varargs parameter, and it must appear as the la
 
 *A change made to the data within an object passed to a method is reflected in the calling method.*
 
-
 ## Questions from practice for revision
 
 - What is the output of the following application?
