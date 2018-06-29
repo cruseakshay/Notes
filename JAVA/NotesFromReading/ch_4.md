@@ -63,6 +63,8 @@ A method may contain at most one varargs parameter, and it must appear as the la
 
 *A change made to the data within an object passed to a method is reflected in the calling method.*
 
+> distinction between reference types and object types ?
+
 ## Questions from practice for revision
 
 - What is the output of the following application?
@@ -218,3 +220,21 @@ A method may contain at most one varargs parameter, and it must appear as the la
             }
         }
     ```
+
+- Given that Short and Integer extend Number, what type can be used to fill in the blank in the class below to allow it to compile?
+    ```java
+    package band; 
+    interface Horn { public Integer play(); }
+    abstract class Woodwind { public Short play() {return 3;} }
+    public final class Saxophone extends Woodwind implements Horn {
+        public  ___________play() {
+            return null;
+        }
+    }
+    ```
+  - Options:
+   - Integer
+   - Short
+   - Number
+   - None of the above
+
