@@ -65,6 +65,29 @@ A method may contain at most one varargs parameter, and it must appear as the la
 
 > distinction between reference types and object types ?
 
+A static method cannot override a non-static method and vice versa.
+
+Only interfaces and abstract classes can include abstract methods.
+
+Java does not allow multiple inheritance, so having one class extend two interfaces that both define the same default method signature leads to a compiler error, unless the class overrides the method.
+
+example:
+```java
+package musical;
+interface SpeakDialogue { default int talk() { return 7; } }
+interface SingMonologue { default int talk() { return 5; } }
+public class Performance implements SpeakDialogue, SingMonologue {
+   public int talk(String... x) {
+      return x.length;
+   }
+   public static void main(String[] notes) {
+      System.out.print(new Performance().talk(notes));
+   }
+}
+```
+
+**In Java, only non-static, non-final, and non-private methods are considered virtual and capable of being overridden in a subclass.**
+
 ## Questions from practice for revision
 
 - What is the output of the following application?
@@ -237,4 +260,26 @@ A method may contain at most one varargs parameter, and it must appear as the la
    - Short
    - Number
    - None of the above
+
+- What is the output of the following application?
+    ```java
+    package sports;
+    abstract class Ball {
+    protected final int size;
+        public Ball(int size) {
+            this.size = size;
+        }
+    }
+    interface Equipment {}
+    public class SoccerBall extends Ball implements Equipment {
+        public SoccerBall() {
+            super(5);
+        }
+        public Ball get() { return this; }
+        public static void main(String[] passes) {
+            Equipment equipment = (Equipment)(Ball)new SoccerBall().get();
+            System.out.print(((SoccerBall)equipment).size);
+        }
+    }
+    ```
 
