@@ -1,5 +1,7 @@
 # Methods and Encapsulation
 
+**Use Java Visualizer** or **python tutor** to develop more understanding.
+
 - Only the access modifier or optional specifiers are allowed before the return type.
 - optional specifiers are allowed in any order.
 - default access does not require a modifier
