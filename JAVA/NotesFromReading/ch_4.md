@@ -90,6 +90,10 @@ public class Performance implements SpeakDialogue, SingMonologue {
 
 **In Java, only non-static, non-final, and non-private methods are considered virtual and capable of being overridden in a subclass.**
 
+The *object type* relates to the attributes of the object that exist in memory, while the *reference type* dictates how the object is able to be used by the caller.
+
+The primary motivation for adding default interface methods to Java was for backward compatibility. These methods allow developers to update older classes with a newer version of an interface without breaking functionality in the existing classes.
+
 ## Questions from practice for revision
 
 - What is the output of the following application?
