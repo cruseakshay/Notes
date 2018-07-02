@@ -16,6 +16,16 @@ The class RuntimeException extends Exception, and both Exception and Error exten
 
 While Exception and RuntimeException are commonly caught in Java applications, it is recommended Error not be caught. An Error often indicates a failure of the JVM which cannot be recovered from. 
 
+- **List of unchecked exceptions**
+  - ClassCastException
+  - ArrayIndexOutOfBoundsException
+  - IllegalArgumentException
+
+- **List of checked exceptions**
+  - IOException
+
+ClassCastException, ArrayIndexOutOfBoundsException, and IllegalArgumentException are unchecked exceptions and can be thrown at any time. IOException is a checked exception that must be handled or declared when used.
+
 ## Questions from practice for revision
 
 - What is the output of the following application?
