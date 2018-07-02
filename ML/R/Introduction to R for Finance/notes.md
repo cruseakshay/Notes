@@ -3,7 +3,8 @@
 ## The Basics
 
 1. financial returns: return multiplier
-multiplier = 1 + (return / 100)
+
+    multiplier = 1 + (return / 100)
 
 ### Readings
 
