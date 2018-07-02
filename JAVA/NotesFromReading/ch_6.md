@@ -13,3 +13,25 @@ A try block must include either a catch or finally block, or both.
 The correct order of blocks is try, catch, and finally.
 
 The class RuntimeException extends Exception, and both Exception and Error extend Throwable. Finally, like all Java classes, they all inherit from Object. Notice that Error does not extend Exception, even though we often refer to these generally as exceptions.
+
+While Exception and RuntimeException are commonly caught in Java applications, it is recommended Error not be caught. An Error often indicates a failure of the JVM which cannot be recovered from. 
+
+## Questions from practice for revision
+
+- What is the output of the following application?
+    ```java
+    package game;
+    public class Baseball {
+        public static void main(String... teams) {
+            try {
+                int score = 1;
+                System.out.print(score++);
+            } catch (Throwable t) {
+                System.out.print(score++);
+            } finally {
+                System.out.print(score++);
+            }
+            System.out.print(score++);
+        }
+    }
+    ```
