@@ -32,6 +32,8 @@ While Exception and RuntimeException are commonly caught in Java applications, i
   - Exception
   - IOException
 
+![Class diagram for Exception](https://www.safaribooksonline.com/library/view/oca-ocp/9781119363392/images/c08uf004.jpg)
+
 ClassCastException, ArrayIndexOutOfBoundsException, and IllegalArgumentException are unchecked exceptions and can be thrown at any time. IOException is a checked exception that must be handled or declared when used.
 
 The *throws* keyword is used in method declarations, while the *throw* keyword is used to throw an exception to the surrounding process.
@@ -51,6 +53,8 @@ A NoClassDefFoundError occurs when code available at compile time is not availab
 A ClassCastException occurs when an object is cast to an incompatible reference type.
 
 An IllegalArgumentException occurs when invalid parameters are sent to a method.
+
+If both the catch and finally blocks throw an exception, the one from the finally block is propagated to the caller, with the one from the catch block being dropped,due to the fact that only one exception can be thrown to the caller.
 
 ## Questions from practice for revision
 
@@ -91,3 +95,25 @@ An IllegalArgumentException occurs when invalid parameters are sent to a method.
     }
     ```
 > The code does not compile due to the call to compute() in the main() method. Even though the compute() method only throws an unchecked exception, its method declaration includes the Exception class, which is a checked exception. For this reason, the checked exception must be handled or declared in the main() method in which it is called. *While there is a try-catch block* in the main() method, it is only for the unchecked NullPointerException. Since Exception is not a subclass of NullPointerException, the checked Exception is not properly handled or declared and the code does not compile, making Option C the correct answer.
+
+- In the following application, the values of street and city have been omitted. Which one of the following is a possible output of   executing this class?
+  1. 350 5th Ave - New York
+  2. Posted:350 5th Ave - New York
+  ```java
+   package registration;
+   public class Address {
+        public String getAddress(String street, String city) {
+            try {
+                return street.toString() + " : " + city.toString();
+            } finally {
+                System.out.print("Posted:");
+            }
+        }
+        public static void main(String[] form) {
+            String street = // value omitted
+            String city = // value omitted
+            System.out.print(new Address().getAddress(street,city));
+        }
+    }
+  ```
+  
