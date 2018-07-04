@@ -74,19 +74,19 @@ Only interfaces and abstract classes can include abstract methods.
 Java does not allow multiple inheritance, so having one class extend two interfaces that both define the same default method signature leads to a compiler error, unless the class overrides the method.
 
 example:
-```java
-package musical;
-interface SpeakDialogue { default int talk() { return 7; } }
-interface SingMonologue { default int talk() { return 5; } }
-public class Performance implements SpeakDialogue, SingMonologue {
-   public int talk(String... x) {
-      return x.length;
-   }
-   public static void main(String[] notes) {
-      System.out.print(new Performance().talk(notes));
-   }
-}
-```
+    ```java
+    package musical;
+    interface SpeakDialogue { default int talk() { return 7; } }
+    interface SingMonologue { default int talk() { return 5; } }
+    public class Performance implements SpeakDialogue, SingMonologue {
+    public int talk(String... x) {
+        return x.length;
+    }
+    public static void main(String[] notes) {
+        System.out.print(new Performance().talk(notes));
+    }
+    }
+    ```
 
 **In Java, only non-static, non-final, and non-private methods are considered virtual and capable of being overridden in a subclass.**
 
@@ -239,7 +239,6 @@ The primary motivation for adding default interface methods to Java was for back
                 System.out.print("Walking and jogging!");
             }
         }
-        
         public class Sprint implements Run, Jog {
             public void walk() {
                 System.out.print("Sprinting!");
@@ -252,7 +251,7 @@ The primary motivation for adding default interface methods to Java was for back
 
 - Given that Short and Integer extend Number, what type can be used to fill in the blank in the class below to allow it to compile?
     ```java
-    package band; 
+    package band;
     interface Horn { public Integer play(); }
     abstract class Woodwind { public Short play() {return 3;} }
     public final class Saxophone extends Woodwind implements Horn {
@@ -261,11 +260,11 @@ The primary motivation for adding default interface methods to Java was for back
         }
     }
     ```
-  - Options:
-   - Integer
-   - Short
-   - Number
-   - None of the above
+- Options:
+  - Integer
+  - Short
+  - Number
+  - None of the above
 
 - What is the output of the following application?
     ```java
@@ -288,4 +287,3 @@ The primary motivation for adding default interface methods to Java was for back
         }
     }
     ```
-
