@@ -18,11 +18,11 @@ A try statement requires a catch or a finally block. Without one of them, the co
 
 The class RuntimeException extends Exception, and both Exception and Error extend Throwable. Finally, like all Java classes, they all inherit from Object. Notice that Error does not extend Exception, even though we often refer to these generally as exceptions.
 
-While Exception and RuntimeException are commonly caught in Java applications, it is recommended Error not be caught. An Error often indicates a failure of the JVM which cannot be recovered from. 
+While Exception and RuntimeException are commonly caught in Java applications, it is recommended Error not be caught. An Error often indicates a failure of the JVM which cannot be recovered from.
 
 - **List of unchecked exceptions**
   - RuntimeException
-    - NullPointerException 
+    - NullPointerException
     - ArithmeticException
   - ClassCastException
   - ArrayIndexOutOfBoundsException
@@ -91,4 +91,3 @@ An IllegalArgumentException occurs when invalid parameters are sent to a method.
     }
     ```
 > The code does not compile due to the call to compute() in the main() method. Even though the compute() method only throws an unchecked exception, its method declaration includes the Exception class, which is a checked exception. For this reason, the checked exception must be handled or declared in the main() method in which it is called. *While there is a try-catch block* in the main() method, it is only for the unchecked NullPointerException. Since Exception is not a subclass of NullPointerException, the checked Exception is not properly handled or declared and the code does not compile, making Option C the correct answer.
-
