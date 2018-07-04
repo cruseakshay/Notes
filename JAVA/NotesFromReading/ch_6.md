@@ -56,6 +56,8 @@ An IllegalArgumentException occurs when invalid parameters are sent to a method.
 
 If both the catch and finally blocks throw an exception, the one from the finally block is propagated to the caller, with the one from the catch block being dropped,due to the fact that only one exception can be thrown to the caller.
 
+An overridden method must not throw any new or broader checked exceptions than the method it inherits.
+
 ## Questions from practice for revision
 
 - What is the output of the following application?
