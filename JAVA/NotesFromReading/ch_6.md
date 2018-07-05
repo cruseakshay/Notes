@@ -145,3 +145,27 @@ An overridden method must not throw any new or broader checked exceptions than t
     2. The application compiles but a stack trace is printed at runtime.
     3. The code does not compile because of line z1.
     4. The code does not compile because of line z2.
+
+- What is the output of the following application?
+    ```java
+    package bed;
+    public class Sleep {
+    public static void snore() {
+        try {
+            String sheep[] = new String[3];
+            System.out.print(sheep[3]);
+        } catch (RuntimeException e) {
+            System.out.print("Awake!");
+        } finally {
+            throw new Exception();  // x1
+        }
+    }
+    public static void main(String... sheep) {  // x2
+        new Sleep().snore();  // x3
+    }
+    }
+    ```
+    1. Awake!, followed by a stack trace
+    2. The code does not compile because of line x1.
+    3. The code does not compile because of line x2.
+    4. The code does not compile because of line x3
