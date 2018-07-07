@@ -56,3 +56,13 @@ Exmaple:
   - Create and manipulate calendar data using classes from java.time.LocalDateTime,  java.time.LocalDate, java.time.LocalTime, -  java.time.format.DateTimeFormatter, java.time.Period 
   - Declare and use an ArrayList of a given type
   - Write a simple Lambda expression that consumes a Lambda Predicate expression
+
+- StringBuilder does not support multiple threads.
+- StringBuffer supports multiple threads.
+- Both String and StringBuilder support languages and encodings.
+- The primary reason to use StringBuilder over String is, String often creates a new object each time you call certain methods on the object like concat(). StringBuilder optimizes operations like append() because it is mutable.
+- A string pool exists for String reuse. A String is **final** and **immutable**.
+
+
+- List is an interface and not a class so It cannot be instantiated.
+- An ArrayList does not automatically sort the elements. It simply remembers them in order. Since Java uses zero-based indexes.
