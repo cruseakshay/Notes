@@ -49,3 +49,10 @@ Exmaple:
 - Period does not allow chaining.Only the last Period method called counts.
 
 ## Added notes from OCA-OCP practice
+
+- Points to consider
+  - Manipulate data using the StringBuilder class and its methods
+  - Create and manipulate Strings
+  - Create and manipulate calendar data using classes from java.time.LocalDateTime,  java.time.LocalDate, java.time.LocalTime, -  java.time.format.DateTimeFormatter, java.time.Period 
+  - Declare and use an ArrayList of a given type
+  - Write a simple Lambda expression that consumes a Lambda Predicate expression
