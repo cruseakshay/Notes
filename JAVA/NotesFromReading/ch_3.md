@@ -48,7 +48,7 @@ Exmaple:
 - dates are immutable.
 - Period does not allow chaining.Only the last Period method called counts.
 
-## Added notes from OCA-OCP practice
+## Notes from OCA-OCP practice
 
 - Points to consider
   - Manipulate data using the StringBuilder class and its methods
@@ -63,6 +63,15 @@ Exmaple:
 - The primary reason to use StringBuilder over String is, String often creates a new object each time you call certain methods on the object like concat(). StringBuilder optimizes operations like append() because it is mutable.
 - A string pool exists for String reuse. A String is **final** and **immutable**.
 
-
 - List is an interface and not a class so It cannot be instantiated.
 - An ArrayList does not automatically sort the elements. It simply remembers them in order. Since Java uses zero-based indexes.
+
+the main benefit of a lambda expression, It allows you to write code that has the execution deferred.
+
+## Questions for practice
+
+- what is the output of the following ?
+  ```java
+    StringBuilder sb = new StringBuilder("radical").insert(sb.length(), "robots");
+    System.out.println(sb);
+  ```
