@@ -20,17 +20,21 @@ It is important to remember that a vector can only be composed of one data type.
     Correlation is a common metric in finance.
 
     [cor()](https://www.rdocumentation.org/packages/stats/versions/3.3.1/topics/cor)
-    
+
 The hierarchy for coercion is:
 logical < integer < numeric < character
 
 *names()* function to add names to vector values.
 
-Vectors
+- Vectors
+  - vector subsetting
 
 - Matrix
   - [cbind()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/cbind) and [rbind()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/cbind) (column bind and row bind respectively).
+  - matrix subsetting
 
+- dataframe
+  - [data.frame()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/data.frame)
 ### Readings
 
 1. Python for Finance Analyze Big Financial Data By Yves Hilpisch
