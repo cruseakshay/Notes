@@ -21,6 +21,14 @@ It is important to remember that a vector can only be composed of one data type.
 
     [cor()](https://www.rdocumentation.org/packages/stats/versions/3.3.1/topics/cor)
 
+4. Time value of Money
+  - Present value and Future value
+
+  If you expect a cash flow of $100 to be received 1 year from now, what is the present value of that cash flow at a 5% interest rate? 
+
+  To calculate this, you discount the cash flow to get it in terms of today's dollars. The general formula for this is:
+
+  present_value <- cash_flow * (1 + interest / 100) ^ -year
 The hierarchy for coercion is:
 logical < integer < numeric < character
 
@@ -41,6 +49,7 @@ logical < integer < numeric < character
   - [colnames()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/row%2Bcolnames)
   - [rownames()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/row%2Bcolnames)
   - delete a column by assigning NULL. ``` cash$col_name <- NULL ```
+  - [subset()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/subset)
 ### Readings
 
 1. Python for Finance Analyze Big Financial Data By Yves Hilpisch
