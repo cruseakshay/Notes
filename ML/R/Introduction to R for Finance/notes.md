@@ -40,7 +40,7 @@ logical < integer < numeric < character
   - [str()](https://www.rdocumentation.org/packages/utils/versions/3.3.2/topics/str)
   - [colnames()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/row%2Bcolnames)
   - [rownames()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/row%2Bcolnames)
-  
+  - delete a column by assigning NULL. ``` cash$col_name <- NULL ```
 ### Readings
 
 1. Python for Finance Analyze Big Financial Data By Yves Hilpisch
