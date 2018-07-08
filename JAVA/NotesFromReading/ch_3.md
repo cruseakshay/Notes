@@ -68,7 +68,15 @@ Exmaple:
 
 - the main benefit of a lambda expression, It allows you to write code that has the execution deferred.
 
-- The <> is known as the diamond operator.
+- The <> is known as the diamond operator. 
+
+- The type in the lambda must match the generic declared on the Predicate. While it is common for a Predicate to have a generic type, it is not required. it is treated like a Predicate of type Object if the generic type is missing.
+
+- LocalDateTime and LocalTime, both include the time elements. LocalDate only includes the date portion and not the time portion.
+
+- Java 8 date and time classes are immutable.
+
+- In Java, most things use zero-based indexes, including arrays and a String. Months are an exception to this convention starting     Java 8.
 
 ## Questions for practice
 
