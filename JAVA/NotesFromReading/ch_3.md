@@ -66,7 +66,9 @@ Exmaple:
 - List is an interface and not a class so It cannot be instantiated.
 - An ArrayList does not automatically sort the elements. It simply remembers them in order. Since Java uses zero-based indexes.
 
-the main benefit of a lambda expression, It allows you to write code that has the execution deferred.
+- the main benefit of a lambda expression, It allows you to write code that has the execution deferred.
+
+- The <> is known as the diamond operator.
 
 ## Questions for practice
 
