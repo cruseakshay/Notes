@@ -35,6 +35,12 @@ logical < integer < numeric < character
 
 - dataframe
   - [data.frame()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/data.frame)
+  - [head()](https://www.rdocumentation.org/packages/utils/versions/3.3.2/topics/head)
+  - [tail()](https://www.rdocumentation.org/packages/utils/versions/3.3.2/topics/head)
+  - [str()](https://www.rdocumentation.org/packages/utils/versions/3.3.2/topics/str)
+  - [colnames()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/row%2Bcolnames)
+  - [rownames()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/row%2Bcolnames)
+  
 ### Readings
 
 1. Python for Finance Analyze Big Financial Data By Yves Hilpisch
