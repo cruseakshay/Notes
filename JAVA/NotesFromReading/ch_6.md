@@ -101,7 +101,8 @@ An overridden method must not throw any new or broader checked exceptions than t
 - In the following application, the values of street and city have been omitted. Which one of the following is a possible output of   executing this class?
   1. 350 5th Ave - New York
   2. Posted:350 5th Ave - New York
-  ```java
+
+```java
    package registration;
    public class Address {
         public String getAddress(String street, String city) {
@@ -117,5 +118,54 @@ An overridden method must not throw any new or broader checked exceptions than t
             System.out.print(new Address().getAddress(street,city));
         }
     }
-  ```
-  
+```
+
+- Given that FileNotFoundException is a subclass of IOException, what is the output of the following application?
+    ```java
+    package storage;
+    import java.io.*;
+    public class Backup {
+    public void performBackup() {
+        try {
+            throw new IOException("Disk not found");
+        } catch (Exception e) {
+            try {
+                throw new FileNotFoundException("File not found");
+            } catch (FileNotFoundException e) {  // z1
+                System.out.print("Failed");
+            }
+        }
+    }
+    public static void main(String... files) {
+        new Backup().performBackup();  // z2
+    }
+    }
+    ```
+    1. Failed
+    2. The application compiles but a stack trace is printed at runtime.
+    3. The code does not compile because of line z1.
+    4. The code does not compile because of line z2.
+
+- What is the output of the following application?
+    ```java
+    package bed;
+    public class Sleep {
+    public static void snore() {
+        try {
+            String sheep[] = new String[3];
+            System.out.print(sheep[3]);
+        } catch (RuntimeException e) {
+            System.out.print("Awake!");
+        } finally {
+            throw new Exception();  // x1
+        }
+    }
+    public static void main(String... sheep) {  // x2
+        new Sleep().snore();  // x3
+    }
+    }
+    ```
+    1. Awake!, followed by a stack trace
+    2. The code does not compile because of line x1.
+    3. The code does not compile because of line x2.
+    4. The code does not compile because of line x3
