@@ -81,6 +81,9 @@ Exmaple:
 - **Predicate is an interface with one method. The method signature is boolean test(T t).**
 
 - The Period class creates immutable objects and is usually used to add/subtract from a LocalDate or LocalDateTime object. It         allows creating date, week, month, or year periods. Since it cannot be used for time.
+
+- Nanosecond smallest unit you can add to a LocalTime object.
+
 ## Questions for practice
 
 - what is the output of the following ?
