@@ -6,6 +6,7 @@
 
     multiplier = 1 + (return / 100)
 
+2. *weighted average*: The weighted average allows you to calculate your portfolio return over a time period.
 vector Coercesion
 It is important to remember that a vector can only be composed of one data type. This means that you cannot have both a numeric and a character in the same vector. If you attempt to do this, the lower ranking type will be coerced into the higher ranking type.
 
