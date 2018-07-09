@@ -37,6 +37,8 @@ logical < integer < numeric < character
 
 plot() can used to visulaise vectors, matrix, dataframe and factor.
 
+[attributes](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/attributes) of datatypes and also [attr()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/attr).
+
 - Vectors
   - vector subsetting
 
@@ -66,6 +68,23 @@ plot() can used to visulaise vectors, matrix, dataframe and factor.
   - unique() to find unique words
 
 - list
+  - [list()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/list)
+  - lists in R can be used to hold together items of different data types.
+  - names() can be used to name elements of a created list.
+  - To access the elements in the list, use [ ]. This will always return another list.
+  - To pull out the data inside each element of your list, use [[ ]].
+  - If your list is named, you can use the $ operator: This is the same as using [[ ]] to return the inner data.
+  - Adding to a list ``` my_list$dans_movie <- "StaR Wars" ```
+  - Adding to a list ``` c(my_list, dans_movie = "StaR Wars") ```
+  - Removing from a list ``` my_list$dans_movie <- NULL ```
+  - Removing from a list, If your list is not named ``` my_list[1] <- NULL or my_list[[1]] <- NULL ```
+  - [split()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/split)
+  - [unsplit()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/split)
+
+#### Split-Apply-Combine
+
+A common data science problem is to split your data frame by a grouping, apply some transformation to each group, and then recombine those pieces back into one data frame. This is such a common class of problems in R that it has been given the name split-apply-combine.
+
 ### Readings
 
 1. Python for Finance Analyze Big Financial Data By Yves Hilpisch
