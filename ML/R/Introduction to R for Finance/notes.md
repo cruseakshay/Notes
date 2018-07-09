@@ -54,7 +54,7 @@ logical < integer < numeric < character
 
 - factors
   - [factor()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/factor)
-  - levels()
+  - [levels()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/levels)
   - cut() to create factor from Integer vector
 ### Readings
 
