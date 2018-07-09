@@ -54,6 +54,8 @@ plot() can used to visulaise vectors, matrix, dataframe and factor.
   - delete a column by assigning NULL. ``` cash$col_name <- NULL ```
   - [subset()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/subset)
   - **R's default behavior when creating data frames is to convert all characters into factors.**
+  - To get rid of above behaviour ```cash <- data.frame(company, cash_flow, year, stringsAsFactors = FALSE)```.
+
 - factors
   - [factor()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/factor)
   - [levels()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/levels)
@@ -62,6 +64,8 @@ plot() can used to visulaise vectors, matrix, dataframe and factor.
   - [ordered()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/factor)
   - ordered and unordered factors
   - unique() to find unique words
+
+- list
 ### Readings
 
 1. Python for Finance Analyze Big Financial Data By Yves Hilpisch
