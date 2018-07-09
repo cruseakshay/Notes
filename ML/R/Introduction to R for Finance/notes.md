@@ -39,6 +39,8 @@ plot() can used to visulaise vectors, matrix, dataframe and factor.
 
 [attributes](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/attributes) of datatypes and also [attr()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/attr).
 
+``` attributes(list_A) and attr(list_A, which = "names") ```
+
 - Vectors
   - vector subsetting
 
