@@ -55,6 +55,7 @@ logical < integer < numeric < character
 - factors
   - [factor()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/factor)
   - [levels()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/levels)
+  - [summary()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/summary) for tabulating factors.
   - cut() to create factor from Integer vector
 ### Readings
 
