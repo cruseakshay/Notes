@@ -35,6 +35,8 @@ logical < integer < numeric < character
 
 *names()* function to add names to vector values.
 
+plot() can used to visulaise vectors, matrix, dataframe and factor.
+
 - Vectors
   - vector subsetting
 
@@ -51,12 +53,15 @@ logical < integer < numeric < character
   - [rownames()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/row%2Bcolnames)
   - delete a column by assigning NULL. ``` cash$col_name <- NULL ```
   - [subset()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/subset)
-
+  - **R's default behavior when creating data frames is to convert all characters into factors.**
 - factors
   - [factor()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/factor)
   - [levels()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/levels)
   - [summary()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/summary) for tabulating factors.
-  - cut() to create factor from Integer vector
+  - [cut()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/cut) to create factor from Integer vector.
+  - [ordered()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/factor)
+  - ordered and unordered factors
+  - unique() to find unique words
 ### Readings
 
 1. Python for Finance Analyze Big Financial Data By Yves Hilpisch
