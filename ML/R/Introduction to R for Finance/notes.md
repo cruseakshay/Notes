@@ -53,7 +53,9 @@ logical < integer < numeric < character
   - [subset()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/subset)
 
 - factors
-
+  - [factor()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/factor)
+  - levels()
+  - cut() to create factor from Integer vector
 ### Readings
 
 1. Python for Finance Analyze Big Financial Data By Yves Hilpisch
