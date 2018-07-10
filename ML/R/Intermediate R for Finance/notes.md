@@ -6,4 +6,13 @@
   - Date is used for calendar date objects like "2015-01-22". POSIXct is a way to represent datetime objects like "2015-01-22         08:39:40 EST".
   - From char to date using [as.Date()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/as.Date)
   - the format of "yyyy-mm-dd" is known as ISO format (ISO = International Organization for Standardization).
-  - **Internally, dates are stored as the number of days since January 1, 1970, and datetimes are stored as the number of seconds since then.**
+  - **Internally, dates are stored as the number of days since January 1, 1970, and datetimes are stored as the number of seconds     since then.**
+  - format =
+    - %Y: 4-digit year (1982)
+    - %y: 2-digit year (82)
+    - %m: 2-digit month (01)
+    - %d: 2-digit day of the month (13)
+    - %A: weekday (Wednesday)
+    - %a: abbreviated weekday (Wed)
+    - %B: month (January)
+    - %b: abbreviated month (Jan)
