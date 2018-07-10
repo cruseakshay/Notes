@@ -39,3 +39,15 @@
   - <=: Less than or equal to
   - ==: Equality
   - !=: Not equal
+
+Relational operators can be used for  Vectorized operations:
+```R
+apple <- c(120.00, 120.08, 119.97, 121.88)
+datacamp  <- c(118.5, 124.21, 125.20, 120.22)
+
+apple > datacamp
+[1]  TRUE FALSE FALSE  TRUE
+
+apple > 120
+[1] FALSE  TRUE FALSE  TRUE
+```
