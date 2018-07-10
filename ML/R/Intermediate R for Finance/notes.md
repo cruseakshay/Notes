@@ -16,3 +16,15 @@
     - %a: abbreviated weekday (Wed)
     - %B: month (January)
     - %b: abbreviated month (Jan)
+  - you can convert objects that are already dates to differently formatted dates using [format()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/format)
+  - you can find the difference between two dates, in days.
+  - Equivalently, you could use the [difftime()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/difftime)         function to find the time interval instead.
+    ```R
+      difftime(tomorrow, today)
+      Time difference of 1 days
+
+      # With some extra options!
+      difftime(tomorrow, today, units = "secs")
+      Time difference of 86400 secs
+    ```
+    
