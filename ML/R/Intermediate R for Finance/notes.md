@@ -5,4 +5,5 @@
   - R has a lot to offer in terms of dates and times. The two main classes of data for this are Date and POSIXct.
   - Date is used for calendar date objects like "2015-01-22". POSIXct is a way to represent datetime objects like "2015-01-22         08:39:40 EST".
   - From char to date using [as.Date()](https://www.rdocumentation.org/packages/base/versions/3.3.2/topics/as.Date)
-  
+  - the format of "yyyy-mm-dd" is known as ISO format (ISO = International Organization for Standardization).
+  - **Internally, dates are stored as the number of days since January 1, 1970, and datetimes are stored as the number of seconds since then.**
