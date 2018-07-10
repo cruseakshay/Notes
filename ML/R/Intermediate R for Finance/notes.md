@@ -27,4 +27,15 @@
       difftime(tomorrow, today, units = "secs")
       Time difference of 86400 secs
     ```
-    
+  - a few functions that are useful for extracting date components
+    - months() - extract month of the input Date
+    - weekdays() - to extract the day of the week that input date falls on
+    - quarters() - to determine which quarter of the year (Q1-Q4) that input date falls in
+
+- types of relational operators.
+  - \> : Greater than
+  - \>=: Greater than or equal to
+  - < : Less than
+  - <=: Less than or equal to
+  - ==: Equality
+  - !=: Not equal
