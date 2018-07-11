@@ -89,3 +89,14 @@ The function is.na() checks for missing data. refer example below
   }
 ```
 
+**ifelse()**
+A powerful function to know about is ifelse(). It creates an if statement in 1 line of code, and more than that, it works on entire vectors!
+
+```R
+  apple
+  [1] 109.49 109.90 109.11 109.95 111.03 112.12
+
+  ifelse(test = apple > 110, yes = "Buy!", no = "Do nothing!")
+  [1] "Do nothing!" "Do nothing!" "Do nothing!" "Do nothing!" "Buy!"       
+  [6] "Buy!"
+```
