@@ -119,3 +119,26 @@ while (condition) {
     # code goes here
 }
 ```
+
+- for loop
+  ```R
+  for (value in sequence) {
+      # code goes here
+  }
+  ```
+  - Loop over data frame rows
+  ```R
+  for (row in 1:nrow(df)) {
+      # code goes here
+  }
+  ```
+  - Loop over matrix rows
+  ```R
+  # Loop over my_matrix
+  for(row in 1:nrow(my_matrix)) {
+      for(col in 1:ncol(my_matrix)) {
+          print(my_matrix[row, col])
+      }
+  }
+  ```
+- if you just want to skip the current iteration, and continue the loop, you can use the *next* statement.
