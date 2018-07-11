@@ -56,4 +56,8 @@ apple > 120
 - | (Or): A union. a | b is true if either a or b is true.
 - Not operator, Add ! in front of a logical expression, and it will flip that expression from TRUE to FALSE (and vice versa).
 
-The function is.na() checks for missing data.
+The function is.na() checks for missing data. refer example below
+```R
+  subset(df, !is.na(column_name)) # to get rows without missing data
+  subset(df, is.na(column_name))  # to get rows with missing data
+```
