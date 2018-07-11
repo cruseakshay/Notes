@@ -51,7 +51,7 @@ apple > datacamp
 apple > 120
 [1] FALSE  TRUE FALSE  TRUE
 ```
-**For checking multiple relational conditions at once** 
+**Logical Operators: For checking multiple relational conditions at once** 
 - & (And): An intersection. a & b is true only if both a and b are true.
 - | (Or): A union. a | b is true if either a or b is true.
 - Not operator, Add ! in front of a logical expression, and it will flip that expression from TRUE to FALSE (and vice versa).
@@ -61,3 +61,31 @@ The function is.na() checks for missing data. refer example below
   subset(df, !is.na(column_name)) # to get rows without missing data
   subset(df, is.na(column_name))  # to get rows with missing data
 ```
+
+**IF statement**
+```R
+  if(condition) {
+    code
+  }
+```
+
+**IF-ELSE statement**
+```R
+  if(condition) {
+    code if true
+  } else {
+      code if false 
+  }
+```
+
+**IF-ELSEIF-ELSE statement**
+```R
+  if(condition1) {
+    code if condition1 is true
+  } else if(condition2) {
+      code if condition2 is true
+  } else {
+      code if both are false
+  }
+```
+
