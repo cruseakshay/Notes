@@ -51,3 +51,9 @@ apple > datacamp
 apple > 120
 [1] FALSE  TRUE FALSE  TRUE
 ```
+**For checking multiple relational conditions at once** 
+- & (And): An intersection. a & b is true only if both a and b are true.
+- | (Or): A union. a | b is true if either a or b is true.
+- Not operator, Add ! in front of a logical expression, and it will flip that expression from TRUE to FALSE (and vice versa).
+
+The function is.na() checks for missing data.
