@@ -100,3 +100,15 @@ A powerful function to know about is ifelse(). It creates an if statement in 1 l
   [1] "Do nothing!" "Do nothing!" "Do nothing!" "Do nothing!" "Buy!"       
   [6] "Buy!"
 ```
+
+- repeat loop
+This is the simplest loop. You must specify when you want to break out of the loop using *break* keyword. Otherwise it runs for eternity!
+
+```R
+repeat {
+    # code goes here
+    if(condition) {
+        break
+    }
+}
+```
