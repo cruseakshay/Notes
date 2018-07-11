@@ -142,3 +142,13 @@ while (condition) {
   }
   ```
 - if you just want to skip the current iteration, and continue the loop, you can use the *next* statement.
+
+- Functions
+  - for accessing built in documentation ?fun_name
+  - *Optional arguments* are ones that don't have to be set by the user, either because they are given a default value, or because    the function can infer them from the other data you have given it. 
+  - the basic structure of a function:
+    ```R
+      func_name <- function(arguments) {
+        # body
+      }
+    ```
