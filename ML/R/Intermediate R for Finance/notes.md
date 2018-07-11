@@ -169,3 +169,7 @@ while (condition) {
     # Calculate the present value of $1200, at an interest rate of 7%, to be received 3 years from now.
     pv(1200, 7, 3)
     ```
+
+- Packages
+  - for installing in local machine *install.packages("tidyquant")*
+  - for loading in current session *library(tidyquant)*
