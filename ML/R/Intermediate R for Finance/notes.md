@@ -112,3 +112,10 @@ repeat {
     }
 }
 ```
+
+- While loops
+```R
+while (condition) {
+    # code goes here
+}
+```
