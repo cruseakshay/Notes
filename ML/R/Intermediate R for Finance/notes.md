@@ -148,7 +148,24 @@ while (condition) {
   - *Optional arguments* are ones that don't have to be set by the user, either because they are given a default value, or because    the function can infer them from the other data you have given it. 
   - the basic structure of a function:
     ```R
-      func_name <- function(arguments) {
+      func_name <- function(arguments, arg_opt=123) {
         # body
       }
+    ```
+  - The value that a function returns is simply the last executed line of the function body.
+  - present value in finanace
+    ```R
+    # Present value function
+    pv <- function(cash_flow, i, year) {
+        
+        # Discount multiplier
+        mult <- 1 + percent_to_decimal(i)
+        
+        # Present value calculation
+        cash_flow * mult ^ -year
+    }
+
+    # Calculate a present value
+    # Calculate the present value of $1200, at an interest rate of 7%, to be received 3 years from now.
+    pv(1200, 7, 3)
     ```
