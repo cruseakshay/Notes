@@ -189,4 +189,4 @@ repeat {
     ```R
       lapply(my_list, FUN = percent_to_decimal, digits = 4)
     ```
-  - - lapply() on a list/dataframe
+  - sapply() on a list/dataframe, returns the output in simplified format that is suitable for further analysis.
