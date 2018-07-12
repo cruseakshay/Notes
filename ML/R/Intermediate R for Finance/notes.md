@@ -175,3 +175,5 @@ repeat {
 - Packages
   - for installing in local machine *install.packages("tidyquant")*
   - for loading in current session *library(tidyquant)*
+
+- Sharpe Ratio [Finance]
