@@ -185,3 +185,8 @@ repeat {
       # Note that you don't need parenthesis when calling length
       lapply(my_iter, FUN = length)
     ```
+  - In the call to lapply() you can specify the named optional arguments after the FUN argument, and they will get passed to the function that you are applying.
+    ```R
+      lapply(my_list, FUN = percent_to_decimal, digits = 4)
+    ```
+  - - lapply() on a list/dataframe
