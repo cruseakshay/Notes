@@ -195,3 +195,9 @@ repeat {
     ```R
       vapply(market_crash, class, FUN.VALUE = character(1))
     ```
+
+- Named function And Anonymous function
+  - anonymous functions are basically functions that aren't assigned a name
+    ```R
+      vapply(stock_return, FUN = function(percent) { percent / 100 }, FUN.VALUE = numeric(2))
+    ```
