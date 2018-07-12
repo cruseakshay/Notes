@@ -176,4 +176,12 @@ repeat {
   - for installing in local machine *install.packages("tidyquant")*
   - for loading in current session *library(tidyquant)*
 
-- Sharpe Ratio [Finance]
+- Sharpe Ratio [Finance] {refer last chapter slides}
+
+- Apply Family of functions.
+  - lapply() on a list/dataframe
+    ```R
+      # Using lapply
+      # Note that you don't need parenthesis when calling length
+      lapply(my_iter, FUN = length)
+    ```
