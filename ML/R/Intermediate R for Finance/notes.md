@@ -190,3 +190,8 @@ repeat {
       lapply(my_list, FUN = percent_to_decimal, digits = 4)
     ```
   - sapply() on a list/dataframe, returns the output in simplified format that is suitable for further analysis.
+  - For interactive use, sapply() is great. It guesses the output type so that it can simplify, and normally that is fine. However, sapply() is not a   safe option to be used when writing functions. If sapply() cannot simplify your output, then it will default to returning a list just like lapply   (). This can be dangerous and break custom functions if you wrote them expecting sapply() to return a simplified vector.
+  - vapply() : is more robust as it throws error if the output of the function doen't confirm FUN.VALUE
+    ```R
+      vapply(market_crash, class, FUN.VALUE = character(1))
+    ```
