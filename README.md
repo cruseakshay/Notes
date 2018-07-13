@@ -14,7 +14,9 @@ Notes added for the courses:
 - ML
   - AndrewNg
   - python
-    - Linear Classification in Python (Datacamp)
+    1. Linear Classification in Python (Datacamp)
+    2. Extreme Gradient Boosting with XGBoost
+    3. Introduction to PySpark
   - R 
     1. Introduction to R for Finance
     2. Intermediate R for Finance
