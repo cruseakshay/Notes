@@ -16,7 +16,9 @@ Notes added for the courses:
   - python
     - Linear Classification in Python (Datacamp)
   - R 
-    - R case study
+    1. Introduction to R for Finance
+    2. Intermediate R for Finance
+    3. R case study
 - NLP
   - Oracle Chatbot MOOC
 - PLSQL study
