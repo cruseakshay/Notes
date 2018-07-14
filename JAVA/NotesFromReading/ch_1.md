@@ -68,6 +68,8 @@ The disjunctive | operator will always evaluate both operands, while the disjunc
 
 Java supports functional programming using lambda expressions.
 
+A switch statement supports the primitive types byte, short, char, and int and their associated wrapper classes Character, Byte, Short, and Integer. It also supports the String class and enumerated types. Floating-point types like float and double are not supported, nor is the Object class.
+
 ## Using loop constructs
 
 The continue keyword is used to end the loop iteration immediately and resume execution at the next iteration.
