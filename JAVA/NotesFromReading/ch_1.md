@@ -62,6 +62,8 @@ Arrays are indexed using numbers, not strings
 
 Sorting an empty array is valid and results in an empty array. Java requires having a sorted array before calling binarySearch(). You do not have to call Arrays.sort to perform the sort though. Array can be already sorted.
 
+Prefix operators, such as ––x and ++x, modify the variable and evaluate to the new value, while postfix operators, such as x–– and x++, modify the variable but return the original value.
+
 ## Using loop constructs
 
 The continue keyword is used to end the loop iteration immediately and resume execution at the next iteration.
