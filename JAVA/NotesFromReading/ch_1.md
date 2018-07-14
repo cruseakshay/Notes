@@ -247,3 +247,17 @@ Java reserved keywords cannot be used as labels in looping constructs.
     - You can always change a method signature from call(String[] arg) to call(String... arg) without causing a compiler error in     the  calling code.
     - You can always change a method signature from call(String... arg) to call(String[] arg) without causing a compiler error in     the  existing code.
     > Ans: From within a method, an array parameter and a varargs parameter are treated the same. From the caller, an array parameter is more restrictive. Both types can receive an array. However, only a varargs parameter is allowed to automatically turn individual parameters into an array. Therefore, statement I is correct
+
+- What is the result of the following?
+    ```java
+    import java.util.*;
+    public class Museums {
+    public static void main(String[] args) {
+        String[] array = {"Natural History", "Science", "Art"};
+        List<String> museums = Arrays.asList(array);
+        museums.remove(2);
+        System.out.println(museums);
+    }
+    }
+    ```
+> When converting an array to a List, Java uses a fixed-sized backed list. This means that the list uses an array in the implementation. While changing elements to new values is allowed, adding and removing elements is not.
