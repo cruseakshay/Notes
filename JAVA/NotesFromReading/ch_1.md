@@ -66,6 +66,8 @@ Prefix operators, such as ––x and ++x, modify the variable and evaluate to t
 
 The disjunctive | operator will always evaluate both operands, while the disjunctive short-circuit || operator will only evaluate the right-hand side of the expression if the left-hand side evaluates to false. Therefore, they are not interchangeable, especially if the right-hand side of the expression modifies a variable.
 
+Java supports functional programming using lambda expressions.
+
 ## Using loop constructs
 
 The continue keyword is used to end the loop iteration immediately and resume execution at the next iteration.
