@@ -38,3 +38,12 @@ jnj <- getSymbols("JNJ", env = NULL)
 
 # Look at the structure of the 'jnj' object
 str(jnj)
+
+# Load the Quandl package
+library(Quandl)
+
+# Import GDP data from FRED
+gdp <- Quandl(code = "FRED/GDP")
+
+# Look at the structure of the object returned by Quandl
+str(gdp)

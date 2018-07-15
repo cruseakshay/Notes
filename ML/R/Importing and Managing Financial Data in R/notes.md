@@ -8,3 +8,13 @@ Yahoo! Finance is the default data source for getSymbols().
 You use the Symbols argument to specify the instrument (i.e. the ticker symbol) you want to import. Since Symbols is the first argument to getSymbols(), you usually just type the instrument name and omit Symbols =.
 
 The src values for Alpha Vantage and FRED are "av" and "FRED", respectively.
+
+**Introducing Quandl()**
+the Quandl package provides access to the Quandl databases via one simple function: Quandl().
+
+The Quandl() function specifies both the data source and the instrument via its code argument, in the form "DATABASE/DATASET".
+
+- Two other ways Quandl() differs from getSymbols() are:
+  - Quandl() returns a data.frame by default.
+  - Quandl() will not automatically assign the data to an object.
+
