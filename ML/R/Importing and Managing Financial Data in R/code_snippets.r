@@ -26,3 +26,15 @@ getSymbols("GDP", src = "FRED")
 
 # Look at the structure of GDP
 str(GDP)
+
+# Assign SPY data to 'spy' using auto.assign argument
+spy <- getSymbols("SPY", auto.assign = FALSE)
+
+# Look at the structure of the 'spy' object
+str(spy)
+
+# Assign JNJ data to 'jnj' using env argument
+jnj <- getSymbols("JNJ", env = NULL)
+
+# Look at the structure of the 'jnj' object
+str(jnj)
