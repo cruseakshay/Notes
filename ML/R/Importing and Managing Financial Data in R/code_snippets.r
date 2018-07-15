@@ -70,3 +70,14 @@ getSymbols(symbol)
 head(PFE)
 
 # Download exchange rate data from Oanda
+# Create a currency_pair object
+currency_pair <- "GBP/CAD"
+
+# Load British Pound to Canadian Dollar exchange rate data
+getSymbols(currency_pair, src = "oanda")
+
+# Examine object using str()
+str(GBPCAD)
+
+# Try to load data from 190 days ago
+getSymbols(currency_pair, from = Sys.Date() - 190, to = Sys.Date(), src = "oanda")
