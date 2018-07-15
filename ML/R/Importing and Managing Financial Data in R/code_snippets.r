@@ -47,3 +47,15 @@ gdp <- Quandl(code = "FRED/GDP")
 
 # Look at the structure of the object returned by Quandl
 str(gdp)
+
+# Import GDP data from FRED as xts
+gdp_xts <- Quandl(code = "FRED/GDP", type = "xts")
+
+# Look at the structure of gdp_xts
+str(gdp_xts)
+
+# Import GDP data from FRED as zoo
+gdp_zoo <- Quandl(code = "FRED/GDP", type = "zoo")
+
+# Look at the structure of gdp_zoo
+str(gdp_zoo)

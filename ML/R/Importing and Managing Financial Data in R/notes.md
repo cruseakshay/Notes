@@ -18,3 +18,11 @@ The Quandl() function specifies both the data source and the instrument via its 
   - Quandl() returns a data.frame by default.
   - Quandl() will not automatically assign the data to an object.
 
+The Quandl() function returns a data.frame by default. It can return other classes via the type argument.
+
+- The possible values for type are:
+  - "raw" (a data.frame),
+  - "ts" (time-series objects from the stats package),
+  - "zoo",
+  - "xts", and
+  - "timeSeries" (from the timeSeries package in the RMetrics suite).
