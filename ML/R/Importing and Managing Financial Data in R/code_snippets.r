@@ -81,3 +81,15 @@ str(GBPCAD)
 
 # Try to load data from 190 days ago
 getSymbols(currency_pair, from = Sys.Date() - 190, to = Sys.Date(), src = "oanda")
+
+# Create a series_name object
+series_name <- "UNRATE"
+
+# Load the data using getSymbols
+getSymbols(series_name, src = "FRED")
+
+# Create a quandl_code object
+quandl_code <- "FRED/UNRATE"
+
+# Load the data using Quandl
+unemploy_rate <- Quandl(quandl_code)
