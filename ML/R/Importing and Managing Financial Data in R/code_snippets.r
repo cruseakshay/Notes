@@ -59,3 +59,14 @@ gdp_zoo <- Quandl(code = "FRED/GDP", type = "zoo")
 
 # Look at the structure of gdp_zoo
 str(gdp_zoo)
+
+# Create an object containing the Pfizer ticker symbol
+symbol <- "PFE"
+
+# Use getSymbols to import the data
+getSymbols(symbol)
+
+# Look at the first few rows of data
+head(PFE)
+
+# Download exchange rate data from Oanda
