@@ -93,3 +93,16 @@ quandl_code <- "FRED/UNRATE"
 
 # Load the data using Quandl
 unemploy_rate <- Quandl(quandl_code)
+
+# Extracting and transforming data
+# Extract the close column
+dc_close <- Cl(DC)
+
+# Look at the head of dc_close
+head(dc_close)
+
+# Extract the volume column
+dc_volume <- Vo(DC)
+
+# Look at the head of dc_volume
+head(dc_volume)

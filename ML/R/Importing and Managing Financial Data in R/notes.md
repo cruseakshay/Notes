@@ -26,3 +26,7 @@ The Quandl() function returns a data.frame by default. It can return other class
   - "zoo",
   - "xts", and
   - "timeSeries" (from the timeSeries package in the RMetrics suite).
+
+## Extracting and transforming data
+
+The quantmod package provides several helper functions to extract specific columns from an object, based on the column name. The Op(), Hi(), Lo(), Cl(), Vo(), and Ad() functions can be used to extract the open, high, low, close, volume, and adjusted close column, respectively.
