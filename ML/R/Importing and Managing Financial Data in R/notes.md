@@ -31,3 +31,6 @@ The Quandl() function returns a data.frame by default. It can return other class
 
 The quantmod package provides several helper functions to extract specific columns from an object, based on the column name. The Op(), Hi(), Lo(), Cl(), Vo(), and Ad() functions can be used to extract the open, high, low, close, volume, and adjusted close column, respectively.
 
+The getPrice() function in the quantmod package can extract any column by name by using the prefer argument. It can also extract columns for a specific instrument by using the symbol argument, which is useful when an object contains several instruments with the same price type.
+
+You can use regular expressions for both the prefer and symbol arguments, because they are passed to the base::grep() function internally.
