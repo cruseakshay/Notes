@@ -106,3 +106,15 @@ dc_volume <- Vo(DC)
 
 # Look at the head of dc_volume
 head(dc_volume)
+
+# Extract the high, low, and close columns
+dc_hlc <- HLC(DC)
+
+# Look at the head of dc_hlc
+head(dc_hlc)
+
+# Extract the open, high, low, close, and volume columns
+dc_ohlcv <- OHLCV(DC)
+
+# Look at the head of dc_ohlcv
+head(dc_ohlcv)
