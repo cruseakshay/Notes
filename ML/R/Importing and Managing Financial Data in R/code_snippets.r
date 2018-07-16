@@ -130,3 +130,16 @@ cl_open <- getPrice(oil_data, symbol = "CLH2016", prefer = "Open$")
 
 # Look at January, 2016 using xts' ISO-8601 subsetting
 cl_open["2016-01"]
+
+# Use Quandl to download weekly returns data
+# Download quarterly CL and BZ prices
+qtr_price <- Quandl(code = c("CME/CLH2016", "CME/BZH2016"), collapse = "quarterly", type = "xts")
+
+# View the high prices for both series
+Hi(qtr_price)
+
+# Download quarterly CL and BZ returns
+qtr_return <- Quandl(code = c("CME/CLH2016", "CME/BZH2016"), collapse = "quarterly", type = "xts", transform = "rdiff")
+
+# View the settle price returns for both series
+getPrice(qtr_return, prefer = "Settle")

@@ -34,3 +34,5 @@ The quantmod package provides several helper functions to extract specific colum
 The getPrice() function in the quantmod package can extract any column by name by using the prefer argument. It can also extract columns for a specific instrument by using the symbol argument, which is useful when an object contains several instruments with the same price type.
 
 You can use regular expressions for both the prefer and symbol arguments, because they are passed to the base::grep() function internally.
+
+The Quandl() function allows you to specify common **aggregations** and **transformations** via the collapse and/or transform arguments.
