@@ -189,3 +189,16 @@ setDefaults(getSymbols.yahoo, from = "2000-01-01")
 
 # Confirm defaults were set correctly
 getDefaults('getSymbols.yahoo')
+
+# Set default data source for one symbol
+# Look at the first few rows of CP
+head(CP)
+
+# Set the source for CP to FRED
+setSymbolLookup(CP = "FRED")
+
+# Load CP data again
+getSymbols("CP")
+
+# Look at the first few rows of CP
+head(CP)

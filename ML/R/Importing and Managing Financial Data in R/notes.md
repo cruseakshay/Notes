@@ -48,3 +48,7 @@ The first argument to setDefaults() is the function you want to update, and the 
 Note that this only works with getSymbols() because getSymbols() actively checks to see if you want to use a different default value.
 
 You can find the arguments for a specific method by using help() (e.g. help("getSymbols.yahoo") or by calling args() to print them to the console
+
+You can use setSymbolLookup() to specify the default data source for an instrument. 
+
+setSymbolLookup() can take any number of name = value pairs, where name is the symbol and value is a named list of getSymbols() arguments for that one symbol.
