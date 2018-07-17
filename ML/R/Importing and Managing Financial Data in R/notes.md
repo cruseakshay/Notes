@@ -56,6 +56,9 @@ setSymbolLookup() can take any number of name = value pairs, where name is the s
 how to save and load symbol-based defaults by using saveSymbolLookup() and loadSymbolLookup(), respectively. You can use the file arguments to specify a file to store your defaults.
 
 - Access the object using get() or backticks
-  
-At some point, you might download data for an instrument that does not have a syntactically valid name. 
-You can use the get function or backticks (`) to access objects that do not have syntactically valid names.
+  At some point, you might download data for an instrument that does not have a syntactically valid name. 
+  You can use the get function or backticks (`) to access objects that do not have syntactically valid names.
+
+- Create valid names for multiple instruments
+  You can also use setSymbolLookup() to create a mapping between the instrument symbol and the name of the R object.
+  setSymbolLookup(NEW_NAME = list(name = "OLD_NAME"))

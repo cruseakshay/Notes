@@ -235,3 +235,13 @@ col_names <- colnames(BRK.A)
 
 # Set BRK.A column names to syntactically valid names
 colnames(BRK.A) <- make.names(col_names) 
+
+# Create valid names for multiple instruments
+# Set name for BRK-A to BRK.A
+setSymbolLookup(BRK.A = list(name = "BRK-A"))
+
+# Set name for T (AT&T) to ATT
+setSymbolLookup(ATT = list(name = "T"))
+
+# Load BRK.A and ATT data
+getSymbols(c("BRK.A", "ATT"))
