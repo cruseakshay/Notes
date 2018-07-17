@@ -225,3 +225,13 @@ head(`BRK-A`)
 
 # Use get() to assign the BRK-A data to an object named BRK.A
 BRK.A <- get("BRK-A")
+
+# Create valid name for one instrument
+# Create BRK.A object
+BRK.A <- getSymbols("BRK-A", auto.assign = FALSE)
+
+# Create col_names object with the column names of BRK.A
+col_names <- colnames(BRK.A)
+
+# Set BRK.A column names to syntactically valid names
+colnames(BRK.A) <- make.names(col_names) 
