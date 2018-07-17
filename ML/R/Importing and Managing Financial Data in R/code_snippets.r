@@ -202,3 +202,16 @@ getSymbols("CP")
 
 # Look at the first few rows of CP
 head(CP)
+
+# Save and load symbol lookup table
+# Save symbol lookup table
+saveSymbolLookup(file = "my_symbol_lookup.rda")
+
+# Set default source for CP to "yahoo"
+setSymbolLookup(CP = "yahoo")
+
+# Verify the default source is "yahoo"
+getSymbolLookup('CP')
+
+# Load symbol lookup table
+loadSymbolLookup('my_symbol_lookup.rda')

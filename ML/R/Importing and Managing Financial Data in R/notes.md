@@ -52,3 +52,5 @@ You can find the arguments for a specific method by using help() (e.g. help("get
 You can use setSymbolLookup() to specify the default data source for an instrument. 
 
 setSymbolLookup() can take any number of name = value pairs, where name is the symbol and value is a named list of getSymbols() arguments for that one symbol.
+
+how to save and load symbol-based defaults by using saveSymbolLookup() and loadSymbolLookup(), respectively. You can use the file arguments to specify a file to store your defaults.
