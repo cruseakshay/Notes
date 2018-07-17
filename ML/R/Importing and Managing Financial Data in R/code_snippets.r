@@ -180,3 +180,12 @@ getSymbols("GOOG")
 
 # Verify the data was actually pulled from Alpha Vantage
 str(GOOG)
+
+# Look at getSymbols.yahoo arguments
+args(getSymbols.yahoo)
+
+# Set default 'from' value for getSymbols.yahoo
+setDefaults(getSymbols.yahoo, from = "2000-01-01")
+
+# Confirm defaults were set correctly
+getDefaults('getSymbols.yahoo')

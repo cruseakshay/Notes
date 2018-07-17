@@ -46,3 +46,5 @@ do.call(merge, my_list) to merge lists into one.
 The first argument to setDefaults() is the function you want to update, and the remaining arguments are name = value pairs of the arguments you want to update and the new default value.
 
 Note that this only works with getSymbols() because getSymbols() actively checks to see if you want to use a different default value.
+
+You can find the arguments for a specific method by using help() (e.g. help("getSymbols.yahoo") or by calling args() to print them to the console
