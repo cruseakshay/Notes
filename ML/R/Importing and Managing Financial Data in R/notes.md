@@ -36,3 +36,7 @@ The getPrice() function in the quantmod package can extract any column by name b
 You can use regular expressions for both the prefer and symbol arguments, because they are passed to the base::grep() function internally.
 
 The Quandl() function allows you to specify common **aggregations** and **transformations** via the collapse and/or transform arguments.
+
+use eapply() to call a function on each object in the environment, much like what lapply() does for each element of a list.
+
+do.call(merge, my_list) to merge lists into one.

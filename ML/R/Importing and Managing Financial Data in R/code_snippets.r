@@ -143,3 +143,13 @@ qtr_return <- Quandl(code = c("CME/CLH2016", "CME/BZH2016"), collapse = "quarter
 
 # View the settle price returns for both series
 getPrice(qtr_return, prefer = "Settle")
+
+# Combine many instruments into one object
+# Call head on each object in data_env using eapply
+data_list <- eapply(data_env, FUN = head)
+
+# Merge all the list elements into one xts object
+data_merged <- do.call(merge, data_list)
+
+# Ensure the columns are ordered: open, high, low, close
+data_ohlc <- OHLC(data_merged)
