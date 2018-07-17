@@ -153,3 +153,30 @@ data_merged <- do.call(merge, data_list)
 
 # Ensure the columns are ordered: open, high, low, close
 data_ohlc <- OHLC(data_merged)
+
+# Symbols
+symbols <- c("AAPL", "MSFT", "IBM")
+
+# Create new environment
+data_env <- new.env()
+
+# Load symbols into data_env
+getSymbols(symbols ,env = data_env)
+
+# Extract the close column from each object and combine into one xts object
+close_data <- do.call(merge, eapply(data_env, Cl))
+
+# View the head of close_data
+head(close_data)
+
+# ch-3 Managing data from multiple sources
+
+# Set a default data source
+# Set the default to pull data from Alpha Vantage
+setDefaults(getSymbols, src = "av")
+
+# Get GOOG data
+getSymbols("GOOG")
+
+# Verify the data was actually pulled from Alpha Vantage
+str(GOOG)

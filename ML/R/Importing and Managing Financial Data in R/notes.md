@@ -40,3 +40,9 @@ The Quandl() function allows you to specify common **aggregations** and **transf
 use eapply() to call a function on each object in the environment, much like what lapply() does for each element of a list.
 
 do.call(merge, my_list) to merge lists into one.
+
+## Managing data from multiple sources
+
+The first argument to setDefaults() is the function you want to update, and the remaining arguments are name = value pairs of the arguments you want to update and the new default value.
+
+Note that this only works with getSymbols() because getSymbols() actively checks to see if you want to use a different default value.
