@@ -215,3 +215,13 @@ getSymbolLookup('CP')
 
 # Load symbol lookup table
 loadSymbolLookup('my_symbol_lookup.rda')
+
+# Access the object using get() or backticks
+# Load BRK-A data
+getSymbols("BRK-A")
+
+# Use backticks and head() to look at the loaded data
+head(`BRK-A`)
+
+# Use get() to assign the BRK-A data to an object named BRK.A
+BRK.A <- get("BRK-A")
