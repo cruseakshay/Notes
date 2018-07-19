@@ -62,3 +62,10 @@ how to save and load symbol-based defaults by using saveSymbolLookup() and loadS
 - Create valid names for multiple instruments
   You can also use setSymbolLookup() to create a mapping between the instrument symbol and the name of the R object.
   setSymbolLookup(NEW_NAME = list(name = "OLD_NAME"))
+
+## Aligning data with different periodicities
+
+- To create regular data from an irregular data set
+  In order to create regular data from an irregular data set, the first thing you need is a regular sequence of date-times that span the dates of your irregular data set. A "regular" sequence of date-times has equally-spaced time points.
+
+  A zero-width xts object has an index of date-times, but no data columns.

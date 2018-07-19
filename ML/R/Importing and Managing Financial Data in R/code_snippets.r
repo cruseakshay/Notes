@@ -245,3 +245,16 @@ setSymbolLookup(ATT = list(name = "T"))
 
 # Load BRK.A and ATT data
 getSymbols(c("BRK.A", "ATT"))
+
+# ch-4 Aligning data with different periodicities
+# Extract the start date of the series
+start_date <- start(irregular_xts)
+
+# Extract the end date of the series
+end_date <- end(irregular_xts)
+
+# Create a regular date sequence
+regular_index <- seq(from = start_date, to = end_date, by = "day")
+
+# Create a zero-width xts object
+regular_xts <- xts(, order.by = regular_index)
