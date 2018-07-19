@@ -343,3 +343,14 @@ merged_xts <- merge(regular_xts, irregular_xts, fill = na.locf)
 
 # Subset to trading day (9AM - 4PM)
 trade_day <- merged_xts["T09:00/T16:00"]
+
+# Fill missing values by trading day
+# split-lapply-rbind 
+# Split trade_day into days
+daily_list <- split(trade_day , f = "days")
+
+# Use lapply to call na.locf for each day in daily_list
+daily_filled <- lapply(daily_list, FUN = na.locf)
+
+# Use do.call to rbind the results
+filled_by_trade_day <- do.call(rbind, daily_filled)
