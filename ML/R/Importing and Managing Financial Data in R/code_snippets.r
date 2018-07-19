@@ -316,3 +316,16 @@ end_points <- c(0, wednesdays, nrow(DFF))
 
 # Calculate weekly mean using custom end points
 weekly_mean <- period.apply(DFF, end_points, mean)
+
+# Combine data that have timezones
+c# Create merged object with a Europe/London timezone
+tz_london <- merge(london, chicago)
+
+# Look at tz_london structure
+str(tz_london)
+
+# Create merged object with a America/Chicago timezone
+tz_chicago <- merge(chicago, london)
+
+# Look at tz_chicago structure
+str(tz_chicago)
