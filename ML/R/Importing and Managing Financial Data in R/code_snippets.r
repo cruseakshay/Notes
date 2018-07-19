@@ -354,3 +354,13 @@ daily_filled <- lapply(daily_list, FUN = na.locf)
 
 # Use do.call to rbind the results
 filled_by_trade_day <- do.call(rbind, daily_filled)
+
+# Aggregate irregular intraday-day data
+# Convert raw prices to 5-second prices
+xts_5sec <- to.period(intraday_xts, period = "seconds", k = 5)
+
+# Convert raw prices to 10-minute prices
+xts_10min <- to.period(intraday_xts, period = "minutes", k = 10)
+
+# Convert raw prices to 1-hour prices
+xts_1hour <- to.period(intraday_xts, period = "hours", k = 1)
