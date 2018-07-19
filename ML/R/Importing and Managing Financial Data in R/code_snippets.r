@@ -329,3 +329,17 @@ tz_chicago <- merge(chicago, london)
 
 # Look at tz_chicago structure
 str(tz_chicago)
+
+# Make irregular intraday-day data regular
+# exercise assumes markets open at 9AM and close at 4PM Monday-Friday.
+# Create a regular date-time sequence
+regular_index <- seq(as.POSIXct("2010-01-04 09:00"), as.POSIXct("2010-01-08 16:00"), by = "30 min")
+
+# Create a zero-width xts object
+regular_xts <- xts(, order.by = regular_index)
+
+# Merge irregular_xts and regular_xts, filling NA with their previous value
+merged_xts <- merge(regular_xts, irregular_xts, fill = na.locf)
+
+# Subset to trading day (9AM - 4PM)
+trade_day <- merged_xts["T09:00/T16:00"]
