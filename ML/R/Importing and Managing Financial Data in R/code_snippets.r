@@ -258,3 +258,20 @@ regular_index <- seq(from = start_date, to = end_date, by = "day")
 
 # Create a zero-width xts object
 regular_xts <- xts(, order.by = regular_index)
+
+# Use merge to make an irregular index regular
+
+# The previous exercise taught you how to make a zero-width xts object with a regular time index. 
+# You can use the zero-width object to regularize an irregular xts object.
+
+# Merge irregular_xts and regular_xts
+merged_xts <- merge(regular_xts, irregular_xts)
+
+# Look at the first few rows of merged_xts
+head(merged_xts)
+
+# Use the fill argument to fill NA with their previous value
+merged_filled_xts <- merge(regular_xts, irregular_xts, fill = na.locf) # locf: last observation comes first
+
+# Look at the first few rows of merged_filled_xts
+head(merged_filled_xts)
