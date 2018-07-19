@@ -1,6 +1,7 @@
 # Importing and Managing Financial Data in R
 
 ## Introduction and downloading data
+
 The getSymbols() function from the quantmod package provides a consistent interface to import data from various sources into your workspace. By default, getSymbols() imports the data as a xts object.
 
 Yahoo! Finance is the default data source for getSymbols().
@@ -49,14 +50,14 @@ Note that this only works with getSymbols() because getSymbols() actively checks
 
 You can find the arguments for a specific method by using help() (e.g. help("getSymbols.yahoo") or by calling args() to print them to the console
 
-You can use setSymbolLookup() to specify the default data source for an instrument. 
+You can use setSymbolLookup() to specify the default data source for an instrument.
 
 setSymbolLookup() can take any number of name = value pairs, where name is the symbol and value is a named list of getSymbols() arguments for that one symbol.
 
 how to save and load symbol-based defaults by using saveSymbolLookup() and loadSymbolLookup(), respectively. You can use the file arguments to specify a file to store your defaults.
 
 - Access the object using get() or backticks
-  At some point, you might download data for an instrument that does not have a syntactically valid name. 
+  At some point, you might download data for an instrument that does not have a syntactically valid name.
   You can use the get function or backticks (`) to access objects that do not have syntactically valid names.
 
 - Create valid names for multiple instruments
