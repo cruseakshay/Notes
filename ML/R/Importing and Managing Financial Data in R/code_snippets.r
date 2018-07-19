@@ -290,3 +290,16 @@ merged_fedfunds <- merge(FEDFUNDS, monthly_fedfunds)
 
 # Look at the first few rows of the merged object
 head(merged_fedfunds)
+
+# Align series to first and last day of month
+# Fill NA forward
+merged_fedfunds_locf <- na.locf(merged_fedfunds)
+
+# Extract index values containing last day of month
+aligned_last_day <- merged_fedfunds_locf[index(monthly_fedfunds)]
+
+# Fill NA backward
+merged_fedfunds_locb <- na.locf(merged_fedfunds,fromLast = TRUE)
+
+# Extract index values containing first day of month
+aligned_first_day <- merged_fedfunds_locb[index(FEDFUNDS)]

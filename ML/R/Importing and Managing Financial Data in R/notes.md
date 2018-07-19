@@ -72,3 +72,6 @@ how to save and load symbol-based defaults by using saveSymbolLookup() and loadS
   A zero-width xts object has an index of date-times, but no data columns.
 
 Sometimes two series have the same periodicy, but use different conventions to represent a timestamp. For example, monthly series may be timestamped with the first or last date of the month. The different timestamp convention can cause many NA when series are merged. The yearmon class from the zoo package helps solve this problem.
+
+- Align series to first and last day of month
+  First you merge the lower-frequency data with the aggregate data, then use na.locf() to fill the NA forward (or backward, using fromLast = TRUE). Then you can subset the result using the index of the object with the representation you prefer.
