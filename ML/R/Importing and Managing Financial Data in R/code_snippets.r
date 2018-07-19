@@ -275,3 +275,18 @@ merged_filled_xts <- merge(regular_xts, irregular_xts, fill = na.locf) # locf: l
 
 # Look at the first few rows of merged_filled_xts
 head(merged_filled_xts)
+
+# Aggregate daily data and merge with monthly data
+# DATA : getSymbols(c("FEDFUNDS", "DFF"), src = "FRED")
+# Aggregate DFF to monthly
+monthly_fedfunds <- apply.monthly(DFF, FUN = mean)
+
+# Convert index to yearmon
+index(monthly_fedfunds) <- as.yearmon(index(monthly_fedfunds))
+
+
+# Merge FEDFUNDS with the monthly aggregate
+merged_fedfunds <- merge(FEDFUNDS, monthly_fedfunds)
+
+# Look at the first few rows of the merged object
+head(merged_fedfunds)

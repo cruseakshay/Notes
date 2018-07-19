@@ -70,3 +70,5 @@ how to save and load symbol-based defaults by using saveSymbolLookup() and loadS
   In order to create regular data from an irregular data set, the first thing you need is a regular sequence of date-times that span the dates of your irregular data set. A "regular" sequence of date-times has equally-spaced time points.
 
   A zero-width xts object has an index of date-times, but no data columns.
+
+Sometimes two series have the same periodicy, but use different conventions to represent a timestamp. For example, monthly series may be timestamped with the first or last date of the month. The different timestamp convention can cause many NA when series are merged. The yearmon class from the zoo package helps solve this problem.
