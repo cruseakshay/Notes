@@ -303,3 +303,16 @@ merged_fedfunds_locb <- na.locf(merged_fedfunds,fromLast = TRUE)
 
 # Extract index values containing first day of month
 aligned_first_day <- merged_fedfunds_locb[index(FEDFUNDS)]
+
+# Aggregate to weekly, ending on Wednesdays
+# Extract index weekdays
+index_weekdays <- .indexwday(DFF)
+
+# Find locations of Wednesdays
+wednesdays <- which(index_weekdays == 3)
+
+# Create custom end points
+end_points <- c(0, wednesdays, nrow(DFF))
+
+# Calculate weekly mean using custom end points
+weekly_mean <- period.apply(DFF, end_points, mean)
