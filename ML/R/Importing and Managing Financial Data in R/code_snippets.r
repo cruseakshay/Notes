@@ -396,3 +396,5 @@ une_zoo <- read.zoo("UNE.csv", index.column = c("Date", "Time"), sep = ",", head
 
 # Look at first few rows of data
 head(une_zoo)
+
+# Read text file containing multiple instruments
