@@ -383,3 +383,16 @@ amzn_xts <- as.xts(amzn_zoo)
 
 # Look at the first few rows of amzn_xts
 head(amzn_xts)
+
+# Handle date and time in separate columns
+# Read data with read.csv
+une_data <- read.csv("UNE.csv", nrows = 5)
+
+# Look at the structure of une_data
+str(une_data)
+
+# Read data with read.zoo, specifying index columns
+une_zoo <- read.zoo("UNE.csv", index.column = c("Date", "Time"), sep = ",", header = TRUE)
+
+# Look at first few rows of data
+head(une_zoo)
