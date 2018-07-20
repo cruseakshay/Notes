@@ -375,3 +375,11 @@ getSymbols("AMZN", src="csv")
 str(AMZN)
 
 # Import text files in other formats
+# Import AMZN.csv using read.zoo
+amzn_zoo <- read.zoo("AMZN.csv", sep = ",", header = TRUE)
+
+# Convert to xts
+amzn_xts <- as.xts(amzn_zoo)
+
+# Look at the first few rows of amzn_xts
+head(amzn_xts)
