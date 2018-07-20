@@ -80,3 +80,7 @@ Sometimes two series have the same periodicy, but use different conventions to r
   In this exercise, you will learn a general aggregation technique to aggregate daily data to weekly, but with weeks ending on Wednesdays. This is often done in stock market research to avoid intra-week seasonality.
 
   You can supply your own end points to period.apply() (versus using endpoints()). Recall endpoints() returns locations of the last observation in each period specified by the on argument. The first and last elements of the result are always zero and the total number of observations, respectively. The end points you pass to period.apply() must follow this convention.
+
+## Importing text data, and adjusting for corporate actions
+
+well-formatted file contains data for a single instrument with date, open, high, low, close, volume, and adjusted close columns, in that order. 

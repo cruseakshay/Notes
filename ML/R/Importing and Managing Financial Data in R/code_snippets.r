@@ -364,3 +364,14 @@ xts_10min <- to.period(intraday_xts, period = "minutes", k = 10)
 
 # Convert raw prices to 1-hour prices
 xts_1hour <- to.period(intraday_xts, period = "hours", k = 1)
+
+# ch-5 Importing text data, and adjusting for corporate actions
+# Import well-formatted daily OHLC data
+# NOTE: AMZN.csv file is in curr dir
+# Load AMZN.csv
+getSymbols("AMZN", src="csv")
+
+# Look at AMZN structure
+str(AMZN)
+
+# Import text files in other formats
