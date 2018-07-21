@@ -398,3 +398,14 @@ une_zoo <- read.zoo("UNE.csv", index.column = c("Date", "Time"), sep = ",", head
 head(une_zoo)
 
 # Read text file containing multiple instruments
+# Read data with read.csv
+two_symbols_data <- read.csv("two_symbols.csv", nrows = 5)
+
+# Look at the structure of two_symbols_data
+str(two_symbols_data)
+
+# Read data with read.zoo, specifying index columns
+two_symbols_zoo <- read.zoo("two_symbols.csv", split = c("Symbol", "Type"), sep = ",", header = TRUE)
+
+# Look at first few rows of data
+head(two_symbols_zoo)
