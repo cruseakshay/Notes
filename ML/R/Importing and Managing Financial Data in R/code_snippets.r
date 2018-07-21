@@ -409,3 +409,19 @@ two_symbols_zoo <- read.zoo("two_symbols.csv", split = c("Symbol", "Type"), sep 
 
 # Look at first few rows of data
 head(two_symbols_zoo)
+
+# Handle missing values
+# fill NA using last observation carried forward
+locf <- na.locf(DGS10)
+
+# fill NA using linear interpolation
+approx <- na.approx(DGS10)
+
+# fill NA using spline interpolation
+spline <- na.spline(DGS10)
+
+# merge into one object
+na_filled <- merge(locf,approx, spline)
+
+# plot combined object
+plot(na_filled, col = c("black", "red", "green"))
