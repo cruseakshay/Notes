@@ -88,3 +88,5 @@ well-formatted file contains data for a single instrument with date, open, high,
 read.zoo() makes it easy to import data when the date and time are in separate columns. The index.column argument allows you to specify the name or number of the column(s) containing the index data. That's all you need to do if the date and time are specified in the standard format ("%Y-%m-%d" for date, and "%H:%M:%S" for time).        
 
 You can download the split and dividend data from Yahoo Finance using the quantmod functions getSplits() and getDividends(), respectively. The historical dividend data from Yahoo Finance is adjusted for splits. If you want to download unadjusted dividend data, you need to set split.adjust = FALSE in your call to getDividends().
+
+If you only have close prices, you can adjust them with adjRatios(). It has 3 arguments: splits, dividends, and close. It returns an xts object with split and dividend adjustment ratios in columns "Split" and "Div", respectively.
