@@ -448,3 +448,13 @@ plot(Ad(aapl_raw) - Cl(aapl_split_adjusted))
 
 # Plot difference between volume from the raw and split-adjusted sources
 plot(Vo(aapl_raw) - Vo(aapl_split_adjusted))
+
+# Adjust for stock splits and dividends
+# Look at first few rows of AAPL
+head(AAPL)
+
+# Adjust AAPL for splits and dividends
+aapl_adjusted <- adjustOHLC(AAPL)
+
+# Look at first few rows of aapl_adjusted
+head(aapl_adjusted)
