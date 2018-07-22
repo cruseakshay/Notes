@@ -458,3 +458,19 @@ aapl_adjusted <- adjustOHLC(AAPL)
 
 # Look at first few rows of aapl_adjusted
 head(aapl_adjusted)
+
+# Download split and dividend data
+# Download AAPL split data
+splits <- getSplits("AAPL")
+
+# Download AAPL dividend data
+dividends <- getDividends("AAPL")
+
+# Look at the first few rows of dividends
+head(dividends)
+
+# Download unadjusted AAPL dividend data
+raw_dividends <- getDividends("AAPL", split.adjust = FALSE)
+
+# Look at the first few rows of raw_dividends
+head(raw_dividends)
