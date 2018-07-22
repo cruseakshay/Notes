@@ -435,3 +435,16 @@ plot(Cl(AAPL))
 
 # Plot adjusted close price
 plot(Ad(AAPL))
+
+# Cross reference sources
+# Look at first few rows of aapl_raw
+head(aapl_raw)
+
+# Look at first few rows of aapl_split
+head(aapl_split_adjusted)
+
+# Plot difference between adjusted close and split-adjusted close
+plot(Ad(aapl_raw) - Cl(aapl_split_adjusted))
+
+# Plot difference between volume from the raw and split-adjusted sources
+plot(Vo(aapl_raw) - Vo(aapl_split_adjusted))
