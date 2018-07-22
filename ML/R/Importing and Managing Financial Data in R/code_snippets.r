@@ -425,3 +425,13 @@ na_filled <- merge(locf,approx, spline)
 
 # plot combined object
 plot(na_filled, col = c("black", "red", "green"))
+
+# Visualize imported data
+# Look at the last few rows of AAPL data
+tail(AAPL)
+
+# Plot close price
+plot(Cl(AAPL))
+
+# Plot adjusted close price
+plot(Ad(AAPL))
