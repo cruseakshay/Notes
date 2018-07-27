@@ -79,7 +79,10 @@ Each class has a copy of the instance variables. There is only one copy of the c
 - Static Imports
   - Static imports are for importing static members of classes.
   - Syntax : import static java.util.Arrays.asList;
+  - Note: if code a method with same signature as static imported one, then JAVA would give preference to the newly coded method in   the class.
+  - The compiler will complain if we try to explicitly do a static import of two methods with the same name or two static            variables with the same name.
 
+## Passing Data Among Methods
 
 - Only the access modifier or optional specifiers are allowed before the return type.
 - optional specifiers are allowed in any order.
