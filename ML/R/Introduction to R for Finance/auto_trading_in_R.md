@@ -10,3 +10,5 @@
     - linear rise if we trade with a uniform account size or exponential if we reinvest gains.
   - return series : list of returns on the account at each trading period.
     The return series is the portfolio gain or loss as a percentage of tradable capital at each trading period.
+
+- Risk-Return Metrics
