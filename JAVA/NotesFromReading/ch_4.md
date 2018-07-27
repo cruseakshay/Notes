@@ -66,6 +66,20 @@ Each class has a copy of the instance variables. There is only one copy of the c
 
 ![static Vs instance calls](./img/staticVsinstance.PNG)
 
+- Static Variables
+  - we can initialize a static variable on the line it is declared.
+
+- Static Initialization
+  - looks like: static{/* code block */}
+  - The static initializer runs when the class is fi rst used.
+  - final static variable can be initialised only once throght the program, either on declaration or in static block.
+  - *Try to Avoid Static and Instance Initializers*
+  - There is a common case to use a static initializer: when you need to initialize a static fi eld and the code to do so requires more than one line. This often occurs when you want to initialize a collection like an ArrayList.
+
+- Static Imports
+  - Static imports are for importing static members of classes.
+  - Syntax : import static java.util.Arrays.asList;
+
 
 - Only the access modifier or optional specifiers are allowed before the return type.
 - optional specifiers are allowed in any order.
