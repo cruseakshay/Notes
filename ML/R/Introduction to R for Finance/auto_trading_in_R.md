@@ -12,3 +12,5 @@
     The return series is the portfolio gain or loss as a percentage of tradable capital at each trading period.
 
 - Risk-Return Metrics
+
+[Risk-Return Metrics](./slides/risk_return_metrics.png)
