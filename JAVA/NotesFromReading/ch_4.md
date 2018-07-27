@@ -50,7 +50,22 @@ TO-DO: Revise from the book
 - protected access
 - pubblic access
 
-- 
+- Designing Static Methods and Fields
+  - Static methods don’t require an instance of the class.
+  - static methods have two main purposes:
+    - For utility or helper methods that don’t require any object state.
+    - *For state* that is shared by all instances of a class, like a counter.
+
+> Does Each Class Have Its Own Copy of the Code?
+Each class has a copy of the instance variables. There is only one copy of the code for the instance methods. each call of an instance method (or any method) gets space on the stack for method parameters and local variables.
+
+- Static vs. Instance
+  - “member” means field or method
+  - *A static member cannot call an instance member.*
+  - a static method or instance method can call a static member(method/variable)
+
+![static Vs instance calls](./img/staticVsinstance.PNG)
+
 
 - Only the access modifier or optional specifiers are allowed before the return type.
 - optional specifiers are allowed in any order.
