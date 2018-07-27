@@ -14,3 +14,8 @@
 - Risk-Return Metrics
 
 ![Risk-Return Metrics](./slides/risk_return_metrics.png)
+
+- Sharpe Ratio
+  - best-known metrics for measuring strategy performance
+  - long-recognized fund and strategy performance metric
+  - It was developed in 1966 by William F. Sharpe
