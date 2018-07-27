@@ -1,5 +1,7 @@
 # Methods and Encapsulation
 
+**Use Java Visualizer** or **python tutor** to develop more understanding.
+
 ## Designing Methods
 
 - Access Modifiers
@@ -8,7 +10,32 @@
   - *protected* methods can only be called from classes in the same package or subclasses.
   - *default* or package private, methods can only be called from classes in the same package.
 
-**Use Java Visualizer** or **python tutor** to develop more understanding.
+- Return Type
+  - The return type might be an actual Java type such as String or int.
+  - If there is no return type, the *void* keyword is used.
+  - *Remember that a method must have a return type.*
+  - *Methods with a return type other than void are required to have a return statement inside the method body.*
+  - Methods that have a return type of void are permitted to have a return statement with no value returned or omit the return        statement entirely.
+
+- Method Name
+  - an identifier may only contain letters, numbers, $, or _.
+  - the first character is not allowed to be a number, and reserved words are not allowed.
+
+- Parameter List
+  - if no parameters then just empty parentheses: ().
+  - If multiple parameters, you separate them with a comma.
+
+- Optional Exception List
+  - optional
+  - can list as many types of exceptions as nedded in this clause separated by commas.
+
+- Method Body
+  - A method body is simply a code block.
+  - It has braces that contain zero or more Java statements.
+
+- Working with Varargs
+  - A vararg parameter must be the last element in a methods parameter list.
+  - This implies that methods are only allowed to have one vararg parameter per method.
 
 - Only the access modifier or optional specifiers are allowed before the return type.
 - optional specifiers are allowed in any order.
