@@ -13,4 +13,4 @@
 
 - Risk-Return Metrics
 
-[Risk-Return Metrics](./slides/risk_return_metrics.png)
+![Risk-Return Metrics](./slides/risk_return_metrics.png)
