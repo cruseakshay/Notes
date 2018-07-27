@@ -4,10 +4,10 @@
 
 ## Designing Methods
 
-- Access Modifiers
+- Access Modifiers (4 in total)
   - *public* methods can be called from any class.
   - *private* methods can only be called from within the class.
-  - *protected* methods can only be called from classes in the same package or subclasses.
+  - *protected* methods can only be called from classes in the same package or subclasses.(page no 176 for revison)
   - *default* or package private, methods can only be called from classes in the same package.
 
 - Return Type
@@ -33,9 +33,24 @@
   - A method body is simply a code block.
   - It has braces that contain zero or more Java statements.
 
-- Working with Varargs
-  - A vararg parameter must be the last element in a methods parameter list.
-  - This implies that methods are only allowed to have one vararg parameter per method.
+## Working with Varargs
+
+A vararg parameter must be the last element in a methods parameter list.
+This implies that methods are only allowed to have one vararg parameter per method.
+- When calling a method with a *vararg* parameter
+  - can pass in an array
+  - can pass the list of the elements of the array and let Java create array for you.
+  - can even omit the vararg values in the method call and Java will create an array of length zero.
+
+## Applying Access Modifiers
+
+TO-DO: Revise from the book
+- private access
+- default (package private access)
+- protected access
+- pubblic access
+
+- 
 
 - Only the access modifier or optional specifiers are allowed before the return type.
 - optional specifiers are allowed in any order.
@@ -109,6 +124,7 @@ Only interfaces and abstract classes can include abstract methods.
 Java does not allow multiple inheritance, so having one class extend two interfaces that both define the same default method signature leads to a compiler error, unless the class overrides the method.
 
 example:
+
     ```java
     package musical;
     interface SpeakDialogue { default int talk() { return 7; } }
