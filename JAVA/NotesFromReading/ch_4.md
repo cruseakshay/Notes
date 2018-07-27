@@ -1,5 +1,13 @@
 # Methods and Encapsulation
 
+## Designing Methods
+
+- Access Modifiers
+  - *public* methods can be called from any class.
+  - *private* methods can only be called from within the class.
+  - *protected* methods can only be called from classes in the same package or subclasses.
+  - *default* or package private, methods can only be called from classes in the same package.
+
 **Use Java Visualizer** or **python tutor** to develop more understanding.
 
 - Only the access modifier or optional specifiers are allowed before the return type.
