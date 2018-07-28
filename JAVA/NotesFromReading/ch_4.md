@@ -113,6 +113,8 @@ This means there can be different access modifiers, specifiers (like static), re
   - Note that Java can only accept wider types. 
   - An int can be passed to a method taking a long parameter. Java will not automatically convert to a narrower type.
 
+![to choose overloaded method](./img/overloaded_method.PNG)
+
 
 - Only the access modifier or optional specifiers are allowed before the return type.
 - optional specifiers are allowed in any order.
