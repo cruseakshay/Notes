@@ -128,7 +128,10 @@ A constructor is a special method that matches the name of the class and has no 
 - Default Constructor
   - If we don’t include any constructors in the class, Java will create one for us without any parameters.
   - This constructor is called as Deafult or No Argument constructor.
+  - The default constructor has an empty parameter list and an empty body.
+  > Remember that a default constructor is only supplied if there are no constructors present.
 
+- Overloading Constructors
 
 - Only the access modifier or optional specifiers are allowed before the return type.
 - optional specifiers are allowed in any order.
