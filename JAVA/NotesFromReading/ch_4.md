@@ -119,6 +119,17 @@ This means there can be different access modifiers, specifiers (like static), re
 
 ## Creating Constructors
 
+A constructor is a special method that matches the name of the class and has no return type.
+- Java is case sensitive, so constructor name should match with class.
+- Constructors are used when creating a new object. This process is called instantiation because it creates a new instance of the class.
+- When Java sees the *new* keyword, it allocates memory for the new object. eg: new Goal().
+- *this* keyword tells Java we want to reference an instance variable.
+
+- Default Constructor
+  - If we don’t include any constructors in the class, Java will create one for us without any parameters.
+  - This constructor is called as Deafult or No Argument constructor.
+
+
 - Only the access modifier or optional specifiers are allowed before the return type.
 - optional specifiers are allowed in any order.
 - default access does not require a modifier
