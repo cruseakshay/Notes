@@ -90,7 +90,20 @@ Assignments made in the method do not affect the caller.
 
 ## Overloading Methods
 
+Method overloading occurs when there are different method signatures with the same name but different type parameters.
+**Everything other than the method signature can vary for overloaded methods.**
+This means there can be different access modifiers, specifiers (like static), return types, and exception lists.
 
+- Overloading and Varargs
+  - Remember that Java treats varargs as if they were an array.
+    - public void fly(int[] lengths) { }
+    - public void fly(int... lengths) { } // DOES NOT COMPILE
+
+- Autoboxing
+  - what happens if we have both a primitive and an integer version?
+     - public void fly(int numMiles) { }
+     - public void fly(Integer numMiles) { }
+    > Java tries to use the most specific parameter list it can find.
 
 
 - Only the access modifier or optional specifiers are allowed before the return type.
