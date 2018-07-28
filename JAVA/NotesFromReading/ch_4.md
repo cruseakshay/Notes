@@ -71,10 +71,10 @@ Each class has a copy of the instance variables. There is only one copy of the c
 
 - Static Initialization
   - looks like: static{/* code block */}
-  - The static initializer runs when the class is fi rst used.
+  - The static initializer runs when the class is first used.
   - final static variable can be initialised only once throght the program, either on declaration or in static block.
   - *Try to Avoid Static and Instance Initializers*
-  - There is a common case to use a static initializer: when you need to initialize a static fi eld and the code to do so requires more than one line. This often occurs when you want to initialize a collection like an ArrayList.
+  - There is a common case to use a static initializer: when you need to initialize a static field and the code to do so requires more than one line. This often occurs when you want to initialize a collection like an ArrayList.
 
 - Static Imports
   - Static imports are for importing static members of classes.
@@ -89,6 +89,8 @@ This means that a copy of the variable is made and the method receives that copy
 Assignments made in the method do not affect the caller.
 
 ## Overloading Methods
+
+
 
 
 - Only the access modifier or optional specifiers are allowed before the return type.
