@@ -105,6 +105,14 @@ This means there can be different access modifiers, specifiers (like static), re
      - public void fly(Integer numMiles) { }
     > Java tries to use the most specific parameter list it can find.
 
+- Reference Types
+  - {String, Integer, Double ... etc } cab be promoted to SuperClass Object type such as Object class for matching method to call.
+
+- Primitives
+  - Primitives work in a way similar to reference variables. Java tries to find the most specific matching overloaded method.
+  - Note that Java can only accept wider types. 
+  - An int can be passed to a method taking a long parameter. Java will not automatically convert to a narrower type.
+
 
 - Only the access modifier or optional specifiers are allowed before the return type.
 - optional specifiers are allowed in any order.
