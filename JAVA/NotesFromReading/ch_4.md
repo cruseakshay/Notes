@@ -115,6 +115,9 @@ This means there can be different access modifiers, specifiers (like static), re
 
 ![to choose overloaded method](./img/overloaded_method.PNG)
 
+> Note: Java is happy to convert the int 4 to a long 4 or an Integer 4. It cannot handle converting in two steps to a long and then to a Long.
+
+## Creating Constructors
 
 - Only the access modifier or optional specifiers are allowed before the return type.
 - optional specifiers are allowed in any order.
