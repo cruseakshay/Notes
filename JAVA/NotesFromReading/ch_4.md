@@ -187,7 +187,7 @@ Lambda expressions are often referred to as lambdas for short. \
 
 Lambdas work with interfaces that have only one method. 
 These are called functional interfaces; interfaces that can be used with functional programming.
-You can imagine that we’d have to create lots of interfaces like this to use lambdas, Java recognizes that this is a common problem and provides such an interface for us. It’s in the package **java.util.function**.
+You can imagine that we’d have to create lots of interfaces like this to use lambdas, Java recognizes that this is a common problem and provides such an interface for us. It’s in the package **java.util.function**. \
 
 - Only the access modifier or optional specifiers are allowed before the return type.
 - optional specifiers are allowed in any order.
