@@ -154,6 +154,21 @@ The other two rules relate to instances and constructors. They have to wait unti
 
 ## Encapsulating Data
 
+accessor/getter \
+mutator/setter
+
+For encapsulation, remember that data (an instance variable) is private and getters/setters are public.\
+Java defines a naming convention that is used in JavaBeans. 
+JavaBeans are reusable software components.
+avaBeans call an instance variable a *property*. \
+
+![Java Beans Naming Convention](./img/java_beans_conv.png)
+
+- Creating Immutable Classes
+
+    One step in making a class immutable is to omit the setters. \
+    Remember, immutable is only measured after the object is constructed.
+
 - Only the access modifier or optional specifiers are allowed before the return type.
 - optional specifiers are allowed in any order.
 - default access does not require a modifier
