@@ -133,6 +133,9 @@ A constructor is a special method that matches the name of the class and has no 
 
 - Overloading Constructors
 
+A class can have multiple constructors as long as they have different method signatures.
+Two constructors must have different parameters in order to be overloaded.
+
 - Only the access modifier or optional specifiers are allowed before the return type.
 - optional specifiers are allowed in any order.
 - default access does not require a modifier
