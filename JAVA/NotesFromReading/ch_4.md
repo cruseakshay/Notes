@@ -133,8 +133,26 @@ A constructor is a special method that matches the name of the class and has no 
 
 - Overloading Constructors
 
-A class can have multiple constructors as long as they have different method signatures.
-Two constructors must have different parameters in order to be overloaded.
+A class can have multiple constructors as long as they have different method signatures.\
+Two constructors must have different parameters in order to be overloaded.\
+Constructors can be called only by writing new before the name of the constructor.\
+this() has one special rule you need to know. If you choose to call it, the this() call must be the first noncommented statement in the constructor.
+
+- Final Fields
+
+**The constructor is part of the initialization process, so it is allowed to assign final instance variables in it.**\
+By the time the constructor completes, all final instance variables must have been set.
+
+- Order of Initialization
+  1. **If there is a superclass, initialize it first.**
+  2. **Static variable declarations and static initializers in the order they appear in the file.**
+  3. **Instance variable declarations and instance initializers in the order they appear in the file.**
+  4. **The constructor.**
+
+Keep in mind that the four rules apply only if an object is instantiated.\
+The other two rules relate to instances and constructors. They have to wait until there is code to instantiate the object.
+
+## Encapsulating Data
 
 - Only the access modifier or optional specifiers are allowed before the return type.
 - optional specifiers are allowed in any order.
