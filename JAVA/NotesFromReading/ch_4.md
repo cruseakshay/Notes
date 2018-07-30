@@ -169,6 +169,8 @@ avaBeans call an instance variable a *property*. \
     One step in making a class immutable is to omit the setters. \
     Remember, immutable is only measured after the object is constructed.
 
+## Writing Simple Lambdas
+
 - Only the access modifier or optional specifiers are allowed before the return type.
 - optional specifiers are allowed in any order.
 - default access does not require a modifier
