@@ -175,8 +175,19 @@ Functional programming is a way of writing code more declaratively.(introduced i
 Functional programming uses lambda expressions to write code.
 A lambda expression is a block of code that gets passed around.
 Lambda expressions are often referred to as lambdas for short. \
-**Deferred execution** means that code is specified now but will run later.
+**Deferred execution** means that code is specified now but will run later. \
+![lambda syntax](./img/lambda_syntax.png)
 
+- Rule for lambda syntax.
+  - The parentheses can only be omitted if there is a single parameter and its type is not explicitly stated.
+  - we can omit braces when we only have a single statement.
+  - Java doesn’t require you to type return or use a semicolon when no braces are used. This special shortcut doesn’t work when we have two or more statements.
+
+- Predicates
+
+Lambdas work with interfaces that have only one method. 
+These are called functional interfaces; interfaces that can be used with functional programming.
+You can imagine that we’d have to create lots of interfaces like this to use lambdas, Java recognizes that this is a common problem and provides such an interface for us. It’s in the package **java.util.function**.
 
 - Only the access modifier or optional specifiers are allowed before the return type.
 - optional specifiers are allowed in any order.
