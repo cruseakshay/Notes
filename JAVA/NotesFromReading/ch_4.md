@@ -171,6 +171,13 @@ avaBeans call an instance variable a *property*. \
 
 ## Writing Simple Lambdas
 
+Functional programming is a way of writing code more declaratively.(introduced in Java 8). \
+Functional programming uses lambda expressions to write code.
+A lambda expression is a block of code that gets passed around.
+Lambda expressions are often referred to as lambdas for short. \
+**Deferred execution** means that code is specified now but will run later.
+
+
 - Only the access modifier or optional specifiers are allowed before the return type.
 - optional specifiers are allowed in any order.
 - default access does not require a modifier
