@@ -13,6 +13,7 @@ ex_matrix[3, 2]
 # Extract the 3rd observation of the 2nd column of core 
 core[3, 2]
 
+# constructing xts
 # Create the object data using 5 random numbers
 data <- rnorm(5)
 
@@ -27,3 +28,16 @@ bday <- as.POSIXct("1899-05-08")
 
 # Create hayek and add a new attribute called born
 hayek <- xts(x = data, order.by = dates, born = bday)
+
+# Deconstructing xts
+# Extract the core data of hayek
+hayek_core <- coredata(hayek)
+
+# View the class of hayek_core
+class(hayek_core)
+
+# Extract the index of hayek
+hayek_index <- index(hayek)
+
+# View the class of hayek_index
+class(hayek_index)
