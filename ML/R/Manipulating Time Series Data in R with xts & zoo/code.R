@@ -41,3 +41,19 @@ hayek_index <- index(hayek)
 
 # View the class of hayek_index
 class(hayek_index)
+
+# Time based indices
+# Create dates
+dates <- as.Date("2016-01-01") + 0:4
+
+# Create ts_a
+ts_a <- xts(x = 1:5, order.by = dates)
+
+# Create ts_b
+ts_b <- xts(x = 1:5, order.by = as.POSIXct(dates))
+
+# Extract the rows of ts_a using the index of ts_b
+ts_a[index(ts_b)]
+
+# Extract the rows of ts_b using the index of ts_a
+ts_a[index(ts_a)]

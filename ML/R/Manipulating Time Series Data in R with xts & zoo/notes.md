@@ -10,3 +10,5 @@ The index holds all the information we need for xts to treat our data as a time 
 
 ![coredata()](http://www.rdocumentation.org/packages/xts/versions/0.9-7/topics/coredata.xts)
 ![index()](http://www.rdocumentation.org/packages/zoo/versions/1.7-13/topics/index)
+
+xts objects get their power from the index attribute that holds the time dimension. One major difference between xts and most other time series objects in R is the ability to use any one of various classes that are used to represent time.
