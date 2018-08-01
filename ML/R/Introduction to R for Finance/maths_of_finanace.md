@@ -27,3 +27,6 @@ a simple rate of discount d, then, in return for a repayment of X after a period
 (typically t < 1), he will lend X(1 - td) at the start of the period. In this situation,
 d is also known as a rate of commercial discount.
 
+## compound interest
+
+The essential feature of compound interest is that interest itself earns interest.
