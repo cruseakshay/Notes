@@ -29,4 +29,12 @@ d is also known as a rate of commercial discount.
 
 ## compound interest
 
+Under the action of compound interest, interest is paid on previously earned
+interest. A principal amount of C invested under compound interest at a rate of i per annum for years will accumulate to \
+C(1 + i)^n
+
 The essential feature of compound interest is that interest itself earns interest.
+- annuities
+- A practical illustration of compound interest is provided by mortgage loans, \
+  i.e., loans that are made for the specific purpose of buying property which then acts as security for the loan.
+- One of the most important applications of compound interest lies in the analysis and evaluation of investments, particularly **fixed-interest securities**.
