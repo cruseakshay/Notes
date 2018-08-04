@@ -19,3 +19,8 @@
   - best-known metrics for measuring strategy performance
   - long-recognized fund and strategy performance metric
   - It was developed in 1966 by William F. Sharpe
+
+- theoretical shortfalls of the Sharpe Ratio
+  - The denominator penalizes large gains as well as large losses.
+  - Inference methods using the Sharpe Ratio require returns to be normally distributed. Financial assets are known to exhibit highly non-normal returns.
+  - The denominator standardizes against the mean return, but the numerator standardizes against a separate benchmark rate or zero. Performance ratios are known to benefit in robustness from the consistent application of benchmarking figures in both the numerator and the denominator.
