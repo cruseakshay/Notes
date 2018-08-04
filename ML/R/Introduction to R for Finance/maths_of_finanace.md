@@ -40,3 +40,4 @@ The essential feature of compound interest is that interest itself earns interes
 - One of the most important applications of compound interest lies in the analysis and evaluation of investments, particularly **fixed-interest securities**.
 
 - cash flow
+- rate of interest
