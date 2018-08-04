@@ -41,3 +41,4 @@ The essential feature of compound interest is that interest itself earns interes
 
 - cash flow
 - rate of interest
+- effective rate of interest
