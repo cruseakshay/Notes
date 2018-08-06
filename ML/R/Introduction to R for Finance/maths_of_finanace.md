@@ -49,3 +49,6 @@ what is Taylor expansion ?
 - C(1+i)^n = C(1 + in + O(i^2))
 
 Investments of term 1 day are often referred to as overnight money.
+
+Note that the nominal rates of interest for different terms are liable to vary from day to day: they should not be assumed to
+be fixed.
