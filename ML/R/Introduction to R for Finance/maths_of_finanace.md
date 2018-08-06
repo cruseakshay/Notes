@@ -47,3 +47,5 @@ The essential feature of compound interest is that interest itself earns interes
 
 what is Taylor expansion ?
 - C(1+i)^n = C(1 + in + O(i^2))
+
+Investments of term 1 day are often referred to as overnight money.
