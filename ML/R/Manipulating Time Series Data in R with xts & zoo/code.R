@@ -73,3 +73,16 @@ am2 <- as.matrix(austres)
 
 # Inspect the head of am2
 head(am2)
+
+# Importing data
+# Create dat by reading tmp_file
+dat <- read.csv(tmp_file, sep=",")
+
+# Convert dat into xts
+xts(dat, order.by = as.Date(rownames(dat), "%m/%d/%Y"))
+
+# Read tmp_file using read.zoo
+dat_zoo <- read.zoo(tmp_file, index.column = 0, sep = ",", format = "%m/%d/%Y")
+
+# Convert dat_zoo to xts
+dat_xts <- as.xts(dat_zoo)
