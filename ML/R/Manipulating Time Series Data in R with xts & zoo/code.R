@@ -86,3 +86,19 @@ dat_zoo <- read.zoo(tmp_file, index.column = 0, sep = ",", format = "%m/%d/%Y")
 
 # Convert dat_zoo to xts
 dat_xts <- as.xts(dat_zoo)
+
+# Exporting xts objects
+# Convert sunspots to xts using as.xts().
+sunspots_xts <- as.xts(sunspots)
+
+# Get the temporary file name
+tmp <- tempfile()
+
+# Write the xts object using zoo to tmp 
+write.zoo(sunspots_xts, sep = ",", file = tmp)
+
+# Read the tmp file. FUN = as.yearmon converts strings such as Jan 1749 into a proper time class
+sun <- read.zoo(tmp, sep = ",", FUN = as.yearmon)
+
+# Convert sun into xts. Save this as sun_xts
+sun_xts <- as.xts(sun)

@@ -12,3 +12,8 @@ The index holds all the information we need for xts to treat our data as a time 
 ![index()](http://www.rdocumentation.org/packages/zoo/versions/1.7-13/topics/index)
 
 xts objects get their power from the index attribute that holds the time dimension. One major difference between xts and most other time series objects in R is the ability to use any one of various classes that are used to represent time.
+
+[saveRDS() and readRDS()](https://www.rdocumentation.org/packages/base/versions/3.3.1/topics/readRDS)
+
+One of the best ways to write an xts object from R is to use the zoo function [write.zoo()](https://www.rdocumentation.org/packages/zoo/versions/1.7-13/topics/read.zoo).
+
