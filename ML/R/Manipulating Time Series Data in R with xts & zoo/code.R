@@ -57,3 +57,19 @@ ts_a[index(ts_b)]
 
 # Extract the rows of ts_b using the index of ts_a
 ts_a[index(ts_a)]
+
+# Converting xts objects
+# Convert austres to an xts object called au
+au <- as.xts(austres)
+
+# Then convert your xts object (au) into a matrix am
+am <- as.matrix(au)
+
+# Inspect the head of am
+head(am)
+
+# Convert the original austres into a matrix am2
+am2 <- as.matrix(austres)
+
+# Inspect the head of am2
+head(am2)
