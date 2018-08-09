@@ -20,3 +20,10 @@ One of the best ways to write an xts object from R is to use the zoo function [w
 ## First Order of Business - Basic Manipulations
 
 [The ISO-8601 standard](https://en.wikipedia.org/wiki/ISO_8601)
+
+it is sometimes necessary to view only a subset of time for each day over multiple days. Using xts, you can slice days easily by using special notation in the i = argument to the single bracket extraction (i.e. [i, j]).
+
+use the special T/T notation designed for intraday repeating intervals.
+
+# Intraday times for all days
+NYSE["T09:30/T16:00"]

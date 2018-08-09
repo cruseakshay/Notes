@@ -112,3 +112,10 @@ jan_march <- x["2016/2016-03-22"]
 
 # Verify that jan_march contains 82 rows
 82 == length(jan_march)
+
+# Extracting recurring intraday intervals
+# Extract all data from irreg between 8AM and 10AM
+morn_2010 <- irreg["T08:00/T10:00"]
+
+# Extract the observations in morn_2010 for January 13th, 2010
+morn_2010["2010-01-13"]
