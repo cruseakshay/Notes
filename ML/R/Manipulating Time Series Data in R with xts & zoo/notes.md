@@ -17,3 +17,6 @@ xts objects get their power from the index attribute that holds the time dimensi
 
 One of the best ways to write an xts object from R is to use the zoo function [write.zoo()](https://www.rdocumentation.org/packages/zoo/versions/1.7-13/topics/read.zoo).
 
+## First Order of Business - Basic Manipulations
+
+[The ISO-8601 standard](https://en.wikipedia.org/wiki/ISO_8601)
