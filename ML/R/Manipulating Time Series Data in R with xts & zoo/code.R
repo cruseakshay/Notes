@@ -102,3 +102,13 @@ sun <- read.zoo(tmp, sep = ",", FUN = as.yearmon)
 
 # Convert sun into xts. Save this as sun_xts
 sun_xts <- as.xts(sun)
+
+# Querying for dates
+# Select all of 2016 from x
+x_2016 <- x["2016"]
+
+# Select January 1, 2016 to March 22, 2016
+jan_march <- x["2016/2016-03-22"]
+
+# Verify that jan_march contains 82 rows
+82 == length(jan_march)
