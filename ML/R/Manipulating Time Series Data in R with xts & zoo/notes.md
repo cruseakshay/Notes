@@ -32,3 +32,13 @@ NYSE["T09:30/T16:00"]
 ## Find the first or last period of time
 
 [first() and last()](https://www.rdocumentation.org/packages/xts/versions/0.9-7/topics/first)
+
+## Matrix arithmetic - add, subtract, multiply, and divide in time!
+
+xts objects respect time. By design when you perform any binary operation using two xts objects, these objects are first aligned using the intersection of the indexes. This may be surprising when first encountered.
+
+if you want to preserve the dimensions of your data.
+- Your options include:
+  - Use coredata() or as.numeric() (drop one to a matrix or vector).
+  - Manually shift index values - i.e. use lag().
+  - Reindex your data (before or after the calculation).
