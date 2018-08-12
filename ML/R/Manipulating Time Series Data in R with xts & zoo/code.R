@@ -126,3 +126,14 @@ x[dates]
 
 # Subset x using dates as POSIXct
 x[as.POSIXct(dates)]
+
+# Update and replace elements
+# Replace the values in x contained in the dates vector with NA
+x[dates] <- NA
+
+# Replace all values in x for dates starting June 9, 2016 with 0
+x["2016-06-09/"] <- 0
+
+# Verify that the value in x for June 11, 2016 is now indeed 0
+x["2016-06-11"]
+    
