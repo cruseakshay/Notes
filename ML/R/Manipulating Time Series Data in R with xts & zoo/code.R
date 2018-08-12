@@ -119,3 +119,10 @@ morn_2010 <- irreg["T08:00/T10:00"]
 
 # Extract the observations in morn_2010 for January 13th, 2010
 morn_2010["2010-01-13"]
+
+# Row selection with time objects
+# Subset x using the vector dates
+x[dates]
+
+# Subset x using dates as POSIXct
+x[as.POSIXct(dates)]
