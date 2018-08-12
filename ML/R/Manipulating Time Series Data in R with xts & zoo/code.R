@@ -157,3 +157,10 @@ a + b
 
 # Add a with the numeric value of b
 a + as.numeric(b)
+
+# Math with non-overlapping indexes
+# Add a to b, and fill all missing rows of b with 0
+a + merge(b, index(a), fill = 0)
+
+# Add a to b and fill NAs with the last observation
+a + merge(b, index(a), fill = na.locf)

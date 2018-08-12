@@ -42,3 +42,10 @@ if you want to preserve the dimensions of your data.
   - Use coredata() or as.numeric() (drop one to a matrix or vector).
   - Manually shift index values - i.e. use lag().
   - Reindex your data (before or after the calculation).
+
+## Math with non-overlapping indexes
+# Add a to b, and fill all missing rows of b with 0
+a + merge(b, index(a), fill = 0)
+
+# Add a to b and fill NAs with the last observation
+a + merge(b, index(a), fill = na.locf)
