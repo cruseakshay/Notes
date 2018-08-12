@@ -146,3 +146,7 @@ last(lastweek, 2)
 
 # Extract all but the first two days of lastweek
 first(lastweek, "-2 days")
+
+# Combining first and last
+# Extract the first three days of the second week of temps
+first(last(first(temps, "2 weeks"), "1 week"), "3 days")
