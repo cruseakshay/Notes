@@ -25,5 +25,10 @@ it is sometimes necessary to view only a subset of time for each day over multip
 
 use the special T/T notation designed for intraday repeating intervals.
 
-# Intraday times for all days
+## Intraday times for all days
+
 NYSE["T09:30/T16:00"]
+
+## Find the first or last period of time
+
+[first() and last()](https://www.rdocumentation.org/packages/xts/versions/0.9-7/topics/first)

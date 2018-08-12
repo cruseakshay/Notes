@@ -137,3 +137,4 @@ x["2016-06-09/"] <- 0
 # Verify that the value in x for June 11, 2016 is now indeed 0
 x["2016-06-11"]
     
+# Find the first or last period of time
