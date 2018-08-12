@@ -150,3 +150,10 @@ first(lastweek, "-2 days")
 # Combining first and last
 # Extract the first three days of the second week of temps
 first(last(first(temps, "2 weeks"), "1 week"), "3 days")
+
+# Matrix arithmetic - add, subtract, multiply, and divide in time!
+# Add a and b
+a + b
+
+# Add a with the numeric value of b
+a + as.numeric(b)
