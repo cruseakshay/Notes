@@ -138,3 +138,11 @@ x["2016-06-09/"] <- 0
 x["2016-06-11"]
     
 # Find the first or last period of time
+# Create lastweek using the last 1 week of temps
+lastweek <- last(temps, "1 week")
+
+# Print the last 2 observations in lastweek
+last(lastweek, 2)
+
+# Extract all but the first two days of lastweek
+first(lastweek, "-2 days")
