@@ -47,5 +47,7 @@ if you want to preserve the dimensions of your data.
 # Add a to b, and fill all missing rows of b with 0
 a + merge(b, index(a), fill = 0)
 
-# Add a to b and fill NAs with the last observation
+## Add a to b and fill NAs with the last observation
 a + merge(b, index(a), fill = na.locf)
+
+## Merging and modifying time series
