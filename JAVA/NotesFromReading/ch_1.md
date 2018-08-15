@@ -2,9 +2,9 @@
 
 The package java.lang is imported into every Java class.
 
-A valid .java file may define any number of classes or interfaces but have at most one public class.
+A valid xyz.java file may define any number of classes or interfaces but have at most one public class.
 
-Java is object oriented, not procedural
+Java is object oriented, not procedural language
 
 Operator overloading is permitted in languages like C++, not Java
 
