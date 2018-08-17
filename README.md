@@ -24,3 +24,5 @@ Notes added for the courses:
 - NLP
   - Oracle Chatbot MOOC
 - PLSQL study
+- Finance
+  - Fundaments of Market Structure
