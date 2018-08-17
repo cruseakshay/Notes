@@ -21,6 +21,7 @@ Notes added for the courses:
     1. Introduction to R for Finance
     2. Intermediate R for Finance
     3. R case study
+    4. Importing and Managing Financial Data in R
 - NLP
   - Oracle Chatbot MOOC
 - PLSQL study
