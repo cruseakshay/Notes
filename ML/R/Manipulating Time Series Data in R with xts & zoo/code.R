@@ -170,3 +170,10 @@ merge(a, b, join = "inner")
 
 # Perform a left-join of a and b, fill missing values with 0
 merge(a, b, join = "left", fill = 0)
+
+# Combining xts by row with rbind
+# Row bind temps_june30 to temps, assign this to temps2
+temps2 <- rbind(temps, temps_june30)
+
+# Row bind temps_july17 and temps_july18 to temps2, call this temps3
+temps3 <- rbind(temps2, temps_july17, temps_july18)
