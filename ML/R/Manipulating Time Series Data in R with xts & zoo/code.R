@@ -164,3 +164,9 @@ a + merge(b, index(a), fill = 0)
 
 # Add a to b and fill NAs with the last observation
 a + merge(b, index(a), fill = na.locf)
+
+# Perform an inner join of a and b
+merge(a, b, join = "inner")
+
+# Perform a left-join of a and b, fill missing values with 0
+merge(a, b, join = "left", fill = 0)
