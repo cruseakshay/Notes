@@ -14,3 +14,11 @@
 
 - imagine all the scenarios of the concepts you learnt, go ahead and code to see the behaviour.
 - try to recall the concepts you learnt without help. this gets easier and faster with time and practice.
+
+- Data types supported by switch statements include the following:
+  - int and Integer, 
+  - byte and Byte,
+  - short and Short,
+  - char and Character,
+  - String,
+  - enum values
