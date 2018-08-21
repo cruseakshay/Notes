@@ -22,3 +22,6 @@
   - char and Character,
   - String,
   - enum values
+- When using switch we need to remember two important things about cases
+  - Duplicate cases not allowed.
+  - Case should be compile time constant.
