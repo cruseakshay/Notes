@@ -44,6 +44,8 @@ Underscores are allowed between any two digits in a numeric literal. Underscores
 
 The parseInt() methods return a primitive. The valueOf() methods return a wrapper class object.
 
+By definition, if two objects are equal, their hash code must also be equal. If you override the equals() method, you change the way two objects are equated and Object's implementation of hashCode() is no longer valid. Therefore, if you override the equals() method, you must also override the hashCode() method as well.
+
 Remember that garbage collection is not guaranteed to run on demand. It may doesn’t run at all.
 
 Java does not automatically convert integers to boolean values for use in if-then statements.
