@@ -1,10 +1,16 @@
 # Java Building Blocks
 
+In Java 6 or earlier version, JVM first loads the byte code into memory. Static blocks will be executed at the time of class loading and then looks for the main method.
+
+From Java 7 on wards , JVM first looks for the main method. If it doesn't find main method, it gives you error. If there is main method then it loads the class into memory.
+
+A class may not have the main method, so there will be no compile time error when compiling such a class. However trying to execute the class file of that class causes an Error not an exception.
+
 The package java.lang is imported into every Java class.
 
-A valid .java file may define any number of classes or interfaces but have at most one public class.
+A valid xyz.java file may define any number of classes or interfaces but have at most one public class.
 
-Java is object oriented, not procedural
+Java is object oriented, not procedural language
 
 Operator overloading is permitted in languages like C++, not Java
 
@@ -37,6 +43,8 @@ The wrapper class for int is **Integer** and the wrapper class for char is **Cha
 Underscores are allowed between any two digits in a numeric literal. Underscores are not allowed adjacent to a decimal point.
 
 The parseInt() methods return a primitive. The valueOf() methods return a wrapper class object.
+
+By definition, if two objects are equal, their hash code must also be equal. If you override the equals() method, you change the way two objects are equated and Object's implementation of hashCode() is no longer valid. Therefore, if you override the equals() method, you must also override the hashCode() method as well.
 
 Remember that garbage collection is not guaranteed to run on demand. It may doesn’t run at all.
 
