@@ -60,7 +60,8 @@ The value of a case statement must be constant, a literal value, or final variab
 
 Barring any JVM limitations, a switch statement can have any number of case statements (including none) but at most one default statement.
 
-Shorter strings sort before longer strings when all the other characters are the same, making Option B the answer.
+Shorter strings sort before longer strings when all the other characters are the same.
+Arrays.sort(): sorts Numbers before letters and Upper case before Lower case letter.
 
 When using an array initializer, you are not allowed to specify the size separately. The size is inferred from the number of elements listed.
 
