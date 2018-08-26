@@ -28,6 +28,8 @@ A byte is smaller than a char.
 
 The instance variables, constructor, and method names can appear in any order within a class declaration.
 
+Since Java 8, static methods are allowed in interfaces. main() is a static method. Hence, main() is allowed in interfaces. So, the code compiles successfully. the main method in interface doesn't execute.
+
 The finalize() method may not be called, such as if your program crashes. However, it is guaranteed to be called no more than once.
 
 byte and short do not store values with decimal points.
