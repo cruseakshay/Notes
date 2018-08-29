@@ -58,6 +58,8 @@ If both the catch and finally blocks throw an exception, the one from the finall
 
 An overridden method must not throw any new or broader checked exceptions than the method it inherits.
 
+The exception variable is implicitly *final*, therefore we cannot assign the variable to different value within the catch block. So here trying to assign different exceptions to exception variable results a compile time error hence option E is correct.
+
 ## Questions from practice for revision
 
 - What is the output of the following application?
