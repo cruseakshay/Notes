@@ -1,4 +1,4 @@
-# Java Building Blocks
+# ch-1 Java Building Blocks
 
 In Java 6 or earlier version, JVM first loads the byte code into memory. Static blocks will be executed at the time of class loading and then looks for the main method.
 
