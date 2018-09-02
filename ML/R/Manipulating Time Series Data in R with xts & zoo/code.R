@@ -208,3 +208,10 @@ merge(head(diff_by_hand), head(diff(AirPass)))
 
 # Calculate the first order 12 month difference of AirPass
 diff(AirPass, lag = 12, difference = 1)
+
+# Find intervals by time in xts
+# Locate the weeks
+endpoints(temps, on = "weeks")
+
+# Locate every two weeks
+endpoints(temps, on = "weeks", k = 2)

@@ -57,3 +57,5 @@ The second argument is join, which specifies how to join the series - accepting 
 This is similar to a relational database join, only here, the index is what we join on. The final argument for this exercise is fill. This keyword specifies what to do with the new values in a series if there is missingness introduced as a result of the merge.
 
 ## Apply and aggregate by time
+The main function in xts to facilitate this is [endpoints()](http://www.rdocumentation.org/packages/xts/versions/0.9-7/topics/endpoints). It takes a time series (or a vector of times) and returns the locations of the last observations in each interval. \
+
