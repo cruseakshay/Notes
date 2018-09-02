@@ -184,3 +184,7 @@ temps_last <- na.locf(temps)
 
 # Fill missing values in temps using the next observation
 temps_next <- na.locf(temps ,fromLast = TRUE)
+
+# NA interpolation using na.approx()
+# Interpolate NAs using linear approximation
+na.approx(AirPass)
