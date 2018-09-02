@@ -189,6 +189,7 @@ temps_next <- na.locf(temps ,fromLast = TRUE)
 # Interpolate NAs using linear approximation
 na.approx(AirPass)
 
+# Combine a leading and lagging time series
 # Create a leading object called lead_x
 lead_x <- lag(x, k = -1)
 
@@ -197,3 +198,13 @@ lag_x  <- lag(x, k = 1)
 
 # Merge your three series together and assign to z
 z <- merge(lead_x, x, lag_x)
+
+# Calculate a difference of a series using diff()
+# Calculate the first difference of AirPass and assign to diff_by_hand
+diff_by_hand <- AirPass - lag(AirPass, k = 1)
+
+# Use merge to compare the first parts of diff_by_hand and diff(AirPass)
+merge(head(diff_by_hand), head(diff(AirPass)))
+
+# Calculate the first order 12 month difference of AirPass
+diff(AirPass, lag = 12, difference = 1)
