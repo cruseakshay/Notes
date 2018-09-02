@@ -55,3 +55,5 @@ merge() takes three key arguments which we will emphasize here.
 First is the ..., which lets you pass in an arbitrary number of objects to combine.
 The second argument is join, which specifies how to join the series - accepting arguments such as inner or left.
 This is similar to a relational database join, only here, the index is what we join on. The final argument for this exercise is fill. This keyword specifies what to do with the new values in a series if there is missingness introduced as a result of the merge.
+
+## Apply and aggregate by time
