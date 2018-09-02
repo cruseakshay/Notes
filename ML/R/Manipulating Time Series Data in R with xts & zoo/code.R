@@ -177,3 +177,10 @@ temps2 <- rbind(temps, temps_june30)
 
 # Row bind temps_july17 and temps_july18 to temps2, call this temps3
 temps3 <- rbind(temps2, temps_july17, temps_july18)
+
+# Fill missing values using last or previous observation
+# Fill missing values in temps using the last observation
+temps_last <- na.locf(temps)
+
+# Fill missing values in temps using the next observation
+temps_next <- na.locf(temps ,fromLast = TRUE)
