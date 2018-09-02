@@ -1,4 +1,4 @@
-# Java Building Blocks
+# ch-1 Java Building Blocks
 
 In Java 6 or earlier version, JVM first loads the byte code into memory. Static blocks will be executed at the time of class loading and then looks for the main method.
 
@@ -16,7 +16,7 @@ Operator overloading is permitted in languages like C++, not Java
 
 the JVM manages the location of objects in memory that can change and is transparent to the Java application.
 
-local variables defined within methods cannot have access modifiers such as public/private.
+local variables defined within methods cannot have access modifiers such as public or private.
 
 Object-oriented programming is the technique of structuring data into objects, which may contain data and a set of actions that operate on the data.
 
