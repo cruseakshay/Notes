@@ -188,3 +188,12 @@ temps_next <- na.locf(temps ,fromLast = TRUE)
 # NA interpolation using na.approx()
 # Interpolate NAs using linear approximation
 na.approx(AirPass)
+
+# Create a leading object called lead_x
+lead_x <- lag(x, k = -1)
+
+# Create a lagging object called lag_x
+lag_x  <- lag(x, k = 1)
+
+# Merge your three series together and assign to z
+z <- merge(lead_x, x, lag_x)
