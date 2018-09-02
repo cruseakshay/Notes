@@ -215,3 +215,10 @@ endpoints(temps, on = "weeks")
 
 # Locate every two weeks
 endpoints(temps, on = "weeks", k = 2)
+
+# Apply a function by time period(s)
+# Calculate the weekly endpoints
+ep <- endpoints(temps, on = "weeks")
+
+# Now calculate the weekly mean and display the results
+period.apply(temps[, "Temp.Mean"], INDEX = ep, FUN = mean)
