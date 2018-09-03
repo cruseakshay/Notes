@@ -6,6 +6,8 @@ From Java 7 on wards , JVM first looks for the main method. If it doesn't find m
 
 In Java 8 join method was introduced in String class.
 
+Default capacity of ArrayList is 10.
+
 A class may not have the main method, so there will be no compile time error when compiling such a class. However trying to execute the class file of that class causes an Error not an exception.
 
 The package java.lang is imported into every Java class.
