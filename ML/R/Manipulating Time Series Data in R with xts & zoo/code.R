@@ -222,3 +222,11 @@ ep <- endpoints(temps, on = "weeks")
 
 # Now calculate the weekly mean and display the results
 period.apply(temps[, "Temp.Mean"], INDEX = ep, FUN = mean)
+
+# Using lapply() and split() to apply functions on intervals
+# Split temps by week
+temps_weekly <- split(temps, f = "weeks")
+
+# Create a list of weekly means, temps_avg, and print this list
+temps_avg <- lapply(X = temps_weekly, FUN = mean)
+temps_avg
