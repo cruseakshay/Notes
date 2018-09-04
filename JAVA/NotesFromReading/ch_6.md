@@ -8,6 +8,8 @@
   - Create and invoke a method that throws an exception
   - Recognize common exception classes (such as NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException             ClassCastException)
 
+[checked-and-unchecked-exceptions](https://www.codejava.net/java-core/exception/java-checked-and-unchecked-exceptions)
+
 A try block must include either a catch or finally block, or both.
 
 A try statement is not required to have a finally block, but if it does, there can be at most one. Furthermore, a try statement can have any number of catch blocks or none at all.
