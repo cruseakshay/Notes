@@ -230,3 +230,13 @@ temps_weekly <- split(temps, f = "weeks")
 # Create a list of weekly means, temps_avg, and print this list
 temps_avg <- lapply(X = temps_weekly, FUN = mean)
 temps_avg
+
+# Selection by endpoints vs. split-lapply-rbind
+# Use the proper combination of split, lapply and rbind
+temps_1 <- do.call(rbind, lapply(split(temps, "weeks"), function(w) last(w, n = "1 day")))
+
+# Create last_day_of_weeks using endpoints()
+last_day_of_weeks <- endpoints(temps, on="weeks")
+
+# Subset temps using last_day_of_weeks 
+temps_2 <- temps[last_day_of_weeks]
