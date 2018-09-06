@@ -240,3 +240,4 @@ last_day_of_weeks <- endpoints(temps, on="weeks")
 
 # Subset temps using last_day_of_weeks 
 temps_2 <- temps[last_day_of_weeks]
+
