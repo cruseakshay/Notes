@@ -61,4 +61,4 @@ The main function in xts to facilitate this is [endpoints()](http://www.rdocumen
 Using [split()](https://www.rdocumentation.org/packages/xts/versions/0.9-7/topics/split.xts) for splitting time series data. \
 
 - Converting periodicity 
-
+range bars, aggregating a series based on some regular window can make analysis easier amongst series that have varying frequencies. 
