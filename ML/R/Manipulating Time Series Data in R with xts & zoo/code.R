@@ -242,4 +242,12 @@ last_day_of_weeks <- endpoints(temps, on="weeks")
 temps_2 <- temps[last_day_of_weeks]
 
 # Converting periodicity
+# Convert usd_eur to weekly and assign to usd_eur_weekly
+usd_eur_weekly <- to.period(usd_eur, period = "weeks")
+
+# Convert usd_eur to monthly and assign to usd_eur_monthly
+usd_eur_monthly <- to.period(usd_eur, period = "months")
+
+# Convert usd_eur to yearly univariate and assign to usd_eur_yearly
+usd_eur_yearly <- to.period(usd_eur, period = "years", OHLC = FALSE)
 
