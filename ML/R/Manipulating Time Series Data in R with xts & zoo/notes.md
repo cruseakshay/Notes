@@ -62,3 +62,5 @@ Using [split()](https://www.rdocumentation.org/packages/xts/versions/0.9-7/topic
 
 - Converting periodicity 
 range bars, aggregating a series based on some regular window can make analysis easier amongst series that have varying frequencies. 
+
+convert from a univariate series into OHLC series, and then convert your final OHLC series back into a univariate series using the xts function [to.period()](http://www.rdocumentation.org/packages/xts/versions/0.9-7/topics/to.period).

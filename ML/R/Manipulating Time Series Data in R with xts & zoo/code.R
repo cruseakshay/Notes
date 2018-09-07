@@ -242,3 +242,4 @@ last_day_of_weeks <- endpoints(temps, on="weeks")
 temps_2 <- temps[last_day_of_weeks]
 
 # Converting periodicity
+
