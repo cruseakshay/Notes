@@ -257,3 +257,13 @@ mkt_quarterly <- to.period(eq_mkt, period = "quarters")
 
 # Convert eq_mkt to quarterly using shortcut function
 mkt_quarterly2 <- to.quarterly(eq_mkt, name = "edhec_equity", indexAt = "firstof")
+
+# Calculate basic rolling value of series by month
+# Split edhec into years
+edhec_years <- split(edhec , f = "years")
+
+# Use lapply to calculate the cumsum for each year in edhec_years
+edhec_ytd <- lapply(edhec_years, FUN = cumsum)
+
+# Use do.call to rbind the results
+edhec_xts <- do.call(rbind, edhec_ytd)
