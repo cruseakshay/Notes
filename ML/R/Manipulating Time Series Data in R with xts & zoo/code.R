@@ -311,3 +311,13 @@ edhec_yearly <- to.period(edhec, period = "years")
 
 # Calculate the periodicity of edhec_yearly
 periodicity(edhec_yearly)
+
+# Find the number of periods in your data
+# Count the months
+nmonths(edhec)
+
+# Count the quarters
+nquarters(edhec)
+
+# Count the years
+nyears(edhec)
