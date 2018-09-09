@@ -288,3 +288,13 @@ indexFormat(temps) <- "%b-%d-%Y"
 
 # View the new format
 head(temps)
+
+# Time Zones (and why you should care!)
+# Construct times_xts with tzone set to America/Chicago
+times_xts <- xts(1:10, order.by = times, tzone = "America/Chicago")
+
+# Change the time zone of times_xts to Asia/Hong_Kong
+tzone(times_xts) <- "Asia/Hong_Kong"
+  
+# Extract the current time zone of times_xts
+tzone(times_xts)
