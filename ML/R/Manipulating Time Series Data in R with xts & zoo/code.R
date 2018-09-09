@@ -321,3 +321,14 @@ nquarters(edhec)
 
 # Count the years
 nyears(edhec)
+
+# Secret index tools
+# Explore underlying units of temps in two commands: .index() and .indexwday()
+.index(temps)
+.indexwday(temps)
+
+# Create an index of weekend days using which()
+index <- which(.indexwday(temps) == 6 | .indexwday(temps) == 0)
+
+# Select the index
+temps[index]
