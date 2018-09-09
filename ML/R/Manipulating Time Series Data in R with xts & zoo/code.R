@@ -267,3 +267,7 @@ edhec_ytd <- lapply(edhec_years, FUN = cumsum)
 
 # Use do.call to rbind the results
 edhec_xts <- do.call(rbind, edhec_ytd)
+
+# Calculate the rolling standard deviation of a time series
+# Use rollapply to calculate the rolling 3 period sd of eq_mkt
+eq_sd <- rollapply(eq_mkt, width = 3, FUN = sd)
