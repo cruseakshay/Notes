@@ -332,3 +332,13 @@ index <- which(.indexwday(temps) == 6 | .indexwday(temps) == 0)
 
 # Select the index
 temps[index]
+
+# Modifying timestamps
+# Make z have unique timestamps
+z_unique <- make.index.unique(z, eps = 1e-4)
+
+# Remove duplicate times in z
+z_dup <- make.index.unique(z, drop = TRUE)
+
+# Round observations in z to the next hour
+z_round <- align.time(z, n = 3600)
