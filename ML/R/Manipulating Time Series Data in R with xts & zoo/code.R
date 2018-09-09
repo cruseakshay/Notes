@@ -298,3 +298,16 @@ tzone(times_xts) <- "Asia/Hong_Kong"
   
 # Extract the current time zone of times_xts
 tzone(times_xts)
+
+# Determining periodicity
+# Calculate the periodicity of temps
+periodicity(temps)
+
+# Calculate the periodicity of edhec
+periodicity(edhec)
+
+# Convert edhec to yearly
+edhec_yearly <- to.period(edhec, period = "years")
+
+# Calculate the periodicity of edhec_yearly
+periodicity(edhec_yearly)
