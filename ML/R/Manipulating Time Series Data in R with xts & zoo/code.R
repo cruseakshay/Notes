@@ -271,3 +271,20 @@ edhec_xts <- do.call(rbind, edhec_ytd)
 # Calculate the rolling standard deviation of a time series
 # Use rollapply to calculate the rolling 3 period sd of eq_mkt
 eq_sd <- rollapply(eq_mkt, width = 3, FUN = sd)
+
+# ch-5 Extra features of xts
+# Class attributes - tclass, tzone, and tformat
+# View the first three indexes of temps
+index(temps)[1:3]
+
+# Get the index class of temps
+indexClass(temps)
+
+# Get the timezone of temps
+indexTZ(temps)
+
+# Change the format of the time display
+indexFormat(temps) <- "%b-%d-%Y"
+
+# View the new format
+head(temps)
