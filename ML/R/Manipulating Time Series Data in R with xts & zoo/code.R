@@ -251,3 +251,9 @@ usd_eur_monthly <- to.period(usd_eur, period = "months")
 # Convert usd_eur to yearly univariate and assign to usd_eur_yearly
 usd_eur_yearly <- to.period(usd_eur, period = "years", OHLC = FALSE)
 
+# Convert a series to a lower frequency
+# Convert eq_mkt to quarterly OHLC
+mkt_quarterly <- to.period(eq_mkt, period = "quarters")
+
+# Convert eq_mkt to quarterly using shortcut function
+mkt_quarterly2 <- to.quarterly(eq_mkt, name = "edhec_equity", indexAt = "firstof")
