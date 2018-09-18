@@ -12,3 +12,11 @@ answer_1 = abs(np.mean(samples_1)-lam)
 answer_2 = abs(np.mean(samples_2)-lam) 
 
 print("|Lambda - sample mean| with {} samples is {} and with {} samples is {}. ".format(size_1, answer_1, size_2, answer_2))
+
+# Shuffling a deck of cards
+# Shuffle the deck
+np.random.shuffle(deck_of_cards)
+
+# Print out the top three cards
+card_choices_after_shuffle = deck_of_cards[0:3]
+print(card_choices_after_shuffle)
