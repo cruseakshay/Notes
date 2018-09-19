@@ -57,3 +57,4 @@ When checking whether an object is an instanceof an interface, Java waits until 
 The reason is that a subclass could implement that interface and the compiler wouldn’t know it.
 
 **Understanding Virtual Method Invocation** \
+Based on the object at runtime overriden methods from respective subclasses are called, this technique is called as Virtual Method Invocation.
