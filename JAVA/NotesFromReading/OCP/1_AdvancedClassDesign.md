@@ -28,3 +28,15 @@ For overloading, the method parameters must vary by type and/or number.
   3. If any checked exceptions are thrown, only the same exceptions or subclasses of those exceptions are allowed to be thrown.
 
 *The methods must not be static. (If they are, the method is hidden and not overridden.)*
+
+**Abstract Classes** \
+An abstract class may contain any number of methods including zero. \
+The methods can be abstract or concrete. \
+Abstract methods may not appear in a class that is not abstract. \
+The first concrete subclass of an abstract class is required to implement all abstract methods that were not implemented by a superclass.
+
+**Static and Final** \
+final prevents a variable from changing or a method from being overridden. \
+static makes a variable shared at the class level and uses the class name to refer to a method.\
+static and final are allowed to be added on the class level too. \
+Using final on a class means that it cannot be subclassed. As with methods,a class cannot be both abstract and final.
