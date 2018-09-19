@@ -23,5 +23,19 @@ public class Ch1_Instanceof {
 
         System.out.println(b4);
         System.out.println(b5);
+
+        // tricky examples follows
+        Hippo hippo2 = new Hippo();
+        
+        //incompatible types: Hippo cannot be converted to Elephant
+        
+        //boolean b6 = hippo2 instanceof Elephant; 
+        //System.out.println(b6);
+
+        /* The compiler knows that there is no possible way for a Hippo variable reference to be an Elephant,
+         * since Hippo doesn’t extend Elephant directly or indirectly. 
+        */
+        
+        // when Interface is invloved with instanceof operator compile time check is not done as subclass my implemnt the interface.
     }
 }

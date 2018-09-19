@@ -51,3 +51,9 @@ if the reference to which a points is an instance of class B, a subclass of B (d
 
 All Java classes inherit from Object, which means that *x instanceof Object* is usually true, except for one case where it is false. \
 If the literal null or a variable reference pointing to null is used to check instanceof, the result is false. null is not an Object.
+
+The compilation check only applies when instanceof is called on a class.\
+When checking whether an object is an instanceof an interface, Java waits until runtime to do the check.\
+The reason is that a subclass could implement that interface and the compiler wouldn’t know it.
+
+**Understanding Virtual Method Invocation** \
