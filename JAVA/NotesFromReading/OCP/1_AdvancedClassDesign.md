@@ -40,3 +40,14 @@ final prevents a variable from changing or a method from being overridden. \
 static makes a variable shared at the class level and uses the class name to refer to a method.\
 static and final are allowed to be added on the class level too. \
 Using final on a class means that it cannot be subclassed. As with methods,a class cannot be both abstract and final.
+
+**Imports** \
+figure out is how to get static methods used to compile.\
+And import all the Classes referenced from another packages.(Consider use of wildcards also)
+
+**Using instanceof** \
+In *a instanceof B*, the expression returns true. \
+if the reference to which a points is an instance of class B, a subclass of B (directly or indirectly), or a class that implements the B interface (directly or indirectly).
+
+All Java classes inherit from Object, which means that *x instanceof Object* is usually true, except for one case where it is false. \
+If the literal null or a variable reference pointing to null is used to check instanceof, the result is false. null is not an Object.
