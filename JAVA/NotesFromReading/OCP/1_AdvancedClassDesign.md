@@ -74,3 +74,19 @@ The @Override annotation is used to express that the programmer, intend for this
   3. Overriding a method declared in Object class, such as *hashCode*, *equals*, or *toString*. (Special case of 2)
 
 **Coding *equals*, *hashCode*, and *toString*** \
+All classes in Java inherit from java.lang.Object, either directly or indirectly.\
+For custom implementation it is common to override *equals()*, *hashCode()*, and *toString()* methods.
+
+- toString() \
+  Java automatically calls the toString() method if you try to print out an object.\
+  some classes supply a human readable implementation of toString() and others do not.\
+  Reflection is a technique used in Java to look at information about the class at runtime.
+
+- equals() \
+  Remember that Java uses == to compare primitives and for checking if two variables refer to the same object. \
+  Checking if two objects are equivalent uses the equals() method, or at least it does if the developer implementing the method           overrides equals().
+
+- *The Contract for equals() Methods*: Rules for equals() method.
+  - The equals() method implements an equivalence relation on non‐null object references:
+    1. It is reflexive: For any non‐null reference value x, x.equals(x) should return true.
+    
