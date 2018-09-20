@@ -93,3 +93,10 @@ For custom implementation it is common to override *equals()*, *hashCode()*, and
     3. It is transitive: For any non‐null reference values x, y, and z, if x.equals(y) returns true and y.equals(z) returns true, then          x.equals(z) should return true.
     4. It is consistent: For any non‐null reference values x and y, multiple invocations of x.equals(y) consistently return true or            consistently return false, provided no information used in equals comparisons on the objects is modified.
     5. For any non‐null reference value x, x.equals(null) should return false.
+- hashCode() \
+  Whenever you override equals(), you are also expected to override hashCode(). \
+  The hash code is used when storing the object as a key in a map. \
+  A hash code is a number that puts instances of a class into a finite number of categories.\
+  *what do you do if you have a primitive and need the hash code?* Ans. you can just use a primitive number as is or divide to get a        smaller int.\
+  Remember that all of the instance variables don’t need to be used in a hashCode() method. It is common not to include boolean and char   variables in the hash code.
+  
