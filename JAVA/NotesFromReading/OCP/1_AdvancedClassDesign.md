@@ -104,3 +104,9 @@ For custom implementation it is common to override *equals()*, *hashCode()*, and
   1. Within the same program, the result of hashCode() must not change. This means that you shouldn’t include variables that change in figuring out the hash code.
   2. If equals() returns true when called with two objects, calling hashCode() on each of those objects must return the same result. This means hashCode() can use a subset of the variables that equals() uses.
   3. If equals() returns false when called with two objects, calling hashCode() on each of those objects does not have to return a different result. This means hashCode() results do not need to be unique when called on unequal objects.
+
+**Working with Enums** \
+An enumeration is like a fixed set of constants. An enum is a class that represents an enumeration in JAVA. it provides *type-safe* checking. \
+Enumerations show up whenever you have a set of items whose types are known at compile time. \
+To create an enum, use the enum keyword instead of the class keyword. Then list all of the valid types for that enum.\
+Behind the scenes, an enum is a type of class that mainly contains static members.
