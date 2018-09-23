@@ -110,4 +110,5 @@ An enumeration is like a fixed set of constants. An enum is a class that represe
 Enumerations show up whenever you have a set of items whose types are known at compile time. \
 To create an enum, use the enum keyword instead of the class keyword. Then list all of the valid types for that enum.\
 Behind the scenes, an enum is a type of class that mainly contains static members. \
-Since an enum is like a set of constants, use the uppercase letter convention that you used for constants.
+Since an enum is like a set of constants, use the uppercase letter convention that you used for constants. \
+Enums may be used in switch statements.
