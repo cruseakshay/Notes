@@ -111,4 +111,11 @@ Enumerations show up whenever you have a set of items whose types are known at c
 To create an enum, use the enum keyword instead of the class keyword. Then list all of the valid types for that enum.\
 Behind the scenes, an enum is a type of class that mainly contains static members. \
 Since an enum is like a set of constants, use the uppercase letter convention that you used for constants. \
-Enums may be used in switch statements.
+Enums may be used in switch statements. You can’t compare an int and enum value directly anyway. \
+Methos in enum: <enum_name>.values(), <enum_name>.ordinal(), <enum_name>.valueOf(). \
+The values in an enum are all that are allowed. You cannot add more at runtime by extending the enum. \
+Enum can have Constructors, Fields, and Methods. The constructor is private because it can only be called from within the enum . \
+The first time that we ask for any of the enum values, Java constructs all of the enum values. After that, Java just returns the already constructed enum values. \
+If enum have Constructors, Fields, or Methods other than just values then ; is must after value declaration. \
+If the enum has an abstract method. This means that each and every enum value is required to implement this method. If we forget one, we get a compiler error. \
+If we don’t want each and every enum value to have a method, we can create a default implementation and override it only for the special cases.
