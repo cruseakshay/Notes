@@ -27,7 +27,7 @@ For overloading, the method parameters must vary by type and/or number.
   2. The return type must be the same or a more restrictive type, also known as covariant return types.
   3. If any checked exceptions are thrown, only the same exceptions or subclasses of those exceptions are allowed to be thrown.
 
-*The methods must not be static. (If they are, the method is hidden and not overridden.)*
+*The methods must not be static. (If they are, the method is hidden and not overridden.)* \
 
 **Abstract Classes** \
 An abstract class may contain any number of methods including zero. \
@@ -119,3 +119,13 @@ The first time that we ask for any of the enum values, Java constructs all of th
 If enum have Constructors, Fields, or Methods other than just values then ; is must after value declaration. \
 If the enum has an abstract method. This means that each and every enum value is required to implement this method. If we forget one, we get a compiler error. \
 If we don’t want each and every enum value to have a method, we can create a default implementation and override it only for the special cases.
+
+**Creating Nested Classes** \
+A nested class is a class that is defined within another class.
+A nested class that is not static is called an inner class.
+
+- There are four of types of nested classes:
+  1. inner class or member inner class
+  2. local inner class
+  3. anonymous inner class
+  4. static nested class
