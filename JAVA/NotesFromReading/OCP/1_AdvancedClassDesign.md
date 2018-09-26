@@ -129,3 +129,7 @@ A nested class that is not static is called an inner class.
   2. local inner class
   3. anonymous inner class
   4. static nested class
+
+1. Member Inner Classes \
+  A member inner class is defined at the member level of a class (the same level as the methods, instance variables and constructors). \
+  Properties: \
