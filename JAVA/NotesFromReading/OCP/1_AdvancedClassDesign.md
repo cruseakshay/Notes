@@ -142,4 +142,10 @@ A nested class that is not static is called an inner class.
 **Local Inner Classes** \
   A local inner class is a nested class defined within a method. \
   Like local variables, a local inner class declaration does not exist until the method is invoked, and it goes out of scope when the method returns. \
-  
+- properties:
+  - They do not have an access specifier.
+  - They cannot be declared static and cannot declare s tatic fields or methods.
+  - They have access to all fields and methods of the enclosing class.
+  - They do not have access to local variables of a method unless those variables are *final or effectively final*.
+
+If the code could still compile with the keyword final inserted before the local variable, the variable is effectively final.
