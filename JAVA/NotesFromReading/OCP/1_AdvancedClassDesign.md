@@ -130,11 +130,16 @@ A nested class that is not static is called an inner class.
   3. anonymous inner class
   4. static nested class
 
-1. Member Inner Classes \
+**Member Inner Classes** \
   A member inner class is defined at the member level of a class (the same level as the methods, instance variables and constructors). \
-  Properties: \
-  Can be declared public, private, or protected or use default access. \
-  Can extend any class and implement interfaces. \
-  Can be abstract or final. \
-  Cannot declare static fields or methods. \
-  Can access members of the outer class including private members.
+- Properties:
+  - Can be declared public, private, or protected or use default access.
+  - Can extend any class and implement interfaces.
+  - Can be abstract or final.
+  - Cannot declare static fields or methods.
+  - Can access members of the outer class including private members.
+
+**Local Inner Classes** \
+  A local inner class is a nested class defined within a method. \
+  Like local variables, a local inner class declaration does not exist until the method is invoked, and it goes out of scope when the method returns. \
+  
