@@ -149,3 +149,7 @@ A nested class that is not static is called an inner class.
   - They do not have access to local variables of a method unless those variables are *final or effectively final*.
 
 If the code could still compile with the keyword final inserted before the local variable, the variable is effectively final.
+
+**Anonymous Inner Classes**
+An anonymous inner class is a local inner class that does not have a name. It is declared and instantiated all in one statement using the new keyword. Anonymous inner classes are required to extend an existing class or implement an existing interface. They are useful when you have a short implementation that will not be used anywhere else. \
+But what if we want to implement both an interface and extend a class? You can’t with an anonymous inner class, unless the class to extend is java.lang.Object. Object is a special class, so it doesn’t count in the rule.
