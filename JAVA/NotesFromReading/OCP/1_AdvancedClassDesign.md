@@ -155,3 +155,5 @@ An anonymous inner class is a local inner class that does not have a name. It is
 But what if we want to implement both an interface and extend a class? You can’t with an anonymous inner class, unless the class to extend is java.lang.Object. Object is a special class, so it doesn’t count in the rule.
 
 **Static Nested Classes**
+A static nested class is a static class defined at the member level. It can be instantiated without an object of the
+enclosing class, so it can’t access the instance variables without an explicit object of the enclosing class.
