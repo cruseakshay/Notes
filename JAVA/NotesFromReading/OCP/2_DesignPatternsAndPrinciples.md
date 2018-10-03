@@ -13,4 +13,6 @@
 
 ### Defining a Functional Interface
 
+  It is a good practice to mark a functional interface with the `@FunctionalInterface` annotation for clarity.  
+  If a class marked with the `@FunctionalInterface` annotation contains more than one abstract method, or no abstract methods at all, then the compiler will detect this error and not compile.  
   
