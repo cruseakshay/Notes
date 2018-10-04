@@ -27,3 +27,5 @@
   that lambda implements returns a value. Alternatively, a return statement is optional when the return type of the method is void.  
   The data types for the input parameters of a lambda expression are optional. When one parameter has a data type listed, though, all parameters must provide a data type.  
   Java doesn’t allow us to re‐declare a local variable used in input parameter list of lambda expression.
+
+### Applying the Predicate Interface
