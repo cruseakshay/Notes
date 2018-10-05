@@ -20,3 +20,12 @@ np.random.shuffle(deck_of_cards)
 # Print out the top three cards
 card_choices_after_shuffle = deck_of_cards[0:3]
 print(card_choices_after_shuffle)
+
+# Throwing a fair die
+# first two steps of running a simulation - defining a random variable and assigning probabilities.
+# Define die outcomes and probabilities
+die, probabilities, throws = [1,2,3,4,5,6], [1/6,1/6,1/6,1/6,1/6,1/6], 1
+
+# Use np.random.choice to throw the die once and record the outcome
+outcome = np.random.choice(die, size=1, p=probabilities)
+print("Outcome of the throw: {}".format(outcome[0]))
