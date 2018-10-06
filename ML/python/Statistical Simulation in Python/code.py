@@ -55,3 +55,5 @@ for i in range(sims):
         wins = wins + 1 
 
 print("In {} games, you win {} times".format(sims, wins))
+
+# Simulating one lottery drawing
