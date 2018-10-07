@@ -44,6 +44,7 @@ class Test{
 
         System.out.println("Location of Last 10 : " + list.lastIndexOf(10));; // when ele is not present.
 
+        // void clear(): This method is used to remove all the elements from any list.
         list.clear(); // removes all ele from list.
 
         System.out.println(list); // list is empty
