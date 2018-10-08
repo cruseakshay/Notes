@@ -5,7 +5,7 @@ import java.util.Set;
 class Exercise7 {
     public static void main(String[] args) {
         Set<Number> numbers = new HashSet<>();
-        // add ele to the set: doesn't allow duplicates
+        // add ele to the set: doesn't allow duplicates, IMP: does not preserve insertion order.
         numbers.add(new Integer(86));
         numbers.add(75);
         numbers.add(new Integer(86));
