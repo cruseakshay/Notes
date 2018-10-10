@@ -1,4 +1,5 @@
 # OCP Syllabus
+
 1. Advanced Class Design
 2. Design Patterns and Principles 47
 3. Generics and Collections 103
@@ -9,3 +10,7 @@
 8. IO 405
 9. NIO.2 453
 10. JDBC
+
+## Planning
+
+- Weekly chapters Plan
