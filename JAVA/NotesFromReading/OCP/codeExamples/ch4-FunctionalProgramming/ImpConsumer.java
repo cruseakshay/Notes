@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.function.Consumer;
 
 class ImpConsumer {
@@ -6,7 +7,7 @@ class ImpConsumer {
         Consumer<String> c1 = System.out::println;
         
         // Consumer using lambda
-        Consumer<String> c2 = x -> System.out.println(X);
+        Consumer<String> c2 = x -> System.out.println(x);
 
         c1.accept("ola");
         c2.accept("yanna Consumer !");
