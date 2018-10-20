@@ -27,5 +27,10 @@ class ImpOptional{
         if (opt.isPresent()) {
             System.out.println(opt.get()); // if try to get the value directly, when Optional is empty. it will throw an exception.{java.util.NoSuchElementExcetion}
         }
+        //SUMMARY: of static methods:: Optional.empty(), Optional.get(), Optional.ofNullable()[check out in docs].
+
+
+        // Now Instance methods:: get(), ifPresent(Consumer c), isPresent(), orElse(T other), orElseGet(Supplier s), orElseThrow(Supplier s)
+        
     }
 }
