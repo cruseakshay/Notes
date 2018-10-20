@@ -27,10 +27,31 @@ class ImpOptional{
         if (opt.isPresent()) {
             System.out.println(opt.get()); // if try to get the value directly, when Optional is empty. it will throw an exception.{java.util.NoSuchElementExcetion}
         }
-        //SUMMARY: of static methods:: Optional.empty(), Optional.get(), Optional.ofNullable()[check out in docs].
+        //SUMMARY: of static methods:: Optional.empty(), Optional.of(), Optional.get(), Optional.ofNullable()[check out in docs].
 
 
         // Now Instance methods:: get(), ifPresent(Consumer c), isPresent(), orElse(T other), orElseGet(Supplier s), orElseThrow(Supplier s)
+
+        /**
+         * instead of checking for value with if statement like above
+         * we can specify a Consumer to be run when there is value present in Optional.
+         * When there is no value it skips running the Consumer.
+         */
         
+        opt.ifPresent(System.out::println);
+        
+        // when value is not present we have 3 choices.
+        Optional<Double> opt1 = average();
+
+        //Option 1: choose to return a specific value or variable.
+        opt1.orElse(Double.NaN);
+
+        //Option 2: using a Supplier to return a value at runtime to return instead.
+        opt1.orElseGet(() -> Math.random()); // must return Double in this case
+        
+        //Option 3: using Supplier to create an Exception that should be thrown.
+        opt1.orElseThrow(() -> new IllegalArgumentException());
+
+
     }
 }
