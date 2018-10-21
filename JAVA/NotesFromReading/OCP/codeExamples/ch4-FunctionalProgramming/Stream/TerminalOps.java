@@ -1,3 +1,4 @@
+import java.util.Optional;
 import java.util.stream.Stream;
 
 class TerminalOps {
@@ -7,5 +8,12 @@ class TerminalOps {
         // 1. count(): returns long :- Number of elements in a finite stream. For infinite stream it Hangs.
         Stream<String> animals = Stream.of("monkey", "gorilla","bonobo");
         System.out.println(animals.count());
+
+        // 2. min() and max(): returns Optional<T>. For infinite stream it Hangs. allows to pass a custom comparator.
+        Stream<String> s = Stream.of("monkey", "ape","bonobo");
+        Optional<String> opt = s.min((s1, s2) -> s1.length() - s2.length());
+        opt.ifPresent(System.out::println);
+
+        Stream.of("dog", "cat","lizard").min((s1, s2) -> s1.length() - s2.length()).ifPresent(System.out::println); // method chaining and lambda showing Functional programming power.
     }
 }
