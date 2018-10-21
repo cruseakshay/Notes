@@ -15,5 +15,12 @@ class TerminalOps {
         opt.ifPresent(System.out::println);
 
         Stream.of("dog", "cat","lizard").min((s1, s2) -> s1.length() - s2.length()).ifPresent(System.out::println); // method chaining and lambda showing Functional programming power.
+
+        // 3. findAny() and findFirst(): return an element of the stream, returns empty Optional if stream is empty.
+        Stream.of("dog", "cat","lizard").findAny().ifPresent(System.out::println);
+
+        Stream.of("cat","lizard", "dog").findFirst().ifPresent(System.out::println);
+        
+        // 4. 
     }
 }
