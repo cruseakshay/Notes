@@ -28,6 +28,7 @@ class TerminalOps {
         System.out.println(Stream.of("dog","lizard", "1dog").allMatch(pred));
         System.out.println(Stream.of("dog","lizard", "1dog").noneMatch(pred));
 
-        // 5. 
+        // 5. forEach(): there is no return value.
+        Stream.of(1,2,3,4).forEach(System.out::print);
     }
 }
