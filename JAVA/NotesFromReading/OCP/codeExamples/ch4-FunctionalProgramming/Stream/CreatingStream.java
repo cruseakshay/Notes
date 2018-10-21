@@ -23,7 +23,8 @@ class CreatingStream {
 
         //5. Creating infinite stream
         Stream<Double> randoms = Stream.generate(Math::random); // generate stream of random numbers.
-        Stream<Integer> oddNUmbers = Stream.iterate(1, n -> n+2); // generate stream of odd numbers. Here 1 is seed/starting value
+        Stream<Integer> oddNUmbers = Stream.iterate(1, n -> n+2); // generate stream of odd numbers. Here 1 is seed/starting value.
+        // lambda expression gets the previous value and generates the next one.
         
     }
 }
