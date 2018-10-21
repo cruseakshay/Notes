@@ -1,4 +1,5 @@
 import java.util.Optional;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 class TerminalOps {
@@ -21,6 +22,12 @@ class TerminalOps {
 
         Stream.of("cat","lizard", "dog").findFirst().ifPresent(System.out::println);
         
-        // 4. 
+        // 4. allMatch(), anyMatch() and noneMatch(): return boolean
+        Predicate<String> pred = x -> Character.isLetter(x.charAt(0));
+        System.out.println(Stream.of("dog","lizard", "1dog").anyMatch(pred)); // as the fn returns boolean
+        System.out.println(Stream.of("dog","lizard", "1dog").allMatch(pred));
+        System.out.println(Stream.of("dog","lizard", "1dog").noneMatch(pred));
+
+        // 5. 
     }
 }
