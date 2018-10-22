@@ -1,4 +1,5 @@
 import java.util.Optional;
+import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
@@ -36,6 +37,15 @@ class TerminalOps {
         String word = str.reduce("", (a,b) -> a+b); // identity, accumulator: start with an initial value and keep merging it with the next one.
         System.out.println(word);
 
-        
+        // the identity isn't really necessary so java lets us omit it. so when we dont specify identity, an Optional is returned as there might be no data.
+        BinaryOperator<Integer> ops = (q,w) -> q * w;
+        Stream<Integer> emptyStream = Stream.empty();
+        Stream<Integer> oneEleStream = Stream.of(3);
+        Stream<Integer> multiEleStream = Stream.of(3,5,6);
+
+        // observe the output
+        emptyStream.reduce(ops).ifPresent(System.out::println); // if stream is empty, an empty Optional is returned.
+        oneEleStream.reduce(ops).ifPresent(System.out::println); // if stream has one element it is returned.
+        multiEleStream.reduce(ops).ifPresent(System.out::println); // if multiple ele then accumulator is applied to combine them.
     }
 }
