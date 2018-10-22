@@ -2,6 +2,8 @@ import java.util.Optional;
 import java.util.TreeSet;
 import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 class TerminalOps {
@@ -62,5 +64,9 @@ class TerminalOps {
         // different logic in accumulator and combiner.
         TreeSet<String> aSet = Stream.of("R","A","j","N","i","K","a","n","t").collect(TreeSet::new, TreeSet::add, TreeSet::addAll);
         System.out.println(aSet);
+
+        // 2nd varient uses Collectors: an interface with common collectors.
+        aSet = Stream.of("R","A","j","N","i","K","a","n","t").collect(Collectors.toCollection(TreeSet::new));
+        System.out.println(aSet); // same example using collectors iterface.
     }
 }
