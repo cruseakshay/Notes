@@ -29,6 +29,13 @@ class TerminalOps {
         System.out.println(Stream.of("dog","lizard", "1dog").noneMatch(pred));
 
         // 5. forEach(): there is no return value.
-        Stream.of(1,2,3,4).forEach(System.out::print);
+        Stream.of(1,2,3,4).forEach(System.out::println);
+
+        // 6. reduce()- combines a stream into an single object. has 3 varients.
+        Stream<String> str = Stream.of("w","o", "l", "f");
+        String word = str.reduce("", (a,b) -> a+b); // identity, accumulator: start with an initial value and keep merging it with the next one.
+        System.out.println(word);
+
+        
     }
 }
