@@ -12,6 +12,7 @@ class ImpLocalDateTime{
         LocalTime time1 = LocalTime.of(5, 50);
 
         LocalDateTime dateAnTime = LocalDateTime.of(date1, time1);
+        System.out.println(dateAnTime);
 
         //other methods for creating datetime object
         System.out.println(LocalDateTime.of(2015, 2, 24, 12, 11));; //year, int month, dayOfMonth, hour, minute
