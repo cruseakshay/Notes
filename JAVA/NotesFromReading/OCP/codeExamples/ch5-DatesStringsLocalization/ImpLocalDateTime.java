@@ -18,5 +18,22 @@ class ImpLocalDateTime{
         System.out.println(LocalDateTime.of(2015, 2, 24, 12, 11));; //year, int month, dayOfMonth, hour, minute
         System.out.println(LocalDateTime.of(2015, Month.FEBRUARY, 24, 12, 11)); //year, Month month, dayOfMonth, hour, minute
         
+        /*
+        Important method signatures:
+
+        public static LocalDateTime of(int year, int month,int dayOfMonth, int hour, int minute)
+        
+        public static LocalDateTime of(int year, int month,int dayOfMonth, int hour, int minute, int second)
+        
+        public static LocalDateTime of(int year, int month,int dayOfMonth, int hour, int minute, int second, int nanos)
+        
+        public static LocalDateTime of(int year, Month month,int dayOfMonth, int hour, int minute)
+        
+        public static LocalDateTime of(int year, Month month,int dayOfMonth, int hour, int minute, int second)
+        
+        public static LocalDateTime of(int year, Month month,int dayOfMonth, int hour, int minute, int second, int nanos)
+        
+        public static LocalDateTime of(LocalDate date, LocalTime time)
+        */
     }
 }
