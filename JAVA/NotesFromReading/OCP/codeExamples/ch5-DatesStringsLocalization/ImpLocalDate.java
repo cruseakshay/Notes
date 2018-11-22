@@ -17,7 +17,7 @@ class ImpLocalDate{
 
 
         // Manipulating Dates : The date and time classes are immutable.
-        //Methods: plusDays(), plusWeeks(), plusMonths(), plusYears().
+        //Methods for foreward movement: plusDays(), plusWeeks(), plusMonths(), plusYears().
         LocalDate date = LocalDate.of(2018, Month.FEBRUARY, 24);
 
         System.out.println("Next Date " + date.plusDays(1));
@@ -27,5 +27,14 @@ class ImpLocalDate{
         System.out.println("Next month " + date.plusMonths(1));
 
         System.out.println("Next Year " + date.plusYears(1));
+
+        //Methods for backward movement: minusDays(), minusWeeks(), minusMonths(), minusYears().
+        System.out.println("Prev Date " + date.minusDays(1));
+        
+        System.out.println("Prev week " + date.minusWeeks(1));
+        
+        System.out.println("Prev month " + date.minusMonths(1));
+
+        System.out.println("Prev Year " + date.minusYears(1));
     }
 }
