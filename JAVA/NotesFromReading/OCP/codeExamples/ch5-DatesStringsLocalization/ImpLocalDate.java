@@ -14,5 +14,18 @@ class ImpLocalDate{
         System.out.println(LocalDate.of(2015, Month.JANUARY, 20)); // year, Month, date. here Month is enum.
         
         System.out.println(LocalDate.of(2015, 1, 12)); // year, Month, date. here Month is int.
+
+
+        // Manipulating Dates : The date and time classes are immutable.
+        //Methods: plusDays(), plusWeeks(), plusMonths(), plusYears().
+        LocalDate date = LocalDate.of(2018, Month.FEBRUARY, 24);
+
+        System.out.println("Next Date " + date.plusDays(1));
+
+        System.out.println("Next week " + date.plusWeeks(1));
+
+        System.out.println("Next month " + date.plusMonths(1));
+
+        System.out.println("Next Year " + date.plusYears(1));
     }
 }
