@@ -21,6 +21,8 @@ class ImpPeriod{
         System.out.println(monthly);
         System.out.println(biWeekly);
 
+        System.out.println(Period.ofWeeks(3)); // tricky, what is the output ? => Remember that week is not one of the units a Period stores.
+
         // Useage:
         LocalDate startPoint = LocalDate.of(2010, Month.JANUARY, 12);
 
@@ -45,6 +47,10 @@ class ImpPeriod{
         Period p = Period.ofYears(1);
         p = Period.ofWeeks(1);
         
-        System.out.println(p);
+        System.out.println(p); // This is clearly not what was intended!
+
+        // Period cannot be used with LocalTime objects.
+        // Period is a day or more of time.
+        // Duration, is intended for smaller units of time.
     }
 }
