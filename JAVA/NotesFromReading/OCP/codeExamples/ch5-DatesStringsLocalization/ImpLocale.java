@@ -17,5 +17,9 @@ class ImpLocale {
         // 2, 3. Using constructors.
         System.out.println(new Locale("fr")); // only Lang
         System.out.println(new Locale("hi", "IN")); // Lang + CCode
+
+        // Using builder pattern to create Locale
+        Locale l1 = new Locale.Builder().setLanguage("en").setRegion("US").build();
+        System.out.println("Created with Builder: "+l1);
     }
 }
