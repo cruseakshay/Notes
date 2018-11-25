@@ -21,5 +21,10 @@ class ImpLocale {
         // Using builder pattern to create Locale
         Locale l1 = new Locale.Builder().setLanguage("en").setRegion("US").build();
         System.out.println("Created with Builder: "+l1);
+
+        // Using different locale other than current one
+        Locale frLocale = new Locale("fr");
+        Locale.setDefault(frLocale);
+        System.out.println(Locale.getDefault());
     }
 }
