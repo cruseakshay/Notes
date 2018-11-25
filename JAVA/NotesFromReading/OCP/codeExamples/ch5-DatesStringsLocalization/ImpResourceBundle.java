@@ -1,5 +1,6 @@
 import java.util.Locale;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 class ImpResourceBundle{
     public static void main(String[] args) {
@@ -9,6 +10,12 @@ class ImpResourceBundle{
         printProperties(us);
         System.out.println();
         printProperties(france);
+
+        //Iterating over all the key/value pairs of ResourceBundle
+        ResourceBundle rs = ResourceBundle.getBundle("Zoo", us);
+        Set<String> keys =  rs.keySet();
+
+        keys.stream().map(k -> k + " " + rs.getString(k)).forEach(System.out::println);
     }
 
     public static void printProperties(Locale locale) {
