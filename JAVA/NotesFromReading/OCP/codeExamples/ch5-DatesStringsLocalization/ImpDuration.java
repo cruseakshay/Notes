@@ -21,5 +21,15 @@ class ImpDuration {
 
         Duration everyMilliSec = Duration.ofMillis(1);
         System.out.println(everyMilliSec); // PT0.001S Note this one is Fractional
+
+        Duration everyNanoSec = Duration.ofNanos(1);
+        System.out.println(everyNanoSec); // PT0.000000001T
+
+        //[NOTE] Duration doesn’t have a constructor that takes multiple units like Period does.
+
+        // Duration includes another more generic factory method. It takes a number and a TemporalUnit.
+        // TemporalUnit is an interface. At the moment, there is only one implementation named ChronoUnit.
+
+        
     }
 }
