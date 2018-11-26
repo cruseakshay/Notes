@@ -1,4 +1,5 @@
 import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 
 class ImpDuration {
     // Duration roughly works the same way as Period, except it is used with objects that have time.
@@ -30,6 +31,6 @@ class ImpDuration {
         // Duration includes another more generic factory method. It takes a number and a TemporalUnit.
         // TemporalUnit is an interface. At the moment, there is only one implementation named ChronoUnit.
 
-        
+        Duration daily1 = Duration.of(1, ChronoUnit.DAYS); // similarly ChronoUnit.HOURS, ChronoUnit.MINUTES, ChronoUnit.SECONDS and others can be used.
     }
 }
