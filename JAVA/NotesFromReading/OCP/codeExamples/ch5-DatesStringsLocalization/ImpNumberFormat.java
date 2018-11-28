@@ -8,7 +8,7 @@ class ImpNumberFormat{
 
         // The format classes are not thread-safe.
 
-        // Formatting a Number.
+        // Formatting.
         int attendeesPerYear = 3_200_000;
         int attendeesPerMonth = attendeesPerYear / 12;
 
@@ -20,5 +20,9 @@ class ImpNumberFormat{
 
         NumberFormat ca = NumberFormat.getInstance(Locale.CANADA_FRENCH);
         System.out.println(ca.format(attendeesPerMonth));
+
+        NumberFormat usCcy = NumberFormat.getCurrencyInstance(Locale.US);
+        int price = 58;
+        System.out.println(usCcy.format(price));
     }
 }
