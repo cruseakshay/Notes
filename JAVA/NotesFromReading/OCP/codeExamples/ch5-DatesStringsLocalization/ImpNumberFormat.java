@@ -1,8 +1,9 @@
 import java.text.NumberFormat;
+import java.text.ParseException;
 import java.util.Locale;
 
 class ImpNumberFormat{
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException{
         // 1. create a NumberFormat object requiered.
         // 2. Use parse() or format() as per use case. format() to turn a number into a String. parse() to turn a String into a number
 
@@ -24,5 +25,12 @@ class ImpNumberFormat{
         NumberFormat usCcy = NumberFormat.getCurrencyInstance(Locale.US);
         int price = 58;
         System.out.println(usCcy.format(price));
+
+        // Parsing.
+        String str = "40.66";
+        NumberFormat fr = NumberFormat.getInstance(Locale.FRANCE);
+        System.out.println(us.parse(str));
+        System.out.println(fr.parse(str)); // note output: The lesson is to make sure parsing is done using the right locale!
+
     }
 }
