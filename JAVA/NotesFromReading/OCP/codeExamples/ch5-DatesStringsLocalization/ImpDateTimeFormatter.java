@@ -13,5 +13,9 @@ class ImpDateTimeFormatter{
 
         // Using methods from object.
         System.out.println(date.format(DateTimeFormatter.ISO_LOCAL_DATE)); // Note Formatter used.
+
+        System.out.println(time.format(DateTimeFormatter.ISO_LOCAL_TIME)); // Note Formatter used.
+
+        System.out.println(dateTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)); // Note Formatter used.
     }
 }
