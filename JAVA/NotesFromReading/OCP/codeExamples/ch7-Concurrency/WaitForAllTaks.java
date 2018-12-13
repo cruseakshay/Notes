@@ -3,7 +3,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 class WaitForAllTaks{
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ExecutorService service = null;
         try {
             service = Executors.newSingleThreadExecutor();
@@ -21,7 +21,7 @@ class WaitForAllTaks{
         if (service != null) {
             service.awaitTermination(1, TimeUnit.MINUTES);
             // check if all tasks are finished.
-            if (service.isShutdown()) {
+            if (service.isTerminated()) {
                 System.out.println("All tasks are finished !");
             } else {
                 System.out.println("at least on of tasks is running !");
