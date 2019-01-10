@@ -14,3 +14,7 @@ Functional-style code has a higher signal-to-noise ratio; we write fewer lines o
 4. The code is more expressive.
 5. The functional-style version is more concise.
 6. The functional-style version is intuitive, code reads more like how we’d state the problem—and it’s easier to understand once we’re familiar with the syntax.
+
+## OOP
+In OOP we’re used to passing objects to methods, creating objects within methods, and returning objects from within methods.
+
