@@ -10,7 +10,7 @@ class IteratingList{
        */  
       final List<String> friends = Arrays.asList("Brian", "Nate", "Neal", "Raju", "Sara", "Scott");
 
-      // Method 1: Old for loop
+      //Method 1: Old for loop
       for (int i = 0; i < friends.size(); i++) {
           System.out.println(friends.get(i));
       }
@@ -20,7 +20,7 @@ class IteratingList{
           System.out.println(name);
       }
 
-      // Method 3: Using JAVA 8 FunctionalInterface 
+      //Method 3: Using JAVA 8 FunctionalInterface 
       friends.forEach(new Consumer<String>() {
           @Override
           public void accept(final String name) {
@@ -30,5 +30,9 @@ class IteratingList{
 
       //Method 4: Using lambda expressions.
       friends.forEach((final String name) -> System.out.println(name));
+
+      
+      //Method 5: Using Method reference.
+      friends.forEach(System.out::println);
     }
 }
