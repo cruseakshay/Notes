@@ -15,10 +15,13 @@ class FindFirstOnStream {
         // isPresent(): to check if value is returned.
         // get(): to get the value.
         // orElse(): to get a Substitue if value is not present.
-
+        // ifPresent(): to run a block of code or a lambda expression only if a value is present.
         final Optional<String> foundName = friends.stream().filter(name -> name.startsWith("N")).findFirst();
         System.out.println(foundName.isPresent());
         System.out.println(foundName.get());
         System.out.println(foundName.orElse("Not Presnt"));
+
+        foundName.ifPresent(name -> System.out.println(name));
+        foundName.ifPresent(System.out::println); // ifPresent() expects a Consumer<>
     }
 }
