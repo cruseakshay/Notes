@@ -15,6 +15,6 @@ class NewCharMethod {
         str.chars().filter(ch -> Character.isDigit(ch)).forEach(ch -> printChar(ch));
 
         // Using method reference.
-        str.chars().filter(Character::isDigit).forEach(NewCharMethod::pr);
+        str.chars().filter(Character::isDigit).forEach(System.out::println);
     }
 }
