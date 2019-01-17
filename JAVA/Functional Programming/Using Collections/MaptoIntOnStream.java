@@ -30,5 +30,6 @@ class MaptoIntOnStream {
             // If any name was longer than the given base, it would get picked up; otherwise the function would return the base value
             (name1, name2) -> name1.length() >= name2.length()? name1 : name2
         );
+        System.out.println(steveOrLonger);
     }
 }
