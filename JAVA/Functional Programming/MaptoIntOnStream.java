@@ -23,5 +23,12 @@ class MaptoIntOnStream {
         );
 
         aLongName.ifPresent(System.out::println);
+        // If we want to set a default or a base value, we can pass that value as an extra parameter to an overloaded variation of the reduce() method.
+
+        //This version of reduce() does not return an Optional.
+        final String steveOrLonger = friends.stream().reduce("Steve",
+            // If any name was longer than the given base, it would get picked up; otherwise the function would return the base value
+            (name1, name2) -> name1.length() >= name2.length()? name1 : name2
+        );
     }
 }
