@@ -38,7 +38,16 @@ public class Compare {
 			printPeople("Sorted in ascending order by age with method reference: ", ascendingAge);
 		    System.out.println("//" + "END:AGE_ASCEND_MR_OUTPUT");
 		}
-		
+		{
+			System.out.println("//" + "START:AGE_DESCEND_OUTPUT");
+			
+			printPeople("Sorted in descending order by age: ",  
+					people.stream().sorted(
+							// the first parameter is not used as a target to the method, but rather as its argument. [does not follow the parameter-routing conventions for method reference]
+							(person1, person2) -> person2.ageDifference(person1)
+							).collect(Collectors.toList()));
+			System.out.println("//" + "END:AGE_DESCEND_OUTPUT");
+		}
 		
 
 	}
