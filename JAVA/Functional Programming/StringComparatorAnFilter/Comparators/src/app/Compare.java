@@ -3,8 +3,9 @@ package app;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;import java.util.stream.Collector;
 import java.util.stream.Collectors;
-
+import static java.util.Comparator.comparing;
 public class Compare {
 	public static void printPeople(final String message, final List<Person> people) {
 
@@ -72,7 +73,18 @@ public class Compare {
 			people.stream().max(Person::ageDifference).ifPresent(oldest -> System.out.println("eldest:: "+ oldest));
 			System.out.println("//" + "END:ELDEST_OUTPUT");
 		}
-		
+		{
+			// [IMP] Just using getter to generate comparing behaviour.
+			final Function<Person, String> byTheirName = person -> person.getName();
+			final Function<Person, Integer> byAge = person -> person.getAge();
+			// Using convenience method java.util.Comparator.comparing;
+			printPeople("Sorted in ascending order by name", people.stream().sorted(comparing(byTheirName)).collect(Collectors.toList()));
+			printPeople("Sorted in ascending order by age", people.stream().sorted(comparing(byAge)).collect(Collectors.toList()));
+			
+			// Comparison using both fields.
+			printPeople("Comparing using both age and name", people.stream().sorted(comparing(byAge).thenComparing(byTheirName)).collect(Collectors.toList()));
+			
+		}
 
 	}
 }
