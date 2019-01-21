@@ -23,3 +23,6 @@ In OOP we’re used to passing objects to methods, creating objects within metho
 
 - Higher-order functions:
   - how to pass functions to functions, create functions within functions, and return functions from within functions.
+
+## Using the collect Method and the Collectors Class
+  
