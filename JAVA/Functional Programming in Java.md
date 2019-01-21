@@ -25,4 +25,9 @@ In OOP we’re used to passing objects to methods, creating objects within metho
   - how to pass functions to functions, create functions within functions, and return functions from within functions.
 
 ## Using the collect Method and the Collectors Class
-  
+
+The collect() method takes a stream of elements and collects or gathers them into a result container. To do that, the method needs to know three things:
+
+- How to make a result container (for example, using the ArrayList::new method)
+- How to add a single element to a result container (for example, using the ArrayList::add method)
+- How to merge one result container into another (for example, using the ArrayList::addAll method)
