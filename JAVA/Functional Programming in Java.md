@@ -31,3 +31,38 @@ The collect() method takes a stream of elements and collects or gathers them int
 - How to make a result container (for example, using the ArrayList::new method)
 - How to add a single element to a result container (for example, using the ArrayList::add method)
 - How to merge one result container into another (for example, using the ArrayList::addAll method)
+
+## Listing All Files in a Directory
+
+All Files in a Directory
+
+```java
+    Files.list(Paths.get(".")).forEach(System.out::println);
+```
+
+Only the subdirectories in the current directory:
+
+```java
+    Files.list(Paths.get(".")).filter(Files::isDirectory).forEach(System.out::println);
+```
+
+## Listing Select Files in a Directory
+
+Traditional way to select only the java files in a DIR_PATH directory:
+
+```java
+    final String[] files = new File(DIR_PATH).list(new java.io.FilenameFilter(){
+        public boolean accept(final File dir, final String name){
+            return name.endsWith(".java");
+        }
+    });
+    System.out.println(files);
+```
+
+The new DirectoryStream facility can help traverse large directory structures more efficiently.
+
+```java
+    Files.newDirectoryStream(
+        Paths.get(DIR_PATH), path -> path.toString().endsWith(".java")
+    ).forEach(System.out::println);
+```
