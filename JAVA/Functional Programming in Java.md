@@ -66,3 +66,13 @@ The new DirectoryStream facility can help traverse large directory structures mo
         Paths.get(DIR_PATH), path -> path.toString().endsWith(".java")
     ).forEach(System.out::println);
 ```
+
+pick files based on file properties, such as if a file is executable, readable, or writable.
+
+Using listFiles() method that takes FileFilter as its parameter.
+
+```java
+    final File[] files = new File(".").listFiles(file -> file.isHidden());
+    // OR
+    final File[] files = new File(".").listFiles(File::isHidden);
+```
