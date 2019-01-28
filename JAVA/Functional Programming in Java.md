@@ -76,3 +76,13 @@ Using listFiles() method that takes FileFilter as its parameter.
     // OR
     final File[] files = new File(".").listFiles(File::isHidden);
 ```
+
+## Listing Immediate Subdirectories Using flatMap
+
+using flatMap() for Listing Immediate subdirectories:
+
+```java
+    List<File> files = Stream.of(new File(".").listFiles())
+                       .flatMap(file -> file.listFiles() == null ? Stream.of(file) : Stream.of(file.listFiles()))
+                       .collect(toList());
+```
