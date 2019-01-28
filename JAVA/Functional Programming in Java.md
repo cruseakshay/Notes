@@ -86,3 +86,24 @@ using flatMap() for Listing Immediate subdirectories:
                        .flatMap(file -> file.listFiles() == null ? Stream.of(file) : Stream.of(file.listFiles()))
                        .collect(toList());
 ```
+
+## Watching a File Change
+
+to watch for file changes in the current directory.
+
+```java
+    final Path path = Paths.get(".");
+    final WatchService watchService =path.getFileSystem()
+                                    .newWatchService();
+    path.register(watchService, StandardWatchEventKinds.ENTRY_MODIFY);
+
+    System.out.println("Report any file changed within next 1 minute...");
+
+    final WatchKey watchKey = watchService.poll(1, TimeUnit.MINUTES);
+    if(watchKey != null) {
+        watchKey.pollEvents()
+        .stream()
+        .forEach(event ->
+        System.out.println(event.context()));
+    }
+```
