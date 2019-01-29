@@ -24,6 +24,10 @@ In OOP we’re used to passing objects to methods, creating objects within metho
 - Higher-order functions:
   - how to pass functions to functions, create functions within functions, and return functions from within functions.
 
+## Imperative programming paradigm
+
+In imperative programming style, programs are composed from elements that "do" something. "Doing" something generally implies an initial state, a transition,and an end state. This is sometimes called _state mutation_.
+
 ## Using the collect Method and the Collectors Class
 
 The collect() method takes a stream of elements and collects or gathers them into a result container. To do that, the method needs to know three things:
