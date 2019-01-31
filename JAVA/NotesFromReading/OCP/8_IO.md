@@ -46,3 +46,26 @@ A File object often is initialized with String containing either an absolute or 
 
 ### Working with a File Object
 
+Few most commonly used methods:
+
+![File object Methods](../img/FileClassMethods.png)
+
+## Introducing Streams
+
+The I/O streams that in this chapter are data streams and completely unrelated to the new Stream API.
+
+### Stream Fundamentals
+
+The contents of a file may be accessed or written via a stream , which is a list of data elements presented sequentially.
+
+Each type of stream segments data into a "wave" or "block" in a particular way.
+
+Some stream classes read or write data as individual byte values.
+
+Other stream classes read or write individual characters or strings of characters.
+
+### Stream Nomenclature
+
+The java.io API provides numerous classes for creating, accessing, and manipulating streams.
+
+#### Byte Streams vs. Character Streams
