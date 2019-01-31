@@ -33,3 +33,16 @@ An instance of a File class represents the pathname of a particular file or dire
 The File class cannot read or write data within a file, although it can be passed as a reference to many *stream classes* to read or write data.
 
 ### Creating a File Object
+
+A File object often is initialized with String containing either an absolute or relative path to the file or directory within the file system.
+
+```java
+    File file = new File("abs/rel path");
+    // OR by joining paths.
+    File parent = new File("/home/smith");
+    // If the parent object happened to be null, then it would be skipped and the method would revert to our single String constructor.
+    File child = new File(parent,"data/zoo.txt");
+```
+
+### Working with a File Object
+
