@@ -155,3 +155,30 @@ streams are considered resources, it is imperative that they be closed after the
     the number of bytes that were actually skipped. If the return value is zero or negative,then end of the stream was reached.
 
 ## Working with Streams
+
+### The FileInputStream and FileOutputStream Classes
+
+The data in a **FileInputStream** object is commonly accessed by successive calls to the *read()* method until a value of *-1* is returned, indicating that the end of the stream—in this case the end of the file has been reached.
+
+A **FileOutputStream** object is accessed by writing successive bytes using the *write(int)* method.
+
+#### The BufferedInputStream and BufferedOutputStream Classes
+
+we can enhance the performance by wrapping the FileInputStream and FileOutputStream classes with the BufferedInputStream and BufferedOutputStream classes.
+
+Instead of reading the data one byte at a time, we use the underlying read(byte[]) method of BufferedInputStream, which returns the number of bytes read into the provided byte array.
+
+- The number of bytes read is important for two reasons.
+  1. if the value returned is 0, then we have reached the end of the file so stop reading from the BufferedInputStream.
+  2. the last read of the file will likely only partially fill the byte array, since it is unlikely for the file size to be an exact multiple of our buffer array size.
+
+The data is written into the BufferedOutputStream using the write(byte[],int,int) method, which takes as input a byte array, an offset, and a length value, respectively.
+
+### The FileReader and FileWriter classes
+
+Like the FileInputStream and FileOutputStream classes, the FileReader and FileWriter classes contain read() and write() methods, respectively.
+These methods read/write char values instead of byte values.
+
+The Writer class, which FileWriter inherits from, offers a *write(String)* method that allows a String object to be written directly to the stream. Using FileReader also allows you to pair it with BufferedReader in order to use the very convenient *readLine()* method.
+
+only the Reader/Writer solution gives us structured access to the text data and also takes care of *character encoding*.
