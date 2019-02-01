@@ -111,3 +111,14 @@ try (
 ```
 
 > For the exam, the only low-level stream classes we need to be familiar with are the ones that operate on files. The rest of the non-abstract stream classes are all high-level streams.
+
+#### Stream Base Classes
+
+The java.io library defines four **abstract classes** that are the parents of all stream classes defined within the API:
+
+- InputStream
+- OutputStream
+- Reader
+- Writer
+
+#### Decoding Java I/O Class Names
