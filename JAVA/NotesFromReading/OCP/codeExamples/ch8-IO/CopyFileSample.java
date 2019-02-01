@@ -10,14 +10,14 @@ public class CopyFileSample{
         try(InputStream in = new FileInputStream(source);
             OutputStream out = new FileOutputStream(destination)){
                 int b;
-                while ((b = in.read())!= -1) {
+                while ((b = in.read())!= -1) { // performance not good as we do not use any byte arrays.
                     out.write(b);
                 }
         }
     }
 
     public static void main(String[] args) throws IOException{
-        File source = new File("Source_path");
+        File source = new File("Source_path"); // FileNotFoundException: if file not found.
         File destination = new File("dest_path");
         copy(source, destination);
     }
