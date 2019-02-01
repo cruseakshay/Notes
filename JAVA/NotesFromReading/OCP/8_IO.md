@@ -69,3 +69,45 @@ Other stream classes read or write individual characters or strings of character
 The java.io API provides numerous classes for creating, accessing, and manipulating streams.
 
 #### Byte Streams vs. Character Streams
+
+The java.io API defines two sets of classes for reading and writing streams:
+those with Stream in their name and those with Reader/Writer in their name.
+
+- Differences between Streams and Readers/Writers
+  1. The stream classes are used for inputting and outputting all types of **binary or byte data**.
+  2. The reader and writer classes are used for inputting and outputting only **character and String data**.
+
+#### Input and Output
+
+Most Input stream classes have a corresponding Output class and vice versa.
+
+Example: FileOutputStream class writes data that can be read by a FileInputStream.
+
+It follows, then, that most Reader classes have a corresponding Writer class.
+
+Example: FileWriter class writes data that can be read by a FileReader.
+
+- exceptions to the rules above:
+  1. PrintWriter has no accompanying PrintReader class.
+  2. PrintStream class has no corresponding InputStream class.
+
+#### Low-Level vs. High-Level Streams
+
+the java.io API also segments streams into *low-level* and *high-level* streams.
+
+A low-level stream connects directly with the source of the data, such as a file, an array, or a String.
+Low-level streams process the raw data or resource and are accessed in a direct and unfiltered manner.
+
+A high-level stream is built on top of another stream using wrapping. Wrapping is the process by which an instance is passed to the constructor of another
+class and operations on the resulting instance are filtered and applied to the original instance.
+
+```java
+try (
+    // FileReader is the low-level stream reader
+    // BufferedReader is the high-level stream that takes a FileReader as input
+    BufferedReader bufferedReader = new BufferedReader(new FileReader("zoo-data.txt"))) {
+    System.out.println(bufferedReader.readLine());
+}
+```
+
+> For the exam, the only low-level stream classes we need to be familiar with are the ones that operate on files. The rest of the non-abstract stream classes are all high-level streams.
