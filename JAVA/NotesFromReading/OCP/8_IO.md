@@ -122,3 +122,36 @@ The java.io library defines four **abstract classes** that are the parents of al
 - Writer
 
 #### Decoding Java I/O Class Names
+
+Table 8.2 describes those java.io streams you should be familiar with for the exam.
+
+![IO classes](../img/IOStreamClasses.png)
+
+#### Common Stream Operations
+
+streams are considered resources, it is imperative that they be closed after they are used lest they lead to resource leaks.
+
+- Closing the Stream
+
+    closing can accomplish by calling the close() method in a finally block or using the try-with-resource syntax.
+
+- Flushing the Stream
+
+    When data is written to an OutputStream, the underlying operating system does not necessarily guarantee that the data will make it to the file immediately.
+
+    If the data is cached in memory and the application terminates unexpectedly, the data would be lost, because it was never written to the file system.
+
+    Java provides a *flush()* method, which requests that all accumulated data be written immediately to disk.
+
+    *close()* method will automatically call *flush()* method.
+
+- Marking the Stream
+    The InputStream and Reader classes include mark(int) and reset() methods to move the stream back to an earlier position.
+    the markSupported() method, which returns true only if mark() is supported. trying to call mark(int) or reset() on a class that does not support these operations will throw an exception at runtime.
+    if you call reset() after you have passed your mark() read limit, an exception may be thrown at runtime since the marked position may become invalidated.
+
+- Skipping over Data
+    The InputStream and Reader classes include a skip(long) method,skips over a certain number of bytes. It returns a long value, which indicates
+    the number of bytes that were actually skipped. If the return value is zero or negative,then end of the stream was reached.
+
+## Working with Streams
