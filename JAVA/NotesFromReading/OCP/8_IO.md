@@ -192,3 +192,38 @@ only the Reader/Writer solution gives us structured access to the text data and 
   process of converting stored data into an object
 
 #### The Serializable Interface
+
+The Serializable interface is a tagging or marker interface, which means that it does not have any methods associated with it.
+
+In order to serialize objects using the java.io API, the class they belong to must implement the java.io.Serializable interface.
+
+The purpose of implementing the Serializable interface is to inform any process attempting to serialize the object that you have taken the proper steps to make the object serializable, which involves making sure that the classes of all instance variables within the object are also marked Serializable.
+
+A process attempting to serialize an object will throw a NotSerializableException if the class or one of its contained classes does not properly implement the Serializable interface.
+
+Instance variable marked by transient keyword will be lost during serialization process.
+
+Besides transient instance variables, static class members will also be ignored during the serialization and deserialization process. This should follow logically, as static class variables do not belong to one particular instance.
+
+#### Serializing and Deserializing Objects
+
+The java.io API provides two stream classes for object serialization and deserialization called ObjectInputStream and ObjectOutputStream.
+
+The ObjectOutputStream class includes a method to serialize the object to the stream called *void writeObject(Object)*. If the provided object is not Serializable, or it contains an embedded reference to a class that is not Serializable or not marked *transient*, a *NotSerializableException* will be thrown at runtime.
+
+For the deserialization process, the ObjectInputStream class includes a deserialization method that returns an object called *readObject()*. Notice that the return type of this method is the generic type java.lang.Object, indicating that the object will have to be cast explicitly at runtime to be used.
+
+ObjectOutputStream and ObjectInputStream support reading and writing *null* objects. Therefore, it is important to check for null values whenreading from a serialized data stream.
+
+#### Understanding Object Creation
+
+For the exam, how a deserialized object is created ?
+
+When you deserialize an object, the constructor of the serialized class is not called.
+
+In fact, Java calls the first no-arg constructor for the first nonserializable parent class, skipping the constructors of
+any serialized class in between. 
+
+Furthermore, any static variables or default initializations are ignored.
+
+### The PrintStream and PrintWriter Classes
