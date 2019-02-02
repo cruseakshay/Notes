@@ -23,6 +23,7 @@ public class ObjectStreamSample {
         }
         catch(EOFException e){
             // File end reached.
+            // This is one of the few times when it is perfectly acceptable to swallow an exception.
         }
         return animals;
     }
