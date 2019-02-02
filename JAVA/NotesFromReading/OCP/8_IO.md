@@ -227,3 +227,59 @@ any serialized class in between.
 Furthermore, any static variables or default initializations are ignored.
 
 ### The PrintStream and PrintWriter Classes
+
+The PrintStream and PrintWriter classes are high-level stream classes that write formatted representation of Java objects to a text-based output stream.
+
+PrintStream -> OutputStream instances -> writes data as bytes.
+PrintWriter -> Writer instance -> write data as characters.
+
+For convenience, both of these classes include constructors that can open and write to files directly.
+
+Furthermore, the PrintWriter class even has a constructor that takes an OutputStream as input, allowing you to wrap a PrintWriter class around an OutputStream.
+
+- *System.out* and *System.err* are actually PrintStream objects.
+
+> For the exam, we should be familiar with the print() , println() , format() , and printf() methods.
+
+print-based methods do not throw any checked exceptions.
+
+write() method -> throws IOException.(checked)
+
+*checkError()* , that can be used to detect the presence of a problem after attempting to write data to the stream.
+
+- *print()* method \
+    print() is overloaded with all Java primitives as well as String and Object. handles character encoding automatically. uses valueOf() applied to an object calls the object's *toString()* method or returns *null* if the object is not set.
+
+- *println()* method \
+    virtually identical to the print() methods, except that they insert a line break after the String value is written. The classes also include a version of println() that takes no arguments, which terminates the current line by writing a line separator. \
+    uses System.getProperty("line.separator") for line breaks.
+
+- *format() and printf()* methods \
+    format() method in PrintStream and PrintWriter takes a String , an optional locale, and a set of arguments, and it writes a formatted String to the stream based on the input. \
+    For convenience, as well as to make C developers feel more at home in Java, the PrintStream and PrintWriter APIs also include a set of printf() methods, which are straight pass-through methods to the format() methods.
+
+### Review of Stream Classes
+
+- abstract parent classes and their concrete implementations
+  1. InputStream
+    - low-level streams \
+      FileInputStream
+    - high-level streams \
+      FilterInputStream <- BufferedInputStream \
+      ObjectInputStream
+  2. Reader
+    - low-level streams \
+      FileReader
+    - high-level streams \
+      BufferedReader, InputStreamReader
+  3. OutputStream
+    - low-level streams \
+      FileOutputStream
+    - high-level streams \
+      FilterOutputStream <- BufferedOutputStream, PrintStream \
+      ObjectOutputStream
+  4. Writer
+    - low-level streams \
+      FileWriter
+    - high-level streams \
+      BufferedWriter, OutputStreamWriter, PrintWriter
