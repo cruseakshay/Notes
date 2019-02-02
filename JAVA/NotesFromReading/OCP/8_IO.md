@@ -182,3 +182,13 @@ These methods read/write char values instead of byte values.
 The Writer class, which FileWriter inherits from, offers a *write(String)* method that allows a String object to be written directly to the stream. Using FileReader also allows you to pair it with BufferedReader in order to use the very convenient *readLine()* method.
 
 only the Reader/Writer solution gives us structured access to the text data and also takes care of *character encoding*.
+
+### The ObjectInputStream and ObjectOutputStream Classes
+
+- serialization
+  The process of converting an in-memory object to a stored data format
+
+- deserialization
+  process of converting stored data into an object
+
+#### The Serializable Interface
