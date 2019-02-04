@@ -84,7 +84,8 @@ For custom implementation it is common to override *equals()*, *hashCode()*, and
 
 - equals() \
   Remember that Java uses == to compare primitives and for checking if two variables refer to the same object. \
-  Checking if two objects are equivalent uses the equals() method, or at least it does if the developer implementing the method           overrides equals().
+  Checking if two objects are equivalent uses the equals() method, or at least it does if the developer implementing the method overrides equals().
+  two objects that return true for equals() objects must return the same hash code.
 
 - *The Contract for equals() Methods*: Rules for equals() method.
   - The equals() method implements an equivalence relation on non‐null object references:
