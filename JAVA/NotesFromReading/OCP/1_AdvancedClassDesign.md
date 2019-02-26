@@ -134,6 +134,7 @@ A nested class that is not static is called an inner class.
 
 **Member Inner Classes** \
   A member inner class is defined at the member level of a class (the same level as the methods, instance variables and constructors). \
+
 - Properties:
   - Can be declared public, private, or protected or use default access.
   - Can extend any class and implement interfaces.
@@ -145,6 +146,8 @@ A nested class that is not static is called an inner class.
   A local inner class is a nested class defined within a method. \
   Like local variables, a local inner class declaration does not exist until the method is invoked, and it goes out of scope when the method returns. \
 
+  Starting in Java SE 8, a local class can access local variables and parameters of the enclosing block that are final or effectively final. A variable or parameter whose value is never changed after it is initialized is effectively final.
+  
 - properties:
   - They do not have an access specifier.
   - They cannot be declared static and cannot declare s tatic fields or methods.
