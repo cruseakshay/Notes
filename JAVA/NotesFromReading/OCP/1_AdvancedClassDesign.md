@@ -27,7 +27,7 @@ For overloading, the method parameters must vary by type and/or number.
   2. The return type must be the same or a more restrictive type, also known as covariant return types.
   3. If any checked exceptions are thrown, only the same exceptions or subclasses of those exceptions are allowed to be thrown.
 
-*The methods must not be static. (If they are, the method is hidden and not overridden.)* \
+*The methods must not be static. (If they are, the method is hidden and not overridden.)* 
 
 **Abstract Classes** \
 An abstract class may contain any number of methods including zero. \
