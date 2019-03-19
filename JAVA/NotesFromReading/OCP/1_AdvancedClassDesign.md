@@ -70,7 +70,7 @@ The @Override annotation is used to express that the programmer, intend for this
 
 - when you see @Override show up on the exam, you must check carefully that the method is doing one of three things:
   1. Implementing a method from an interface
-  2. Overriding a superclass method of a class shown in the example
+  2. Overriding a superclass method of a class
   3. Overriding a method declared in Object class, such as *hashCode*, *equals*, or *toString*. (Special case of 2)
 
 **Coding *equals*, *hashCode*, and *toString*** \
