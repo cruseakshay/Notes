@@ -27,7 +27,7 @@ For overloading, the method parameters must vary by type and/or number.
   2. The return type must be the same or a more restrictive type, also known as covariant return types.
   3. If any checked exceptions are thrown, only the same exceptions or subclasses of those exceptions are allowed to be thrown.
 
-*The methods must not be static. (If they are, the method is hidden and not overridden.)* \
+*The methods must not be static. (If they are, the method is hidden and not overridden.)* 
 
 **Abstract Classes** \
 An abstract class may contain any number of methods including zero. \
@@ -70,7 +70,7 @@ The @Override annotation is used to express that the programmer, intend for this
 
 - when you see @Override show up on the exam, you must check carefully that the method is doing one of three things:
   1. Implementing a method from an interface
-  2. Overriding a superclass method of a class shown in the example
+  2. Overriding a superclass method of a class
   3. Overriding a method declared in Object class, such as *hashCode*, *equals*, or *toString*. (Special case of 2)
 
 **Coding *equals*, *hashCode*, and *toString*** \
@@ -84,7 +84,8 @@ For custom implementation it is common to override *equals()*, *hashCode()*, and
 
 - equals() \
   Remember that Java uses == to compare primitives and for checking if two variables refer to the same object. \
-  Checking if two objects are equivalent uses the equals() method, or at least it does if the developer implementing the method           overrides equals().
+  Checking if two objects are equivalent uses the equals() method, or at least it does if the developer implementing the method overrides equals().
+  two objects that return true for equals() objects must return the same hash code.
 
 - *The Contract for equals() Methods*: Rules for equals() method.
   - The equals() method implements an equivalence relation on non‐null object references:
@@ -116,6 +117,7 @@ Methos in enum: <enum_name>.values(), <enum_name>.ordinal(), <enum_name>.valueOf
 The values in an enum are all that are allowed. You cannot add more at runtime by extending the enum. \
 Enum can have Constructors, Fields, and Methods. The constructor is private because it can only be called from within the enum . \
 The first time that we ask for any of the enum values, Java constructs all of the enum values. After that, Java just returns the already constructed enum values. \
+Enums are also allowed to have only a private constructor. \
 If enum have Constructors, Fields, or Methods other than just values then ; is must after value declaration. \
 If the enum has an abstract method. This means that each and every enum value is required to implement this method. If we forget one, we get a compiler error. \
 If we don’t want each and every enum value to have a method, we can create a default implementation and override it only for the special cases.
@@ -132,6 +134,7 @@ A nested class that is not static is called an inner class.
 
 **Member Inner Classes** \
   A member inner class is defined at the member level of a class (the same level as the methods, instance variables and constructors). \
+
 - Properties:
   - Can be declared public, private, or protected or use default access.
   - Can extend any class and implement interfaces.
@@ -142,6 +145,9 @@ A nested class that is not static is called an inner class.
 **Local Inner Classes** \
   A local inner class is a nested class defined within a method. \
   Like local variables, a local inner class declaration does not exist until the method is invoked, and it goes out of scope when the method returns. \
+
+  Starting in Java SE 8, a local class can access local variables and parameters of the enclosing block that are final or effectively final. A variable or parameter whose value is never changed after it is initialized is effectively final.
+  
 - properties:
   - They do not have an access specifier.
   - They cannot be declared static and cannot declare s tatic fields or methods.
