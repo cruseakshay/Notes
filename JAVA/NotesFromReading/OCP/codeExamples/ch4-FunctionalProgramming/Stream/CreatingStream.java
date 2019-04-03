@@ -15,6 +15,11 @@ class CreatingStream {
 
         //3. Stream from an array.
         Stream<Integer> fromArray = Stream.of(1, 2, 3, 4);
+        String[] arr = new String[]{"a", "b", "c"};
+          // using full array
+        Stream<String> streamOfArrayFull = Arrays.stream(arr);
+        // using partial array
+        Stream<String> streamOfArrayPart = Arrays.stream(arr, 1, 3);
 
         //4. Converting from list to stream.
         List<String> list = Arrays.asList("a", "b", "c");
