@@ -32,5 +32,24 @@ class ToCollection{
                                                     // BiFunction to help decide in case of collison.
                                                     (item, identicalItem)-> item));
         
+
+        
+        {
+            // CollectingAndThen is a special collector that allows performing another action on a result straight after collecting ends.
+            List<String> result = givenList.stream().collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableList::copyOf));
+        }
+        {
+            // Joining collector can be used for joining Stream<String> elements.
+            String result = givenList.stream.collect(Collectors.joining());
+            System.out.println(result);
+        }
+        {
+            // Joining collector: custom separators, prefixes, postfixes.
+            String result = givenList.stream().collect(Collectors.joining(" "));
+            System.out.println(result);
+        }
+        {
+
+        }
     }
 }
