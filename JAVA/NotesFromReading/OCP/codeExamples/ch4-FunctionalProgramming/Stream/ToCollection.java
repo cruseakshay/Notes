@@ -1,6 +1,10 @@
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 class ToCollection{
     public static void main(String[] args) {
@@ -15,5 +19,18 @@ class ToCollection{
         // To get back custom implementation of desiered collection
             // LinkedList as result
         List<String> listAsResult2 = givenList.stream().collect(Collectors.toCollection(LinkedList::new));
+
+        // collect elements into a Map that stores strings as keys and their lengths as values.
+        Map<String, Integer> mapAsResult = givenList.stream().collect(Collectors.toMap(Function.identity(), String::length));
+
+        // What happens if collection contains duplicate elements?
+            // Note that toMap doesn’t even evaluate whether the values are also equal. If it sees duplicate keys, it immediately throws an IllegalStateException.
+            // cases with key collision, use Collectors.toMap(keyMapper, valueMapper, mergeFunction)
+            
+            Map<String, Integer> mapAsResult2 = Arrays.asList("a", "bb", "c", "d", "bb") // Contains duplicates for Map:Key
+                                                    .stream().collect(Collectors.toMap(Function.identity(), String::length, 
+                                                    // BiFunction to help decide in case of collison.
+                                                    (item, identicalItem)-> item));
+        
     }
 }
