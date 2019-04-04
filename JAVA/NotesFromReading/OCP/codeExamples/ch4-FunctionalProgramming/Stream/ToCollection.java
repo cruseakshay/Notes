@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.DoubleSummaryStatistics;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -49,7 +50,24 @@ class ToCollection{
             System.out.println(result);
         }
         {
-
+            String result = givenList.stream().collect(joining(" ", "PRE-", "-POST"));
+            System.out.println(result);
+        }
+        {
+            // Collectors.counting(): Counting is a simple collector that allows simply counting of all Stream elements.
+            Long result = givenList.stream().collect(Collectors.counting());
+            System.out.println(result);
+        }
+        {
+            // Collectors.summarizingDouble/Long/Int(): returns a special class containing statistical information about numerical data 
+            // in a Stream of extracted elements.
+            DoubleSummaryStatistics result = givenList.stream().collect(Collectors.summarizingDouble(String::length));
+            // Info available in summary.
+            System.out.println(result.getCount());
+            System.out.println(result.getMin());
+            System.out.println(result.getMax());
+            System.out.println(result.getSum());
+            System.out.println(result.getAverage());
         }
     }
 }
