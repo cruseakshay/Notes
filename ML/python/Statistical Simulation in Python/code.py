@@ -146,3 +146,26 @@ for _ in range(sims):
 # Calculate fraction of outcomes where there was a weight loss
 weight_loss_outcomes_frac = sum([(x < 0) for x in outcomes]) / len(outcomes)
 print("Probability of Weight Loss = {}".format(weight_loss_outcomes_frac))
+
+# Problem Statement: Sign up Flow
+# We will now model the DGP of an eCommerce ad flow starting with sign-ups.
+
+# On any day, we get many ad impressions, which can be modeled as Poisson random variables (RV). You are told that λ is normally distributed with a mean of 100k visitors and standard deviation 2000.
+
+# During the signup journey, the customer sees an ad, decides whether or not to click, and then whether or not to signup. Thus both clicks and signups are binary, modeled using binomial RVs.
+# What about probability p of success? Our current low-cost option gives us a click-through rate of 1% and a sign-up rate of 20%. A higher cost option could increase the clickthrough and signup rate by up to 20%, 
+# but we are unsure of the level of improvement, so we model it as a uniform RV.
+
+# Initialize click-through rate and signup rate dictionaries
+ct_rate = {'low':0.01, 'high':np.random.uniform(low=0.01, high=1.2*0.01)}
+su_rate = {'low':0.2, 'high':np.random.uniform(low=0.2, high=1.2*0.2)}
+
+def get_signups(cost, ct_rate, su_rate, sims):
+    lam = np.random.normal(loc=100000, scale=2000, size=sims)
+    # Simulate impressions(poisson), clicks(binomial) and signups(binomial)
+    impressions = np.random.poisson(lam=lam)
+    clicks = np.random.binomial(n = impressions, p = ct_rate[cost])
+    signups = np.random.binomial(n = clicks, p = su_rate[cost])
+    return signups
+
+print("Simulated Signups = {}".format(get_signups('high', ct_rate, su_rate, 1)))
