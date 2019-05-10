@@ -99,8 +99,7 @@ answer = lottery_ticket_cost - 1
 
 print("The highest price at which it makes sense to buy the ticket is {}".format(answer))
 
-# Problem Statement:
-# National elections
+# Problem Statement: National elections
 # This exercise will give you a taste of how you can model a DGP at different levels of complexity.
 
 # Consider national elections in a country with two political parties - Red and Blue. This country has 50 states and the party that wins the most states wins the elections. 
@@ -119,3 +118,31 @@ for _ in range(sims):
 # Calculate probability of Red winning in less than 45% of the states
 prob_red_wins = sum([(x < 0.45) for x in outcomes]) / len(outcomes)
 print("Probability of Red winning in less than 45% of the states = {}".format(prob_red_wins))
+
+# Problem Statement: Fitness goals
+# Let's model how activity levels impact weight loss using modern fitness trackers. On days when you go to the gym, you average around 15k steps, and around 5k steps otherwise.
+# You go to the gym 40% of the time. Let's model the step counts in a day as a Poisson random variable with a mean λ dependent on whether or not you go to the gym.
+
+# For simplicity, let’s say you have an 80% chance of losing 1lb and a 20% chance of gaining 1b when you get more than 10k steps. 
+# The probabilities are reversed when you get less than 8k steps. Otherwise, there's an even chance of gaining or losing 1lb. Given all this, find the probability of losing weight in a month.
+
+# Examine the prob variable in the shell, which is the default probability of gaining or losing 1lb.
+
+# Simulate steps & choose prob 
+for _ in range(sims):
+    w = []
+    for i in range(days):
+        lam = np.random.choice([5000, 15000], p=[0.6, 0.4], size=1)
+        steps = np.random.poisson(lam=lam)
+        if steps > 10000: 
+            prob = [0.2, 0.8]
+        elif steps < 8000: 
+            prob = [0.8, 0.2]
+        else:
+            prob = [0.5, 0.5]
+        w.append(np.random.choice([1, -1], p=prob))
+    outcomes.append(sum(w))
+
+# Calculate fraction of outcomes where there was a weight loss
+weight_loss_outcomes_frac = sum([(x < 0) for x in outcomes]) / len(outcomes)
+print("Probability of Weight Loss = {}".format(weight_loss_outcomes_frac))
