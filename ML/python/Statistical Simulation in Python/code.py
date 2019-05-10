@@ -169,3 +169,26 @@ def get_signups(cost, ct_rate, su_rate, sims):
     return signups
 
 print("Simulated Signups = {}".format(get_signups('high', ct_rate, su_rate, 1)))
+
+# Problem Statement:  Purchase Flow
+# After signups, let's model the revenue generation process. Once the customer has signed up, they decide whether or not to purchase - a natural candidate for a binomial RV. 
+# Let's assume that 10% of signups result in a purchase.
+
+# Although customers can make many purchases, let's assume one purchase. The purchase value could be modeled by any continuous RV, but one nice candidate is the exponential RV. 
+# Suppose we know that purchase value per customer has averaged around $1000. We use this information to create the purchase_values RV. The revenue, then, is simply the sum of all purchase values.
+
+# The variables ct_rate, su_rate and the function get_signups() from the last exercise are pre-loaded for you.
+
+def get_revenue(signups):
+    rev = []
+    np.random.seed(123)
+    for s in signups:
+        # Model purchases as binomial, purchase_values as exponential
+        purchases = np.random.binomial(s, p=0.1)
+        purchase_values = np.random.exponential(scale=1000, size=purchases)
+        
+        # Append to revenue the sum of all purchase values.
+        rev.append(sum(purchase_values))
+    return rev
+
+print("Simulated Revenue = ${}".format(get_revenue(get_signups('low', ct_rate, su_rate, 1))[0]))
