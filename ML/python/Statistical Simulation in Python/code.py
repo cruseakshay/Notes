@@ -192,3 +192,24 @@ def get_revenue(signups):
     return rev
 
 print("Simulated Revenue = ${}".format(get_revenue(get_signups('low', ct_rate, su_rate, 1))[0]))
+
+# Probability of losing money
+# In this exercise, we will use the DGP model to estimate probability.
+
+# As seen earlier, this company has the option of spending extra money, let's say $3000, to redesign the ad. This could potentially get them higher clickthrough and signup rates, 
+# but this is not guaranteed. We would like to know whether or not to spend this extra $3000 by calculating the probability of losing money. In other words, 
+# the probability that the revenue from the high-cost option minus the revenue from the low-cost option is lesser than the cost.
+
+# Once we have simulated revenue outcomes, we can ask a rich set of questions that might not have been accessible using traditional analytical methods.
+
+# This simple yet powerful framework forms the basis of Bayesian methods for getting probabilities.
+# Initialize cost_diff
+sims, cost_diff = 10000, 3000
+
+# Get revenue when the cost is 'low' and when the cost is 'high'
+rev_low = get_revenue(get_signups('low', ct_rate, su_rate, sims))
+rev_high = get_revenue(get_signups('high', ct_rate, su_rate, sims))
+
+# calculate fraction of times rev_high - rev_low is less than cost_diff
+frac = sum([(rev_high[i] - rev_low[i]) < cost_diff for i in range(len(rev_low))])/len(rev_low)
+print("Probability of losing money = {}".format(frac))
