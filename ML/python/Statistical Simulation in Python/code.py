@@ -215,3 +215,32 @@ frac = sum([(rev_high[i] - rev_low[i]) < cost_diff for i in range(len(rev_low))]
 print("Probability of losing money = {}".format(frac))
 
 # 3. Resampling methods
+    # Types:
+    # a. Bootstrap Resampling: sampling with replacement.
+    # b. Jackknife Resampling: Leave out one or more datapoints.
+    # c. Permutation Testing: Label switching.
+
+# Probability example
+# In this exercise, we will review the difference between sampling with and without replacement. We will calculate the probability of an event using simulation, 
+# but vary our sampling method to see how it impacts probability.
+
+# Consider a bowl filled with colored candies - three blue, two green, and five yellow. Draw three candies at random, with replacement and without replacement.
+# You want to know the probability of drawing a yellow candy on the third draw given that the first candy was blue and the second candy was green.
+
+# Set up the bowl
+success_rep, success_no_rep, sims = 0, 0, 10000
+bowl = ['b','b','b','g','g','y','y','y','y','y']
+
+for i in range(sims):
+    # Sample with and without replacement & increment success counters
+    sample_rep = np.random.choice(bowl, replace=True, size=3)
+    sample_no_rep = np.random.choice(bowl, replace=False, size=3)
+    if (sample_rep[0] == 'b') & (sample_rep[1] == 'g') & (sample_rep[2] == 'y'): 
+        success_rep += 1
+    if (sample_no_rep[0] == 'b') & (sample_no_rep[1] == 'g')& (sample_no_rep[2] == 'y' ): 
+        success_no_rep += 1
+
+# Calculate probabilities
+prob_with_replacement = success_rep/sims
+prob_without_replacement = success_no_rep/sims
+print("Probability with replacement = {}, without replacement = {}".format(prob_with_replacement, prob_without_replacement))
