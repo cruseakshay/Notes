@@ -213,3 +213,5 @@ rev_high = get_revenue(get_signups('high', ct_rate, su_rate, sims))
 # calculate fraction of times rev_high - rev_low is less than cost_diff
 frac = sum([(rev_high[i] - rev_low[i]) < cost_diff for i in range(len(rev_low))])/len(rev_low)
 print("Probability of losing money = {}".format(frac))
+
+# 3. Resampling methods
