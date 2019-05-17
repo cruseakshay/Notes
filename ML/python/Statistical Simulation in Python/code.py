@@ -264,3 +264,11 @@ for i in range(sims):
 boot_mean = np.mean(mean_lengths)
 boot_95_ci = np.percentile(mean_lengths, [2.5, 97.5])
 print("Bootstrapped Mean Length = {}, 95% CI = {}".format(boot_mean, boot_95_ci))
+
+# Non-standard estimators
+# In the last exercise, you ran a simple bootstrap that we will now modify for more complicated estimators.
+
+# Suppose you are studying the health of students. You are given the height and weight of 1000 students and are interested in the median height as well as the correlation between height and weight and the associated 95% CI for these quantities. Let's use bootstrapping.
+
+# Examine the pandas DataFrame df with the heights and weights of 1000 students. Using this, calculate the 95% CI for both the median height as well as the correlation between height and weight.
+
