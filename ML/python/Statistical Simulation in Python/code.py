@@ -364,3 +364,16 @@ permuted_A = data[perm[:len(donations_A)]]
 permuted_B = data[perm[len(donations_A):]]
 diff_in_means = np.mean(permuted_A) - np.mean(permuted_B)
 print("Difference in the permuted mean values = {}.".format(diff_in_means))
+
+# Hypothesis testing - Difference of means
+# We want to test the hypothesis that there is a difference in the average donations received from A and B.
+# Previously, you learned how to generate one permutation of the data. Now, we will generate a null distribution of the difference in means and then calculate the p-value.
+
+# For the null distribution, we first generate multiple permuted datasets and store the difference in means for each case. 
+# We then calculate the test statistic as the difference in means with the original dataset. 
+# Finally, we calculate the p-value as twice the fraction of cases where the difference is greater than or equal to the absolute value of the test statistic (2-sided hypothesis). A p-value of less than say 0.05 could then determine statistical significance.
+
+
+
+
+
