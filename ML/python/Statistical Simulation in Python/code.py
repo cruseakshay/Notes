@@ -305,3 +305,19 @@ for i in range(sims):
 # Calculate 95% CI on rsquared_boot
 r_sq_95_ci = np.percentile(rsquared_boot, [2.5, 97.5])
 print("R Squared 95% CI = {}".format(r_sq_95_ci))
+
+# Basic jackknife estimation - mean
+# You own a wrench factory and want to measure the average length of the wrenches to ensure that they meet some specifications. 
+# Your factory produces thousands of wrenches every day, but it's infeasible to measure the length of each wrench. However, 
+# you have access to a representative sample of 100 wrenches. Let's use jackknife estimation to get the average lengths.
+# Leave one observation out from wrench_lengths to get the jackknife sample and store the mean length
+mean_lengths, n = [], len(wrench_lengths)
+index = np.arange(n)
+
+for i in range(n):
+    jk_sample = wrench_lengths[index != i]
+    mean_lengths.append(jk_sample.mean())
+
+# The jackknife estimate is the mean of the mean lengths from each sample
+mean_lengths_jk = np.mean(np.array(mean_lengths))
+print("Jackknife estimate of the mean = {}".format(mean_lengths_jk))
