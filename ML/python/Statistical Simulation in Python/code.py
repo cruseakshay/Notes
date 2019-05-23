@@ -321,3 +321,23 @@ for i in range(n):
 # The jackknife estimate is the mean of the mean lengths from each sample
 mean_lengths_jk = np.mean(np.array(mean_lengths))
 print("Jackknife estimate of the mean = {}".format(mean_lengths_jk))
+
+# Jackknife confidence interval for the median
+# you are now interested in estimating the median length of the wrenches along with a 95% CI to ensure that the wrenches are within tolerance.
+
+# Leave one observation out to get the jackknife sample and store the median length
+median_lengths = []
+for i in range(n):
+    jk_sample = wrench_lengths[index != i]
+    median_lengths.append(np.median(jk_sample))
+
+median_lengths = np.array(median_lengths)
+
+# Calculate jackknife estimate and it's variance
+jk_median_length = np.mean(median_lengths)
+jk_var = (n-1)*np.var(median_lengths)
+
+# Assuming normality, calculate lower and upper 95% confidence intervals
+jk_lower_ci = jk_median_length - 1.96*np.sqrt(jk_var)
+jk_upper_ci = jk_median_length + 1.96*np.sqrt(jk_var)
+print("Jackknife 95% CI lower = {}, upper = {}".format(jk_lower_ci, jk_upper_ci))
