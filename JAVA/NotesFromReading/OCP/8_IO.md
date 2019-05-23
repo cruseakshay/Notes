@@ -283,3 +283,19 @@ write() method -> throws IOException.(checked)
       FileWriter
     - high-level streams \
       BufferedWriter, OutputStreamWriter, PrintWriter
+
+## Interacting with Users
+
+The *Console* class was introduced in Java 6 as a more evolved form of the *System.in* and *System.out* stream classes.
+
+### The Old Way
+
+System.in returns an InputStream - used to retrieve text input from the user.
+
+It can be chained to a BufferedReader to allow input that terminates with the Enter key.
+BufferedReader is a Reader so wrap System.in object using InputStreamReader.
+
+```java
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+```
+
