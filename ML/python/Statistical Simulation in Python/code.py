@@ -365,7 +365,7 @@ permuted_B = data[perm[len(donations_A):]]
 diff_in_means = np.mean(permuted_A) - np.mean(permuted_B)
 print("Difference in the permuted mean values = {}.".format(diff_in_means))
 
-# Hypothesis testing - Difference of means
+# b
 # We want to test the hypothesis that there is a difference in the average donations received from A and B.
 # Previously, you learned how to generate one permutation of the data. Now, we will generate a null distribution of the difference in means and then calculate the p-value.
 
@@ -377,3 +377,25 @@ print("Difference in the permuted mean values = {}.".format(diff_in_means))
 
 
 
+# CH 4 - Advanced Applications of Simulation
+# Modeling Corn Production
+# Suppose that you manage a small corn farm and are interested in optimizing your costs. In this exercise, we will model the production of corn.
+
+# For simplicity, let's assume that corn production depends on only two factors: rain, which you don't control, and cost, which you control. Rain is normally distributed with mean 50 and standard deviation 15. 
+# For now, let's fix cost at 5,000. Corn produced in any season is a Poisson random variable while the average corn production is governed by the equation:
+
+# 100 * cost ^ 0.1 * rain ^ 0.2
+
+# Initialize variables
+cost = 5000
+rain = np.random.normal(50, 15)
+
+# Corn Production Model
+def corn_produced(rain, cost):
+  mean_corn = 100 * (cost ** 0.1) * (rain ** 0.2)
+  corn = np.random.poisson(lam=mean_corn)
+  return corn
+
+# Simulate and print corn production
+corn_result = corn_produced(rain, cost)
+print("Simulated Corn Production = {}".format(corn_result))
