@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+# To start weblogic node manager from python script.
 import sys
 import logging
 import os
