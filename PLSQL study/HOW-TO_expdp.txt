@@ -1,0 +1,10 @@
+--BY SYSDBA Role or User.
+CREATE OR REPLACE DIRECTORY <DIRECTORY_NAME> AS '<SERVER_DIR_PATH>';
+GRANT READ, WRITE ON DIRECTORY <DIRECTORY_NAME> TO <USER/ROLE>;
+
+--From bash
+export ORACLE_HOME=<12C_R2 PATH>/dbhome_1
+export PATH=$ORACLE_HOME/bin:$PATH
+export ORACLE_SID=<Service Name>
+export ORAENV_ASK=NO
+expdp <USER>/<passwd>@<SID> schemas=<SCHEMA_NAME> directory=<DIRECTORY_NAME> dumpfile=<DUMP_FILE_NAME>.dmp logfile=<LOG_FILE_NAME>.log

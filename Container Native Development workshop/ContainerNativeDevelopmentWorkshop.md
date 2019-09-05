@@ -11,3 +11,9 @@ Welcome to the Oracle Public Cloud Container Native Development workshop. This w
 ![lab 500](Images/week5.png)
 
 ![Steps, pipeline, workflow](Images/img1.png)
+
+## Advantages of Containers for Microservice Architechture
+
+1. Application software is decoupled from host environment. Providing great portability.
+2. Containers are lightweight and fairly transparent, enabling scalability.
+3. Software is packaged along with its dependencies.
