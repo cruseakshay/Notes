@@ -468,3 +468,20 @@ for i in range(sims):
 # Estimate pi as 4 times the avg number of points in the circle.
 pi_sim = 4 * circle_points/sims
 print("Simulated value of pi = {}".format(pi_sim))
+
+# Power Analysis - Part I
+# Suppose that you are in charge of a news media website and you are interested in increasing the amount of time users spend on your website. 
+# Currently, the time users spend on your website is normally distributed with a mean of 1 minute and a variance of 0.5 minutes. 
+# Suppose that you are introducing a feature that loads pages faster and want to know the sample size required to measure a 10% increase in time spent on the website.
+
+# Initialize effect_size, control_mean, control_sd
+effect_size, sample_size, control_mean, control_sd = 0.05, 50, 1, 0.5
+
+# Simulate control_time_spent and treatment_time_spent, assuming equal variance
+control_time_spent = np.random.normal(loc=control_mean, scale=control_sd, size=sample_size)
+treatment_time_spent = np.random.normal(loc=control_mean*(1+effect_size), scale=control_sd, size=sample_size)
+
+# Run the t-test and get the p_value
+t_stat, p_value = st.ttest_ind(control_time_spent, treatment_time_spent)
+stat_sig = p_value < 0.05
+print("P-value: {}, Statistically Significant? {}".format(p_value, stat_sig))
