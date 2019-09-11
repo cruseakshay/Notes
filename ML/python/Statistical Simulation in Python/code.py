@@ -485,3 +485,24 @@ treatment_time_spent = np.random.normal(loc=control_mean*(1+effect_size), scale=
 t_stat, p_value = st.ttest_ind(control_time_spent, treatment_time_spent)
 stat_sig = p_value < 0.05
 print("P-value: {}, Statistically Significant? {}".format(p_value, stat_sig))
+
+# Power Analysis - Part II
+# For our website, we want to know how many people need to visit each variant, such that we can detect a 10% increase in time spent with 80% power.
+# For this, we start with a small sample (50), simulate multiple instances of this experiment & check power. If 80% power is reached, we stop. If not, 
+# we increase the sample size & try again.
+
+sample_size = 50
+
+# Keep incrementing sample size by 10 till we reach required power
+while 1:
+    control_time_spent = np.random.normal(loc=control_mean, scale=control_sd, size=(sample_size, sims))
+    treatment_time_spent = np.random.normal(loc=control_mean*(1+effect_size), scale=control_sd, size=(sample_size, sims))
+    t, p = st.ttest_ind(treatment_time_spent, control_time_spent)
+    
+    # Power is the fraction of times in the simulation when the p-value was less than 0.05
+    power = (p < 0.05).sum()/sims
+    if power >= 0.8: 
+        break
+    else: 
+        sample_size += 10
+print("For 80% power, sample size required = {}".format(sample_size))
