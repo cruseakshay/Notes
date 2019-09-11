@@ -506,3 +506,23 @@ while 1:
     else: 
         sample_size += 10
 print("For 80% power, sample size required = {}".format(sample_size))
+
+# Portfolio Simulation - Part I
+# calculate the expected returns of a stock portfolio & characterize its uncertainty.
+# Suppose you have invested $10,000 in your portfolio comprising of multiple stocks. 
+# You want to evaluate the portfolio's performance over 10 years. You can tweak your overall expected rate of return and volatility (standard deviation of the rate of return). 
+# Assume the rate of return follows a normal distribution.
+
+# write a function that takes the principal (initial investment), number of years, expected rate of return and volatility as inputs and returns the portfolio's total value after 10 years.
+# rates is a Normal random variable and has size equal to number of years
+def portfolio_return(yrs, avg_return, sd_of_return, principal):
+    np.random.seed(123)
+    rates = np.random.normal(loc=avg_return, scale=sd_of_return, size=yrs)
+    # Calculate the return at the end of the period
+    end_return = principal
+    for x in rates:
+        end_return = end_return + end_return * x
+    return end_return
+
+result = portfolio_return(yrs = 5, avg_return = 0.07, sd_of_return = 0.15, principal = 1000)
+print("Portfolio return after 5 years = {}".format(result))
