@@ -545,3 +545,17 @@ upper_ci = np.percentile(rets, 97.5)
 print("95% CI of Returns: Lower = {}, Upper = {}".format(lower_ci, upper_ci))
 
 # Portfolio Simulation - Part III
+# Let's go back to your stock-heavy portfolio with an expected return of 7% and a volatility of 30%. 
+# You have the choice of rebalancing your portfolio with some bonds such that the expected return is 4% & volatility is 10%. 
+# You have a principal of $10,000. You want to select a strategy based on how much your portfolio will be worth in 10 years. 
+# Let's simulate returns for both the portfolios and choose based on the least amount you can expect with 75% probability (25th percentile).
+
+for i in range(sims):
+    rets_stock.append(portfolio_return(yrs = 10, avg_return = 0.07, volatility = 0.3, principal = 10000))
+    rets_bond.append(portfolio_return(yrs = 10, avg_return = 0.04, volatility = 0.1, principal = 10000))
+
+# Calculate the 25th percentile of the distributions and the amount you'd lose or gain
+rets_stock_perc = np.percentile(rets_stock, 25)
+rets_bond_perc = np.percentile(rets_bond, 25)
+additional_returns = rets_stock_perc - rets_bond_perc 
+print("Sticking to stocks gets you an additional return of {}".format(additional_returns))
