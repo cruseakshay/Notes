@@ -526,3 +526,22 @@ def portfolio_return(yrs, avg_return, sd_of_return, principal):
 
 result = portfolio_return(yrs = 5, avg_return = 0.07, sd_of_return = 0.15, principal = 1000)
 print("Portfolio return after 5 years = {}".format(result))
+
+# Portfolio Simulation - Part II
+# Your stock-heavy portfolio has an initial investment of $10,000, an expected return of 7% and a volatility of 30%. 
+# You want to get a 95% confidence interval of what your investment will be worth in 10 years. We will simulate multiple samples of 10-year returns 
+# and calculate the confidence intervals on the distribution of returns.
+
+# Run 1,000 iterations and store the results
+sims, rets = 1000, []
+
+for i in range(sims):
+    rets.append(portfolio_return(yrs = 10, avg_return = 0.07, 
+                                 volatility = 0.3, principal = 10000))
+
+# Calculate the 95% CI
+lower_ci = np.percentile(rets, 2.5)
+upper_ci = np.percentile(rets, 97.5)
+print("95% CI of Returns: Lower = {}, Upper = {}".format(lower_ci, upper_ci))
+
+# Portfolio Simulation - Part III
