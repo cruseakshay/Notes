@@ -7,3 +7,7 @@
 - Which AWS service can help you visualize all the resources currently deployed in your account, their event histories, and how their configurations have changed over time?
 
   AWS Config
+
+- You can protect RDS database availability from outages by creating full standby instances in a second availability zone using ________.
+
+  multi-AZ deployment.
