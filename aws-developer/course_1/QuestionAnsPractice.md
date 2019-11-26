@@ -19,3 +19,7 @@
 - What are the three possible states of a CloudWatch alarm?
 
   ALARM, OK, and INSUFFICIENT_DATA
+
+- True/False: EC2 instances and S3 buckets are the only origins you can use for CloudFront distributions.
+
+  False
