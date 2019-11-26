@@ -11,3 +11,11 @@
 - You can protect RDS database availability from outages by creating full standby instances in a second availability zone using ________.
 
   multi-AZ deployment.
+
+- The best protection against a region-wide service failure of S3 infrastructure is ________.
+
+  Cross-region replication
+  
+- What are the three possible states of a CloudWatch alarm?
+
+  ALARM, OK, and INSUFFICIENT_DATA
