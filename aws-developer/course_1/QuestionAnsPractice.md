@@ -23,3 +23,11 @@
 - True/False: EC2 instances and S3 buckets are the only origins you can use for CloudFront distributions.
 
   False
+
+- What is the most efficient way to organize an account's multiple IAM users to minimize administration overhead?
+
+  Create IAM groups
+  
+- EC2 instances connect to the Internet (via their elastic network interfaces) through an ________.
+
+  Internet gateway
