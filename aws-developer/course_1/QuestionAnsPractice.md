@@ -39,3 +39,11 @@
 - Which CloudWatch resource type stores log events?
 
   log stream
+
+- Which storage engine should you use with MySQL, Aurora, and MariaDB for maximum compatibility with RDS?
+
+  InnoDB is the only storage engine Amazon recommends for MySQL and MariaDB deployments in RDS and the only engine Aurora supports.
+  
+- What do you have to do to securely authenticate to the GUI console of a Windows EC2 session?
+
+  The client computer in an encrypted operation must always provide the private key to authenticate. For EC2 instances running Windows,   you retrieve the password you'll use for the GUI login using your private key.
