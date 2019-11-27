@@ -31,3 +31,11 @@
 - EC2 instances connect to the Internet (via their elastic network interfaces) through an ________.
 
   Internet gateway
+
+- What must you do to configure a NAT instance after creating it?
+
+  The source/destination check on the NAT instance's ENI must be disabled to allow the instance to receive traffic not destined for its   IP and to send traffic using a source address that it doesn't own. The NAT instance's default route must point to an Internet gateway   as the target.
+
+- Which CloudWatch resource type stores log events?
+
+  log stream
