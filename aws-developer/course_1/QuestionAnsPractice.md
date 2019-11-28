@@ -47,3 +47,11 @@
 - What do you have to do to securely authenticate to the GUI console of a Windows EC2 session?
 
   The client computer in an encrypted operation must always provide the private key to authenticate. For EC2 instances running Windows,   you retrieve the password you'll use for the GUI login using your private key.
+  
+- You have a VMware virtual machine in your local infrastructure that you'd like to copy to your AWS account and run as an EC2 instance.   Which of the following will be necessary steps?
+
+  Import the virtual machine using VM Import/Export. Select the imported VM from among your private AMIs and launch an instance
+  
+- You want a CloudWatch alarm to change state when four consecutive evaluation periods elapse with no data. How should you configure the   alarm to treat missing data?
+
+  To have CloudWatch treat missing data as exceeding the threshold, set the Treat Missing Data As option to Breaching.
