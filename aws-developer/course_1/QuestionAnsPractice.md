@@ -55,3 +55,21 @@
 - You want a CloudWatch alarm to change state when four consecutive evaluation periods elapse with no data. How should you configure the   alarm to treat missing data?
 
   To have CloudWatch treat missing data as exceeding the threshold, set the Treat Missing Data As option to Breaching.
+
+- Which of the following content types is the best fit for a Real-Time Messaging Protocol (RTMP) distribution?
+
+  A. Amazon Elastic Transcoder–based videos
+  B. S3-based videos
+  C. Streaming videos
+  D. A mix of text and media-rich digital content
+
+  RTMP distributions can only manage content from S3 buckets. RTMP is intended for the distribution of video content.
+  
+- what is the difference in durability between S3’s S3 One Zone-IA and Reduced Redundancy classes?
+
+  One Zone-IA is heavily replicated but only within a single availability zone, while reduced redundancy is only lightly replicated.
+  
+- How many database engines can an RDS database instance run?
+
+  Although there are six database engines to choose from, a single database instance can run only one database engine. If you want to     run more than one database engine, you will need a separate database instance for each engine.
+  
