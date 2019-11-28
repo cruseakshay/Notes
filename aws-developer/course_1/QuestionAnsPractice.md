@@ -73,3 +73,10 @@
 
   Although there are six database engines to choose from, a single database instance can run only one database engine. If you want to     run more than one database engine, you will need a separate database instance for each engine.
   
+- You have a publicly available file called filename stored in an S3 bucket named bucketname. Which of the following addresses will       successfully retrieve the file using a web browser?
+
+  HTTP (web) requests must address the s3.amazon.aws.com domain along with the bucket and filenames.                                       https://s3.amazonaws.com/bucketname/filename
+  
+- If a MariaDB database running in RDS needs to write 200 MB of data every second, how many IOPS should you provision using io1 storage   to sustain this performance?
+
+  MariaDB has a page size of 16 KB. To write 200 MB (204,800 KB) of data every second, it would need 12,800 IOPS. Oracle, PostgreSQL, or Microsoft SQL Server, which all use an 8 KB page size, would need 25,600 IOPS to achieve the same throughput.
