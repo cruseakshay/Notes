@@ -108,3 +108,7 @@
 - Which actions will you need to perform to transfer a domain from an external registrar to Route 53?
 
   To transfer a domain, you'll need to make sure the domain isn't set to locked and an authorization code that you'll provide to Route     53.
+
+- Which ElastiCache engine can persistently store data?
+
+  ElastiCache supports Memcached and Redis, but only the latter can store data persistently.
