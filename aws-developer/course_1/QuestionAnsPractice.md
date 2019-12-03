@@ -100,3 +100,11 @@
 - What is the range of allowed IPv4 prefix lengths for a VPC CIDR block?
 
   The allowed range of prefix lengths for a VPC CIDR is between /16 and /28 inclusive. The maximum possible prefix length for an IP       subnet is /32.
+
+- Which service would you use to most effectively reduce the latency your end users experience when accessing your application resources   over the Internet?
+
+  CloudFront maintains a network of endpoints where cached versions of your application data are stored to provide quicker responses to   user requests.
+  
+- Which actions will you need to perform to transfer a domain from an external registrar to Route 53?
+
+  To transfer a domain, you'll need to make sure the domain isn't set to locked and an authorization code that you'll provide to Route     53.
