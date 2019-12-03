@@ -97,4 +97,6 @@
 
   Geoproximity routing routes users to the location closest to them.
 
-  
+- What is the range of allowed IPv4 prefix lengths for a VPC CIDR block?
+
+  The allowed range of prefix lengths for a VPC CIDR is between /16 and /28 inclusive. The maximum possible prefix length for an IP       subnet is /32.
