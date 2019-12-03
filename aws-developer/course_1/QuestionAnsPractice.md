@@ -88,3 +88,13 @@
 - You've configured CloudTrail to log all management events in all regions. Which of the following API events will CloudTrail log? 
 
   Creating a bucket and subnet are API actions, regardless of whether they're performed from the web console or AWS CLI.
+
+- What is the function of Amazon Cognito user pools?
+
+  User pools provide sign-up and sign-in for your application's users. Temporary access to defined AWS services to your application       users is provided by identity pools. 
+  
+- You want to use Route 53 to send users to the application load balancer closest to them. Which routing policies lets you do this with   the least effort?
+
+  Geoproximity routing routes users to the location closest to them.
+
+  
