@@ -121,3 +121,10 @@
 
   The destination 0.0.0.0/0 matches all IP prefixes and hence covers all publicly accessible hosts on the Internet.
   
+- What uniquely distinguishes two CloudWatch metrics that have the same name and are in the same namespace?
+
+  CloudWatch uses dimensions to uniquely identify metrics with the same name and namespace. 
+  
+- You learn that an instance in the us-west-1 region was deleted at some point in the past. To find out who deleted the instance and       when, which of the following must be true?
+
+  If CloudTrail were logging write-only management events in the same region as the instance, it would have generated trail logs           containing the deletion event.
