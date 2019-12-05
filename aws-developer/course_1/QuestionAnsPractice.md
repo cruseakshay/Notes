@@ -112,3 +112,12 @@
 - Which ElastiCache engine can persistently store data?
 
   ElastiCache supports Memcached and Redis, but only the latter can store data persistently.
+
+- Enabling point-in-time RDS snapshots is sufficient to give you a recovery point objective (RPO) of less than 10 minutes.
+
+  True
+  
+- What is the destination for a default IPv4 route?
+
+  The destination 0.0.0.0/0 matches all IP prefixes and hence covers all publicly accessible hosts on the Internet.
+  
