@@ -147,3 +147,12 @@
 - Which AWS tools will allow you to locate EC2 instances closer to each other to reduce network latency?
 
   Placement groups.
+
+- The EBS Lifecycle Manager can take snapshots of volumes that were once attached to terminated instances.
+
+  The EBS Lifecycle Manager can take scheduled snapshots of any EBS volume, regardless of attachment state.
+  
+- EC2 Auto Scaling automatically replaces group instances directly terminated by the root user.
+  
+  True
+  
