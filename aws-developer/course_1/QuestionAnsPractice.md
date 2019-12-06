@@ -128,3 +128,11 @@
 - You learn that an instance in the us-west-1 region was deleted at some point in the past. To find out who deleted the instance and       when, which of the following must be true?
 
   If CloudTrail were logging write-only management events in the same region as the instance, it would have generated trail logs           containing the deletion event.
+  
+- an example of a top-level domain (TLD)?
+  The rightmost section of an FQDN address is the TLD like *.com .
+  
+- Which services can alert you to malware on an EC2 instance?
+
+  GuardDuty looks for potentially malicious activity.
+  
