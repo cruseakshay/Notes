@@ -175,3 +175,7 @@
 - What is the relationship between a subnet and an availability zone?
 
   Multiple subnets may exist in a single availability zone. A subnet cannot span availability zones.
+
+- What is a public subnet ?
+
+  The definition of a public subnet is a subnet that has a default route pointing to an Internet gateway as a target. Otherwise, it's a   private subnet.
