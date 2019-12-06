@@ -136,3 +136,14 @@
 
   GuardDuty looks for potentially malicious activity.
   
+- Which VPC resource performs network address translation?
+
+  An Internet gateway performs NAT for instances that have a public IP address.
+  
+- What must every relational database table contain?
+
+  A table must contain at least one attribute or column. 
+  
+- Which AWS tools will allow you to locate EC2 instances closer to each other to reduce network latency?
+
+  Placement groups.
