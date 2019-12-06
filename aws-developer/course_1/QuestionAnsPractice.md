@@ -156,3 +156,10 @@
   
   True
   
+- In a CloudWatch alarm, what does the EC2 recover action do to the monitored instance?
+
+  The recover action is useful when there's a problem with an instance that requires AWS involvement to repair, such as a hardware         failure. The recover action migrates the same instance to a new host.
+  
+- S3 cross-region replication uses transfer acceleration.
+
+  False; Explanation: S3 cross-region replication transfers objects between different buckets. Transfer acceleration uses a CloudFront     edge location to speed up transfers between S3 and the Internet.
