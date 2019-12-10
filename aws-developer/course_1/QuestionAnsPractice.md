@@ -188,4 +188,6 @@
 
   An availability zone is an isolated physical data center within an AWS region. Regions are geographic areas that contain multiple       availability zones.
   
-- 
+- How can you assign a public IP address to a running instance that doesn't have one?
+
+  Assigning an EIP to an instance is a two-step process. First you must allocate an EIP, and then you must associate it with an ENI.
