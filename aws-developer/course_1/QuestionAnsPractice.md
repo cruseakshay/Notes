@@ -179,3 +179,13 @@
 - What is a public subnet ?
 
   The definition of a public subnet is a subnet that has a default route pointing to an Internet gateway as a target. Otherwise, it's a   private subnet.
+
+- Which AWS tool lets you organize your EC2 instances and configure their network connectivity and access control?
+
+  VPCs are virtualized network environments where you can control the connectivity of your EC2 (and RDS, etc.) infrastructure.
+  
+- What does the term availability zone refer to in AWS documentation?
+
+  An availability zone is an isolated physical data center within an AWS region. Regions are geographic areas that contain multiple       availability zones.
+  
+- 
