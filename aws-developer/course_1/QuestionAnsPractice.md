@@ -195,3 +195,8 @@
 - Enabling point-in-time RDS snapshots is sufficient to give you a recovery point objective (RPO) of less than 10 minutes.
 
   True.
+  
+- What are the important steps for securing IAM user accounts?
+
+  Enable multifactor authentication (MFA), Assign a long and complex password.
+  
