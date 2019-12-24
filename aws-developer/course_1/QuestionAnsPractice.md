@@ -200,3 +200,6 @@
 
   Enable multifactor authentication (MFA), Assign a long and complex password.
   
+- What is the function of Amazon Cognito user pools?
+
+  User pools provide sign-up and sign-in for your application's users.
