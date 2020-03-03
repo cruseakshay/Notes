@@ -59,3 +59,11 @@ For Region, type us-west-2.
 For Default output format, press ENTER.
 
 You have now configured the AWS CLI so that any CLI calls will operate with the credentials of the AWS IAM user.
+
+### Simple Storage Service
+
+S3 allows us to set access control via three methods:
+1. Bucket Policies, 
+2. IAM for users and groups and
+3. Access Control Lists.
+
