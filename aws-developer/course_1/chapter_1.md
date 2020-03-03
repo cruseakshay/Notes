@@ -47,3 +47,15 @@ curl http://169.254.169.254/latest/meta-data/network/interfaces/macs/Your-MAC/su
 
 Execute the command below to get the instance user data: \
 curl http://169.254.169.254/latest/user-data
+
+To get programmatic access to aws api using user configure AWS CLI with the access keys of the AWS IAM user.
+
+aws configure
+
+Follow the prompts on the screen and paste in the values for Access Key Id and Secret Access Key.
+
+For Region, type us-west-2.
+
+For Default output format, press ENTER.
+
+You have now configured the AWS CLI so that any CLI calls will operate with the credentials of the AWS IAM user.
