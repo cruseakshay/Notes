@@ -1,0 +1,40 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Sid1",
+            "Effect": "Allow",
+            "Action": [
+                "iam:*",
+                "rds:*",
+                "sns:*",
+                "cloudformation:*",
+                "rekognition:*",
+                "ec2:*",
+                "cognito-idp:*",
+                "sqs:*",
+                "xray:*",
+                "s3:*",
+                "elasticloadbalancing:*",
+                "cloud9:*",
+                "lambda:*",
+                "tag:GetResources",
+                "logs:*",
+                "kms:ListKeyPolicies",
+                "kms:GenerateRandom",
+                "kms:ListRetirableGrants",
+                "kms:GetKeyPolicy",
+                "kms:ListResourceTags",
+                "kms:ReEncryptFrom",
+                "kms:ListGrants",
+                "kms:GetParametersForImport",
+                "kms:ListKeys",
+                "kms:GetKeyRotationStatus",
+                "kms:ListAliases",
+                "kms:ReEncryptTo",
+                "kms:DescribeKey"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
