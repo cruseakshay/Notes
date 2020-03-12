@@ -33,3 +33,5 @@ The method of k-nearest neighbors makes very mild structural assumptions: its pr
 
 #### Linear Models and Least Squares
 
+the intercept, also known as the bias in machine learning.
+
