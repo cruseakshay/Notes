@@ -2,7 +2,7 @@
 
 ## Overview of Supervised Learning
 
-input/predictors/independent variables/features/
+input/predictors/independent variables/features/explanatory variables
 
 output/response/dependent variable
 
