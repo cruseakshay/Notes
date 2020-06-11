@@ -22,3 +22,18 @@ forward pass -> forward propogation
 backward pass -> backward propogation
 
 Difference between Loss function and cost function ?
+
+Convex and non convex function.
+
+local and global minima.
+
+derivatives and partial derivatives.
+
+what is computation graph ?
+
+One step of backward propagation on a computation graph yields derivative of final output variable.
+
+chain rule of differential calculus.
+
+what is vectorization ?
+
