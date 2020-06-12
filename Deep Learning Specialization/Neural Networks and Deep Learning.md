@@ -11,6 +11,22 @@ Think{ Data, Computation, Algorithm}
 
 Switching sigmoid with relu led to efficient computation.
 
+derivative of sigmoid function ?
+
+In computer science, an image is represented by a 3D array of shape (length,height,depth=3). 
+
+However, when you read an image as the input of an algorithm you convert it to a vector of shape (length∗height∗3,1).
+
+Note that you can divide matrices of different sizes and it works fine due to broadcasting in numpy.
+
+what is softmax function ?
+
+the difference between the dot/outer/elementwise product of matrix ?
+
+The loss is used to evaluate the performance of your model. The bigger your loss is, the more different your predictions ($ \hat{y} $) are from the true values ($y$). In deep learning, you use optimization algorithms like Gradient Descent to train your model and to minimize the cost.
+
+L1 loss definition ?
+
 ---
 ### Week 2
 
@@ -20,6 +36,12 @@ Logistic Regression is the algorithm for binary classification.
 
 forward pass -> forward propogation
 backward pass -> backward propogation
+
+(forward propagation): Calculate current loss
+
+(backward propagation): Calculate current gradient
+
+
 
 Difference between Loss function and cost function ?
 
@@ -52,4 +74,8 @@ c = a + b # shape?
 difference between element-wise multiplication and np.dot() or matrix dot product ?
 
 what is maximum likelihood estimate ?
+
+---
+
+One common preprocessing step in machine learning is to center and standardize your dataset, meaning that you substract the mean of the whole numpy array from each example, and then divide each example by the standard deviation of the whole numpy array.
 
