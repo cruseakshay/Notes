@@ -1,21 +1,29 @@
+# Django reference
+
 pip install django
 
-# inside specific dir
-django-admin startproject [ProjectName]
+django-admin startproject password_generator
 
-# cd into project dir
+### cd into project dir [password_generator]
+
 python manage.py runserver
 
-#Project 
-# manage.py >>> to runserver, create project etc...
-# explore project structure of django project...
+### manage.py >>> to runserver, create app etc...
+### explore project structure of django project and app...
 
-python manage.py startapp [AppName] 
+python manage.py startapp generator
 
-#add app to settings.py
+### edit settings.py to add entry for the app
 
-#explore urls.py
+### edit urls.py to add path for / and imports app/views.py
 
-#add template, template/AppName folder to app
+### edit app/views.py to handle the request.
 
-#explore HttpResponse, render using templates
+### create inside app dir: templates/appName/newfile.html
+
+### how to render template html from views.py ?
+
+### how to re-direct request to new url and reference the url in template html by it's name ?
+
+### how to access request data ?
+request.GET.get('')
