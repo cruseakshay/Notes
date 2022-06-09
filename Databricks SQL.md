@@ -108,7 +108,7 @@ CREATE TABLE basic_sql_for_databricks_sql_source_silver_suppliers AS
 ```sql
 -- 2021 Sales
 SELECT sum(total_price) Total_Sales FROM dbacademy.basic_sql_for_databricks_sql_sales_gold
-    WHERE order_date >= to_date('2021-01-01');
+    WHERE order_date >= to_date('2019-01-01');
 
 -- Insert New Sale
 INSERT INTO dbacademy.basic_sql_for_databricks_sql_sales_gold
