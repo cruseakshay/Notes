@@ -1,7 +1,18 @@
-## Databricks SQL
+# Databricks SQL
 
-### Pre-requisite
+For stakeholders with SQL experience DB-SQL provides a simple user friendly experience to run ad-hoc queries **directly on the data present in Data Lake**.
+Also lets the user create multiple visualizations to explore query results, build and share dashboards.
 
+## Agenda
+
+- Introduction to Databricks SQL.
+- Query data in Databricks SQL.
+- Create basic visualizations using Databricks SQL.
+- Explore the different types of visualizations that can be created using Databricks SQL.
+- Use Databricks SQL to create dashboards.
+- Sharing queries and dashboards with others.
+
+## Pre-requisite
 
 ```sql
 CREATE DATABASE IF NOT EXISTS dbacademy;
@@ -91,7 +102,8 @@ CREATE TABLE basic_sql_for_databricks_sql_source_silver_suppliers AS
   SELECT * FROM delta.`wasbs://courseware@dbacademy.blob.core.windows.net/basic-sql-for-databricks-sql/v01/retail-org/solutions/silver/suppliers`;
 ```
 
-### Basic Querying Using SQL
+
+## Basic Querying Using SQL
 
 ```sql
 -- 2021 Sales
@@ -105,7 +117,8 @@ INSERT INTO dbacademy.basic_sql_for_databricks_sql_sales_gold
     (38832, "Jones", "Opple", current_date(), "Opple", NULL, 1000);
 ```
 
-### Query Parameters (Text, Number, Dropdown List, Query Based Dropdown)
+
+## Query Parameters (Text, Number, Dropdown List, Query Based Dropdown)
 
 ```sql
 -- Query Parameters
@@ -127,7 +140,8 @@ SELECT sum(total_price) Total_Sales FROM dbacademy.basic_sql_for_databricks_sql_
 SELECT DISTINCT product_category FROM dbacademy.basic_sql_for_databricks_sql_sales_gold;
 ```
 
-### Bar Chart
+
+## Bar Chart
 
 ```sql
 -- Note: In Table Viz, Column Rename, Column Visibility, Type: Text, HTTP, IMG etc.
@@ -139,7 +153,7 @@ SELECT customer_name, total_price Total_Sales, month(order_date) Month, product_
     AND order_date <= to_date('2019-10-31');
 ```
 
-### Table, Details, and Counter
+## Table, Details, and Counter
 
 ```sql
 -- Details
@@ -149,7 +163,8 @@ SELECT * FROM dbacademy.basic_sql_for_databricks_sql_sales_gold;
 SELECT sum(total_price) Total_Sales, 3000000 Sales_Goal FROM dbacademy.basic_sql_for_databricks_sql_sales_gold;
 ```
 
-### Area, Pie, Line, Heatmap, Scatter, and Box
+
+## Area, Pie, Line, Heatmap, Scatter, and Box
 
 ```sql
 -- Area, Pie, Line, and Heatmap Chart
@@ -177,7 +192,8 @@ SELECT * FROM dbacademy.basic_sql_for_databricks_sql_sales_gold;
 -- Use scatter plot query
 ```
 
-### Pivot, Funnel, and Word Cloud
+
+## Pivot, Funnel, and Word Cloud
 
 ```sql
 -- Pivot Table
@@ -214,7 +230,8 @@ SELECT state, count(customer_id)
 -- SELECT * from dbacademy.basic_sql_for_databricks_sql_customers;
 ```
 
-### Sankey and Sunburst
+
+## Sankey and Sunburst
 
 ```sql
 -- Sankey and Sunburst
@@ -256,7 +273,9 @@ GROUP BY e1, e2, e3, e4, e5
 ORDER BY value DESC
 ```
 
-### Cohort
+
+## Cohort
+
 
 ```sql
 -- Cohort
