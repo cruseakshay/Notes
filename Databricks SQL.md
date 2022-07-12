@@ -22,7 +22,7 @@ CREATE DATABASE IF NOT EXISTS dbacademy;
 ------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------
 ---------- **MUST change the username**---------------------------
-GRANT ALL PRIVILEGES ON DATABASE dbacademy TO `student@azuredatabrickstraining.onmicrosoft.com`;
+GRANT ALL PRIVILEGES ON DATABASE dbacademy TO `student@databricks.com`;
 ------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------
 
