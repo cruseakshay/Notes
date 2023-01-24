@@ -1,5 +1,7 @@
 # Templated SQL In Python 
 
+Reference: https://medium.com/@sergei.izrailev
+
 ```python
 user_transaction_template = '''
 select
