@@ -31,7 +31,10 @@ print(bind_params)
 import pandas as pd
 frm = pd.read_sql(query, conn, params=bind_params)
 
-from six import string_typesdef quote_sql_string(value):
+
+from six import string_types
+
+def quote_sql_string(value):
     '''
     If `value` is a string type, escapes single quotes in the string
     and returns the string enclosed in single quotes.
@@ -42,7 +45,9 @@ from six import string_typesdef quote_sql_string(value):
         return "'{}'".format(new_value)
     return value
 
-from copy import deepcopydef get_sql_from_template(query, bind_params):
+from copy import deepcopy
+
+def get_sql_from_template(query, bind_params):
     if not bind_params:
         return query
     params = deepcopy(bind_params)
@@ -51,7 +56,7 @@ from copy import deepcopydef get_sql_from_template(query, bind_params):
     return query % params
     
 from jinjasql import JinjaSql
-​
+
 def apply_sql_template(template, parameters):
     '''
     Apply a JinjaSql template (string) substituting parameters (dict) and return
