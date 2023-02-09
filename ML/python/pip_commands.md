@@ -4,6 +4,6 @@
 
 pip list --outdated
 
-#### PIP windows Upgrade
+#### PIP windows Upgrade (Powershell) 
 
 pip freeze | %{$_.split('==')[0]} | %{pip install --upgrade $_}
