@@ -7,3 +7,7 @@ pip list --outdated
 #### PIP windows Upgrade (Powershell) 
 
 pip freeze | %{$_.split('==')[0]} | %{pip install --upgrade $_}
+
+#### Upgrade Packges from requirements.
+
+pip install -r requirements.txt --upgrade
