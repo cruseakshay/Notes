@@ -7,7 +7,8 @@ CREATE DATABASE IF NOT EXISTS {db};
 
 USE {db}
 
-SET spark.databricks.delta.formatCheck.enabled = false; --??
+--Details: https://books.japila.pl/delta-lake-internals/DeltaSQLConf/   
+SET spark.databricks.delta.formatCheck.enabled = false;
 
 SET spark.databricks.delta.properties.defaults.autoOptimize.optimizeWrite = true; -- ??
 
