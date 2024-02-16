@@ -1,0 +1,698 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Generic Container - Https Listener and TargetGroup",
+  "Parameters": {
+    "ApplicationName": {
+      "Type": "String",
+      "Description": "Application Name",
+      "Default": "<APP_NAME>"
+    },
+    "RegionShort": {
+      "Type": "String",
+      "Description": "Enter the region definition for the resource names"
+    },
+    "EnvironmentPrefix": {
+      "Type": "String"
+    },
+    "EnvironmentPrefixShort": {
+      "Type": "String"
+    },
+    "VpcId": {
+      "Type": "String"
+    },
+    "EcsClusterName": {
+      "Type": "String"
+    },
+    "DNSSecurityGroup": {
+      "Type": "String"
+    },
+    "ImageTag": {
+      "Type": "String",
+      "Default": "latest"
+    },
+    "ECSSubnet1": {
+      "Type": "String",
+      "Description": "Fargate subnet 1"
+    },
+    "ECSSubnet2": {
+      "Type": "String",
+      "Description": "Fargate subnet 2"
+    },
+    "TagKeyBU": {
+      "Type": "String",
+      "Description": "Enter the name of the BU",
+      "Default": "Contoso"
+    },
+    "TagKeyTechnology": {
+      "Type": "String",
+      "Description": "Enter the name of the Technology",
+      "Default": "Contoso Tech"
+    },
+    "TagKeyAppID": {
+      "Type": "String",
+      "Description": "Enter the name of the Appid",
+      "Default": "UUID-UUID-UUID"
+    },
+    "TagKeyProject": {
+      "Type": "String",
+      "Description": "Enter the name of the Project",
+      "Default": "Contoso Online"
+    },
+    "TagKeyDelivery": {
+      "Type": "String",
+      "Description": "Enter the Delivery type",
+      "Default": "INTERNAL"
+    },
+    "TagKeyPortfolio": {
+      "Type": "String",
+      "Description": "Enter the name of the Portfolio",
+      "Default": "Channel Delivery"
+    },
+    "TagKeyProjectId": {
+      "Type": "String",
+      "Description": "Enter the name of the Project",
+      "Default": "ContosoPRJ"
+    },
+    "TagKeyTier": {
+      "Type": "String",
+      "Description": "Enter the tier of the Project",
+      "Default": "TierI"
+    },
+    "TagKeyEnvironment": {
+      "Type": "String",
+      "Description": "Enter the name of the Environment"
+    },
+    "TagKeyOwner": {
+      "Type": "String",
+      "Description": "Enter the name of the Owner",
+      "Default": "You know who"
+    },
+    "TagKeyMaintenanceSchedule": {
+      "Type": "String",
+      "Description": "Enter value of Maintenance Schedule",
+      "Default": "N/A"
+    },
+    "TagKeySupportGroup": {
+      "Type": "String",
+      "Description": "Enter name of Support Group",
+      "Default": "Contoso CloudOps"
+    },
+    "TagKeyUsedFor": {
+      "Type": "String",
+      "Description": "Enter value of Used for",
+      "Default": "Application Server"
+    },
+    "ResourcePrefix": {
+      "Type": "String",
+      "Description": "Enter the prefix value to be used for resource creation",
+      "Default": "somePrefix"
+    },
+    "LoadBalancerPath": {
+      "Type": "String",
+      "Description": "Enter the prefix value to be used for resource creation",
+      "Default": "somePrefix"
+    },
+    "LoadBalancerPriority": {
+      "Type": "String",
+      "Description": "Enter the prefix value to be used for resource creation",
+      "Default": "200"
+    },
+    "TaskDesiredCount": {
+      "Type": "String",
+      "Default": "1"
+    },
+    "LoadBalancerListener": {
+      "Type": "String",
+      "Default": "ALBUri"
+    },
+    "ApplicationSubnet1": {
+      "Type": "String",
+      "Description": "Fargate subnet 1",
+      "Default": "subnet-XXXXXXXX"
+    },
+    "ApplicationSubnet2": {
+      "Type": "String",
+      "Description": "Fargate subnet 2",
+      "Default": "subnet-XXXXXXXX"
+    },
+    "ApplicationSecurityGroup": {
+      "Type": "String",
+      "Description": "Application security group",
+      "Default": "sg-XXXXXXXX"
+    }
+  },
+  "Resources": {
+    "Repository": {
+      "Type": "AWS::ECR::Repository",
+      "Properties": {
+        "RepositoryName": {
+          "Fn::Sub": "RepoName/${ApplicationName}"
+        },
+        "ImageScanningConfiguration": {
+          "ScanOnPush": "true"
+        }
+      }
+    },
+    "LogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": {
+          "Fn::Sub": "/ecs/${ApplicationName}"
+        },
+        "RetentionInDays": 365
+      }
+    },
+    "TaskDefinition": {
+      "Type": "AWS::ECS::TaskDefinition",
+      "UpdateReplacePolicy": "Retain",
+      "Properties": {
+        "Family": {
+          "Fn::Sub": "${ApplicationName}-task"
+        },
+        "RequiresCompatibilities": [
+          "FARGATE"
+        ],
+        "ContainerDefinitions": [
+          {
+            "Name": {
+              "Fn::Sub": "${ApplicationName}-task"
+            },
+            "Image": {
+              "Fn::Join": [
+                ".",
+                [
+                  {
+                    "Ref": "AWS::AccountId"
+                  },
+                  "dkr.ecr",
+                  {
+                    "Ref": "AWS::Region"
+                  },
+                  {
+                    "Fn::Join": [
+                      "/",
+                      [
+                        "amazonaws.com",
+                        {
+                          "Fn::Join": [
+                            ":",
+                            [
+                              {
+                                "Fn::Sub": "RepoName/${ApplicationName}"
+                              },
+                              {
+                                "Ref": "ImageTag"
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    ]
+                  }
+                ]
+              ]
+            },
+            "PortMappings": [
+              {
+                "HostPort": 8080,
+                "Protocol": "tcp",
+                "ContainerPort": 8080
+              }
+            ],
+            "Essential": true,
+            "LogConfiguration": {
+              "LogDriver": "awslogs",
+              "Options": {
+                "awslogs-group": {
+                  "Fn::Sub": "/ecs/${ApplicationName}"
+                },
+                "awslogs-region": {
+                  "Ref": "AWS::Region"
+                },
+                "awslogs-stream-prefix": "ecs"
+              }
+            },
+            "Environment": [
+              {
+                "Name": "ENV",
+                "Value": {
+                  "Ref": "EnvironmentPrefix"
+                }
+              },
+              {
+                "Name": "Version",
+                "Value": {
+                  "Ref": "ImageTag"
+                }
+              },
+              {
+                "Name": "REGION",
+                "Value": {
+                  "Ref": "AWS::Region"
+                }
+              }
+            ]
+          }
+        ],
+        "NetworkMode": "awsvpc",
+        "Cpu": "2048",
+        "Memory": "8192",
+        "ExecutionRoleArn": {
+          "Ref": "IAMRole"
+        },
+        "TaskRoleArn": {
+          "Ref": "IAMRole"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": {
+              "Fn::Join": [
+                "-",
+                [
+                  {
+                    "Ref": "ResourcePrefix"
+                  },
+                  {
+                    "Ref": "EnvironmentPrefix"
+                  },
+                  {
+                    "Ref": "RegionShort"
+                  },
+                  {
+                    "Ref": "ApplicationName"
+                  },
+                  "ecs"
+                ]
+              ]
+            }
+          },
+          {
+            "Key": "BU",
+            "Value": {
+              "Ref": "TagKeyBU"
+            }
+          },
+          {
+            "Key": "Technology",
+            "Value": {
+              "Ref": "TagKeyTechnology"
+            }
+          },
+          {
+            "Key": "Project",
+            "Value": {
+              "Ref": "TagKeyProject"
+            }
+          },
+          {
+            "Key": "Environment",
+            "Value": {
+              "Ref": "TagKeyEnvironment"
+            }
+          },
+          {
+            "Key": "Owner",
+            "Value": {
+              "Ref": "TagKeyOwner"
+            }
+          },
+          {
+            "Key": "AppID",
+            "Value": {
+              "Ref": "TagKeyAppID"
+            }
+          },
+          {
+            "Key": "MaintenanceSchedule",
+            "Value": {
+              "Ref": "TagKeyMaintenanceSchedule"
+            }
+          },
+          {
+            "Key": "SupportGroup",
+            "Value": {
+              "Ref": "TagKeySupportGroup"
+            }
+          },
+          {
+            "Key": "Used_For",
+            "Value": {
+              "Ref": "TagKeyUsedFor"
+            }
+          },
+          {
+            "Key": "Delivery",
+            "Value": {
+              "Ref": "TagKeyDelivery"
+            }
+          },
+          {
+            "Key": "Portfolio",
+            "Value": {
+              "Ref": "TagKeyPortfolio"
+            }
+          },
+          {
+            "Key": "Project_Id",
+            "Value": {
+              "Ref": "TagKeyProjectId"
+            }
+          },
+          {
+            "Key": "Tier",
+            "Value": {
+              "Ref": "TagKeyTier"
+            }
+          }
+        ]
+      }
+    },
+    "IAMRole": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": [
+                  "ecs-tasks.amazonaws.com"
+                ]
+              },
+              "Action": [
+                "sts:AssumeRole"
+              ]
+            }
+          ]
+        },
+        "ManagedPolicyArns": [
+          "arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceAutoscaleRole"
+        ],
+        "Path": "/",
+        "Policies": [
+          {
+            "PolicyName": "AmazonECSTaskExecutionRolePolicy",
+            "PolicyDocument": {
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "ecr:GetAuthorizationToken",
+                    "ecr:BatchCheckLayerAvailability",
+                    "ecr:GetDownloadUrlForLayer",
+                    "ecr:BatchGetImage"
+                  ],
+                  "Resource": {
+                    "Fn::Sub": "arn:aws:ecr:${AWS::Region}:${AWS::AccountId}:repository/RepoName/${ApplicationName}"
+                  }
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "logs:PutLogEvents",
+                    "logs:CreateLogStream"
+                  ],
+                  "Resource": "*"
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "ecr:GetAuthorizationToken"
+                  ],
+                  "Resource": "*"
+                },
+                {
+                  "Sid": "Stmtallread",
+                  "Action": [
+                    "s3:ListAllMyBuckets"
+                  ],
+                  "Effect": "Allow",
+                  "Resource": [
+                    "arn:aws:s3:::*"
+                  ]
+                },
+                {
+                  "Sid": "Stmtbucket",
+                  "Action": [
+                    "s3:Get*",
+                    "s3:List*",
+                    "s3:PutObject",
+                    "s3:DeleteObject",
+                    "s3:PutObjectAcl"
+                  ],
+                  "Effect": "Allow",
+                  "Resource": [
+                    "arn:aws:s3:::some_bucket",
+                    "arn:aws:s3:::some_bucket/*"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "TargetGroup": {
+      "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+      "Properties": {
+        "Name": {
+          "Ref": "ApplicationName"
+        },
+        "Port": 8080,
+        "Protocol": "HTTP",
+        "VpcId": {
+          "Ref": "VpcId"
+        },
+        "TargetType": "ip",
+        "TargetGroupAttributes": [
+          {
+            "Key": "deregistration_delay.timeout_seconds",
+            "Value": 60
+          }
+        ],
+        "HealthCheckPath": {
+          "Fn::Sub": "/${LoadBalancerPath}/healthcheck/get-health"
+        },
+        "UnhealthyThresholdCount": 8,
+        "HealthCheckIntervalSeconds": 60,
+        "Tags": [
+          {
+            "Key": "BU",
+            "Value": {
+              "Ref": "TagKeyBU"
+            }
+          },
+          {
+            "Key": "Technology",
+            "Value": {
+              "Ref": "TagKeyTechnology"
+            }
+          },
+          {
+            "Key": "Project",
+            "Value": {
+              "Ref": "TagKeyProject"
+            }
+          },
+          {
+            "Key": "Environment",
+            "Value": {
+              "Ref": "TagKeyEnvironment"
+            }
+          },
+          {
+            "Key": "Owner",
+            "Value": {
+              "Ref": "TagKeyOwner"
+            }
+          }
+        ]
+      }
+    },
+    "LoadBalancerHttpsListenerRuleForRegistry": {
+      "Type": "AWS::ElasticLoadBalancingV2::ListenerRule",
+      "Properties": {
+        "Actions": [
+          {
+            "Type": "forward",
+            "TargetGroupArn": {
+              "Ref": "TargetGroup"
+            }
+          }
+        ],
+        "Conditions": [
+          {
+            "Field": "path-pattern",
+            "Values": [
+              {
+                "Fn::Sub": "/${LoadBalancerPath}*"
+              }
+            ]
+          }
+        ],
+        "ListenerArn": {
+          "Ref": "LoadBalancerListener"
+        },
+        "Priority": {
+          "Ref": "LoadBalancerPriority"
+        }
+      }
+    },
+    "EcsService": {
+      "DependsOn": [
+        "TargetGroup",
+        "LoadBalancerHttpsListenerRuleForRegistry"
+      ],
+      "Type": "AWS::ECS::Service",
+      "Properties": {
+        "Cluster": {
+          "Ref": "EcsClusterName"
+        },
+        "ServiceName": {
+          "Fn::Sub": "${ApplicationName}-service"
+        },
+        "DesiredCount": {
+          "Ref": "TaskDesiredCount"
+        },
+        "NetworkConfiguration": {
+          "AwsvpcConfiguration": {
+            "AssignPublicIp": "DISABLED",
+            "SecurityGroups": [
+              {
+                "Ref": "ApplicationSecurityGroup"
+              },
+              {
+                "Ref": "DNSSecurityGroup"
+              }
+            ],
+            "Subnets": [
+              {
+                "Ref": "ApplicationSubnet1"
+              },
+              {
+                "Ref": "ApplicationSubnet2"
+              }
+            ]
+          }
+        },
+        "TaskDefinition": {
+          "Fn::Sub": "${ApplicationName}-task"
+        },
+        "LaunchType": "FARGATE",
+        "LoadBalancers": [
+          {
+            "ContainerName": {
+              "Fn::Sub": "${ApplicationName}-task"
+            },
+            "ContainerPort": "8080",
+            "TargetGroupArn": {
+              "Ref": "TargetGroup"
+            }
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "BU",
+            "Value": {
+              "Ref": "TagKeyBU"
+            }
+          },
+          {
+            "Key": "Technology",
+            "Value": {
+              "Ref": "TagKeyTechnology"
+            }
+          },
+          {
+            "Key": "AppID",
+            "Value": {
+              "Ref": "TagKeyAppID"
+            }
+          },
+          {
+            "Key": "Project",
+            "Value": {
+              "Ref": "TagKeyProject"
+            }
+          },
+          {
+            "Key": "Environment",
+            "Value": {
+              "Ref": "TagKeyEnvironment"
+            }
+          },
+          {
+            "Key": "Owner",
+            "Value": {
+              "Ref": "TagKeyOwner"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "Outputs": {
+    "RepositoryArn": {
+      "Description": "Returns the Amazon Resource Name (ARN) for the specified AWS::ECR::Repository resource. For example, arn:aws:ecr:eu-west-1:123456789012:repository/test-repository",
+      "Value": {
+        "Fn::GetAtt": [
+          "Repository",
+          "Arn"
+        ]
+      },
+      "Export": {
+        "Name": {
+          "Fn::Sub": "${AWS::StackName}-repository-arn"
+        }
+      }
+    },
+    "RepositoryUri": {
+      "Description": "Returns the URI for the specified AWS::ECR::Repository resource. For example, 123456789012.dkr.ecr.us-west-2.amazonaws.com/repository.",
+      "Value": {
+        "Fn::GetAtt": [
+          "Repository",
+          "RepositoryUri"
+        ]
+      },
+      "Export": {
+        "Name": {
+          "Fn::Sub": "${AWS::StackName}-repository-uri"
+        }
+      }
+    },
+    "TaskDefinitionName": {
+      "Value": {
+        "Fn::Select": [
+          "1",
+          {
+            "Fn::Split": [
+              "/",
+              {
+                "Fn::Sub": "${TaskDefinition}"
+              }
+            ]
+          }
+        ]
+      },
+      "Export": {
+        "Name": {
+          "Fn::Sub": "${AWS::StackName}-task-definition-name"
+        }
+      }
+    },
+    "TaskDefinitionArn": {
+      "Value": {
+        "Fn::GetAtt": [
+          "TaskDefinition",
+          "TaskDefinitionArn"
+        ]
+      },
+      "Export": {
+        "Name": {
+          "Fn::Sub": "${AWS::StackName}-task-definition-arn"
+        }
+      }
+    }
+  }
+}
