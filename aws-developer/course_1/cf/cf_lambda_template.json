@@ -1,0 +1,190 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Parameters": {
+        "BucketPrefix": {
+            "Type": "String",
+            "Default": "default-value"
+        },
+        "EnvironmentPrefix": {
+            "Type": "String",
+            "Default": "dev"
+        },
+        "ApplicationName": {
+            "Type": "String",
+            "Default": "contoso-lambda"
+        },
+        "Runtime": {
+            "Type": "String",
+            "Default": "python3.8"
+        },
+        "LambdaSubnet1": {
+            "Type": "String",
+            "Default": "subnet-XXXXXXXX"
+        },
+        "LambdaSubnet2": {
+            "Type": "String",
+            "Default": "subnet-XXXXXXXX"
+        },
+        "SecurityGroup": {
+            "Type": "String",
+            "Default": "sg-XXXXXXXX"
+        },
+        "SecurityGroup2": {
+            "Type": "String",
+            "Default": "sg-XXXXXXXX"
+        },
+        "TagKeyBU": {
+            "Type": "String",
+            "Description": "Enter the name of the BU",
+            "Default": "XXXXXXXX"
+        },
+        "TagKeyTeam": {
+            "Type": "String",
+            "Description": "Enter the name of the Team",
+            "Default": "XXXXXXXX"
+        },
+        "TagKeyTechnology": {
+            "Type": "String",
+            "Description": "Enter the name of the Technology",
+            "Default": "XXXXXXXX"
+        },
+        "TagKeyProject": {
+            "Type": "String",
+            "Description": "Enter the name of the Project",
+            "Default": "XXXXXXXX"
+        },
+        "TagKeyEnvironment": {
+            "Type": "String",
+            "Description": "Enter the name of the Environment",
+            "Default": "Dev"
+        },
+        "TagKeyOwner": {
+            "Type": "String",
+            "Description": "Enter the name of the Owner",
+            "Default": "XXXXXXXX"
+        }
+    },
+    "Resources": {
+        "LambdaFunction": {
+          "Type": "AWS::Lambda::Function",
+          "Properties": {
+            "FunctionName": {
+              "Fn::Join": [
+                "-",
+                [
+                  "XXXXXXXX",
+                  {
+                    "Fn::Sub": "${EnvironmentPrefix}"
+                  },
+                  "XXXXXXXX",
+                  {
+                    "Fn::Sub": "${ApplicationName}"
+                  }
+                ]
+              ]
+            },
+            "Handler": "lambda_function.lambda_handler",
+            "Runtime": {
+              "Ref": "Runtime"
+            },
+            "Description": "XXXXXXXX",
+            "MemorySize": 1024,
+            "Timeout": 120,
+            "Code": {
+              "S3Bucket": {
+                "Fn::Sub": "${BucketPrefix}"
+              },
+              "S3Key": "XX/XX/XXXX.zip"
+            },
+            "Role": "arn:aws:iam::0123456789:role/XXXXXXXXXXX-LambdaExecutionRole-TMLA0UTV3JWL",
+            "VpcConfig": {
+              "SecurityGroupIds": [
+                {
+                  "Fn::Sub": "${SecurityGroup}"
+                },
+                {
+                  "Fn::Sub": "${SecurityGroup2}"
+                }
+              ],
+              "SubnetIds": [
+                {
+                  "Fn::Sub": "${LambdaSubnet1}"
+                },
+                {
+                  "Fn::Sub": "${LambdaSubnet2}"
+                }
+              ]
+            },
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": {
+                  "Fn::Join": [
+                    "-",
+                    [
+                      "XXXX",
+                      {
+                        "Fn::Sub": "${EnvironmentPrefix}"
+                      },
+                      "XXXX",
+                      {
+                        "Fn::Sub": "${ApplicationName}"
+                      }
+                    ]
+                  ]
+                }
+              },
+              {
+                "Key": "BU",
+                "Value": {
+                  "Ref": "TagKeyBU"
+                }
+              },
+              {
+                "Key": "Team",
+                "Value": {
+                  "Ref": "TagKeyTeam"
+                }
+              },
+              {
+                "Key": "Technology",
+                "Value": {
+                  "Ref": "TagKeyTechnology"
+                }
+              },
+              {
+                "Key": "Project",
+                "Value": {
+                  "Ref": "TagKeyProject"
+                }
+              },
+              {
+                "Key": "Environment",
+                "Value": {
+                  "Ref": "TagKeyEnvironment"
+                }
+              },
+              {
+                "Key": "Owner",
+                "Value": {
+                  "Ref": "TagKeyOwner"
+                }
+              }
+            ],
+            "Layers": [
+              "arn:aws:lambda:us-east-1:0123456789:layer:XXXX-XXXX-dev-use1a-common-packages-layer:176"
+            ],
+            "Environment": {
+              "Variables": {
+                "ENV": {
+                  "Ref": "EnvironmentPrefix"
+                },
+                "REGION": {
+                  "Ref": "AWS::Region"
+                }
+              }
+            }
+          }
+        }
+    }
+}
