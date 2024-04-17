@@ -30,5 +30,7 @@ for filename in os.listdir(f"{file_dir}/inputs"):
 The pros of this method:
 
 It is Scalable as DAGs are not generated each time the folder dags/ is parsed by the Scheduler
+
 Full visibility of the DAG code (one DAG -> one file)
+
 Full control over the way DAGs are generated (script, less prone to errors or "zombie" DAGs)
